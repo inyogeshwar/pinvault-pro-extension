@@ -3,7 +3,9 @@
 [![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)](https://addons.mozilla.org)
 [![Edge Add-on](https://img.shields.io/badge/Edge-Compatible-blue?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Compatible-green?logo=googlechrome)](https://chrome.google.com/webstore)
+[![GitHub Release](https://img.shields.io/github/v/release/inyogeshwar/pinvault-pro-extension?logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Downloads](https://img.shields.io/github/downloads/inyogeshwar/pinvault-pro-extension/total?logo=download)](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
 
 > **Professional bulk image downloading tool for Pinterest with AI-powered auto-scroll technology, real-time dual-interface synchronization, and intelligent vault organization.**
 
@@ -35,14 +37,16 @@
 
 ### Firefox
 1. **From Mozilla Add-ons (AMO):** [Install PinSaver Pro](https://addons.mozilla.org) *(Coming Soon)*
-2. **Manual Installation:**
-   - Download `PinSaver-Pro-Firefox-v1.1.3.xpi`
+2. **From GitHub Releases:** [Download Firefox XPI](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Firefox-v1.1.3.xpi)
+3. **Manual Installation:**
+   - Download `PinSaver-Pro-Firefox-v1.1.3.xpi` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Open Firefox → Add-ons Manager → Install Add-on From File
 
 ### Edge/Chrome
 1. **From Microsoft Edge Add-ons:** [Install PinSaver Pro](https://microsoftedge.microsoft.com/addons) *(Coming Soon)*
-2. **Manual Installation:**
-   - Download `PinSaver-Pro-Edge-v1.1.3.zip`
+2. **From GitHub Releases:** [Download Edge ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Edge-v1.1.3.zip)
+3. **Manual Installation:**
+   - Download `PinSaver-Pro-Edge-v1.1.3.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Extract and load as unpacked extension
 
 ## 🎯 Usage
@@ -99,6 +103,19 @@ pinvault-pro-extension/
 ├── 📦 PinSaver-Pro-Edge-v1.1.3.zip       # Edge/Chrome package
 └── 📄 README.md                           # This file
 ```
+
+## 📥 Releases
+
+All extension packages are available in [GitHub Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases):
+
+### Latest Release: v1.1.3
+- **🦊 Firefox:** [`PinSaver-Pro-Firefox-v1.1.3.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Firefox-v1.1.3.xpi) *(61.4 KB)*
+- **🌐 Edge/Chrome:** [`PinSaver-Pro-Edge-v1.1.3.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Edge-v1.1.3.zip) *(60.0 KB)*
+
+### Installation from Releases
+1. **Visit:** [GitHub Releases Page](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+2. **Download:** The appropriate package for your browser
+3. **Install:** Follow platform-specific installation instructions above
 
 ## 🔧 Development
 
