@@ -2,6 +2,15 @@
 
 A professional bulk image collection browser extension with AI-powered auto-scroll technology and intelligent vault organization.
 
+## 📚 Documentation
+
+For comprehensive documentation, visit our **[Project Wiki](WIKI.md)**:
+- 🚀 [Getting Started Guide](README.md#-quick-start)
+- 🗺️ [Project Roadmap](ROADMAP.md)
+- 🔧 [Technical Documentation](TECHNICAL.md)
+- 📊 [Development Status](STATUS.md)
+- 🛠️ [Development Setup](DEVELOPMENT.md)
+
 ## 🚀 Quick Start
 
 ### For Users
@@ -35,7 +44,7 @@ A professional bulk image collection browser extension with AI-powered auto-scro
 5. Select the extension folder
 6. The extension will appear in your toolbar
 
-##  Repository Structure
+## 📁 Repository Structure
 
 ```
 pinvault-pro-extension/
@@ -133,7 +142,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- [Microsoft Edge Add-ons Store](#) (Coming Soon)
+- [Microsoft Edge Add-ons Store](#) (Under Review - Store ID: 0RDCKC80KK2N)
 - [GitHub Repository](https://github.com/inyogeshwar/pinvault-pro-extension)
 - [Issues & Support](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
 
