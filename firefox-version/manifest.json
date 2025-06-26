@@ -1,0 +1,108 @@
+{
+  "manifest_version": 2,
+  "name": "PinSaver Pro - Bulk Image Downloader",
+  "version": "1.1.3",
+  "description": "Professional bulk image downloading tool featuring AI-powered auto-scroll technology, real-time dual-interface synchronization, distinctive glassmorphism UI, and intelligent timestamped vault organization. Engineered for content creators and power users requiring advanced bulk image downloading capabilities.",
+  "permissions": [
+    "downloads",
+    "storage",
+    "contextMenus",
+    "activeTab",
+    "tabs",
+    "*://*.pinterest.com/*",
+    "*://*.pinterest.co.uk/*",
+    "*://*.pinterest.fr/*",
+    "*://*.pinterest.de/*",
+    "*://*.pinterest.es/*",
+    "*://*.pinterest.it/*",
+    "*://*.pinterest.jp/*",
+    "*://*.pinterest.ca/*",
+    "*://*.pinterest.au/*",
+    "*://*.pinterest.in/*",
+    "*://*.pinterest.mx/*",
+    "*://*.pinterest.se/*",
+    "*://*.pinterest.dk/*",
+    "*://*.pinterest.no/*",
+    "*://*.pinterest.pt/*",
+    "*://*.pinterest.ru/*",
+    "*://*.pinterest.kr/*",
+    "*://*.pinterest.ph/*",
+    "*://*.pinterest.nz/*",
+    "*://*.pinterest.cl/*",
+    "*://*.pinterest.com.mx/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://*.pinterest.com/*",
+        "*://*.pinterest.co.uk/*",
+        "*://*.pinterest.fr/*",
+        "*://*.pinterest.de/*",
+        "*://*.pinterest.es/*",
+        "*://*.pinterest.it/*",
+        "*://*.pinterest.jp/*",
+        "*://*.pinterest.ca/*",
+        "*://*.pinterest.au/*",
+        "*://*.pinterest.in/*",
+        "*://*.pinterest.mx/*",
+        "*://*.pinterest.se/*",
+        "*://*.pinterest.dk/*",
+        "*://*.pinterest.no/*",
+        "*://*.pinterest.pt/*",
+        "*://*.pinterest.ru/*",
+        "*://*.pinterest.kr/*",
+        "*://*.pinterest.ph/*",
+        "*://*.pinterest.nz/*",
+        "*://*.pinterest.cl/*",
+        "*://*.pinterest.com.mx/*"
+      ],
+      "js": ["content.js"],
+      "css": ["styles.css"],
+      "run_at": "document_end"
+    }
+  ],
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_title": "PinSaver Pro - Bulk Image Downloader",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "sidebar_action": {
+    "default_title": "PinSaver Pro Sidebar",
+    "default_panel": "sidebar.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "32": "icons/icon32.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "web_accessible_resources": [
+    "icons/*.png",
+    "styles.css",
+    "welcome.js"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "pinsaver-pro@extension.com",
+      "strict_min_version": "79.0"
+    },
+    "gecko_android": {
+      "strict_min_version": "113.0"
+    }
+  }
+}
