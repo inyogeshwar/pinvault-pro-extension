@@ -12,10 +12,12 @@
 
 ### 🎬 **Marketing Materials:**
 - [x] YouTube video title, description, and tags (500 char optimized)
+- [x] Demo video uploaded to YouTube: https://youtu.be/ie2gPVA_SHc
 - [x] Marketing strategy document with multi-platform approach
 - [x] SEO-optimized landing page (docs/index.html)
 - [x] Store submission guide with all browser descriptions
 - [x] Cross-platform promotion timeline
+- [x] Social media announcement templates ready
 
 ### 📦 **Extension Packages:**
 - [x] Firefox XPI package (v1.2.0)
@@ -26,7 +28,8 @@
 
 ### 📸 **Visual Assets:**
 - [x] Screenshots captured (screenshot-1.png, screenshot-2.png, screenshot-3.png)
-- [x] Demo video recorded and ready for upload
+- [x] Demo video recorded and uploaded: https://youtu.be/ie2gPVA_SHc
+- [x] Video integrated into README.md and landing page
 - [ ] Overview.png screenshot for main hero image
 
 ## 🚀 **IMMEDIATE NEXT STEPS**
@@ -53,12 +56,18 @@ Use the optimized content from `MARKETING.md`:
 4. Choose "main" branch and "/docs" folder
 5. Your landing page will be live at: https://inyogeshwar.github.io/pinvault-pro-extension/
 
-### 4. **Update README with Video** (5 minutes)
-After uploading to YouTube, replace the placeholder in README.md:
-```markdown
-### 🎬 **Demo Video**
-[![PinVault Pro Demo](https://img.youtube.com/vi/YOUR_VIDEO_ID/maxresdefault.jpg)](https://www.youtube.com/watch?v=YOUR_VIDEO_ID)
-```
+### 4. **Launch Social Media Campaign** (15 minutes)
+Use the ready-to-post content from `SOCIAL_MEDIA_LAUNCH.md`:
+- **Twitter/X**: Professional announcement with video link
+- **LinkedIn**: Detailed launch post for professional network
+- **Reddit**: Technical post in r/webdev and other communities
+- **Facebook**: User-friendly announcement for broader audience
+
+### 5. **Update README with Video** (COMPLETED ✅)
+Video has been integrated into README.md:
+- Hero section with video thumbnail and link
+- Navigation menu includes video link
+- Professional presentation with YouTube embed
 
 ## 🏪 **BROWSER STORE SUBMISSIONS** (Next Week)
 

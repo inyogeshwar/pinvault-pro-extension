@@ -2,6 +2,19 @@
 
 ## 📹 **YouTube Video Details**
 
+### **Video URL:**
+https://youtu.be/ie2gPVA_SHc
+
+### **Embed Code:**
+```html
+<iframe src="https://www.youtube.com/embed/ie2gPVA_SHc" frameborder="0" allowfullscreen></iframe>
+```
+
+### **Thumbnail URL:**
+```
+https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg
+```
+
 ### **Title (58 characters):**
 ```
 PinVault Pro - Pinterest Bulk Image Downloader Extension Demo

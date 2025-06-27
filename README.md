@@ -15,13 +15,25 @@
 
 **🎯 Professional bulk image downloading tool for Pinterest with AI-powered technology**
 
-[📥 Download](#-installation) • [🔧 Features](#-features) • [📚 Documentation](#-usage) • [🚀 Contribute](#-contributing)
+[📥 Download](#-installation) • [🎬 Demo Video](https://youtu.be/ie2gPVA_SHc) • [🔧 Features](#-features) • [📚 Documentation](#-usage) • [🚀 Contribute](#-contributing)
 
 </div>
 
 ---
 
-## � Preview Gallery
+## 🎬 **Demo Video**
+
+<div align="center">
+
+[![PinVault Pro Demo - Pinterest Bulk Image Downloader](https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg)](https://youtu.be/ie2gPVA_SHc)
+
+**🚀 Watch the complete PinVault Pro demonstration** - See bulk downloading, AI auto-scroll, and HD Privacy Mode in action!
+
+</div>
+
+---
+
+##  Preview Gallery
 
 <div align="center">
 
