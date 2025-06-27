@@ -415,6 +415,14 @@ Found a bug or have a feature request? Please create an issue:
 <tr>
 <td align="center">
 
+### 💖 **Support Development**
+[![Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=flat&logo=patreon&logoColor=white)](https://patreon.com/inyogeshwar)
+[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/yogeshwarkumar)
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?style=flat&logo=github-sponsors)](https://github.com/sponsors/inyogeshwar)
+
+</td>
+<td align="center">
+
 ### 📞 **Get Help**
 [![Email](https://img.shields.io/badge/Email-Support-blue?style=flat&logo=gmail)](mailto:yogeshwar853202@outlook.com)
 [![Issues](https://img.shields.io/badge/GitHub-Issues-red?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
