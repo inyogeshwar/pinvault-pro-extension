@@ -288,6 +288,21 @@
             object-fit: contain;
         }
         
+        /* Button Icons */
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .btn-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
         /* Download Section */
         .download-section {
             background: rgba(255, 255, 255, 0.1);
@@ -535,13 +550,28 @@
             
             <div class="download-buttons">
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi" class="btn btn-primary">
-                    🦊 Firefox Extension
+                    <span class="btn-icon">
+                        <img src="icons/firefox.svg" alt="Firefox" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg';">
+                    </span>
+                    Firefox Extension
                 </a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip" class="btn btn-primary">
-                    🌐 Edge/Chrome Extension
+                    <span class="btn-icon">
+                        <img src="icons/chrome.svg" alt="Google Chrome" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg';">
+                    </span>
+                    Chrome Extension
+                </a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip" class="btn btn-primary">
+                    <span class="btn-icon">
+                        <img src="icons/edge.svg" alt="Microsoft Edge" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftedge/microsoftedge-original.svg';">
+                    </span>
+                    Edge Extension
                 </a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip" class="btn btn-primary">
-                    🔴 Opera Extension
+                    <span class="btn-icon">
+                        <img src="icons/opera.svg" alt="Opera" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opera/opera-original.svg';">
+                    </span>
+                    Opera Extension
                 </a>
             </div>
         </div>
