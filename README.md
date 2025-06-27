@@ -397,8 +397,15 @@ Found a bug or have a feature request? Please create an issue:
 
 ## 📊 Changelog
 
+### v1.2.0 (2025-06-28)
+- **🎨 Complete Rebranding** - Updated from PinSaver Pro to PinVault Pro
+- **💖 Enhanced Support** - Added Patreon, Ko-fi, and GitHub Sponsors integration
+- **🌐 Multi-Browser Support** - Added Opera support alongside Firefox, Edge, Chrome
+- **📱 Universal Compatibility** - Optimized for all major browsers with proper manifests
+- **🛡️ Privacy Focus** - Enhanced HD Privacy Mode and security features
+- **✨ UI Improvements** - Modern glassmorphism design with better UX
+
 ### v1.1.3 (2025-06-26)
-- **🔄 Rebranded** from PinVault Pro to PinSaver Pro
 - **🦊 Firefox Support** - Full Firefox desktop and Android compatibility
 - **🌐 Edge Support** - Manifest V3 with modern APIs
 - **✅ Validation** - Zero errors/warnings on Firefox AMO
