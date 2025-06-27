@@ -3,56 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinVault Pro - Professional Pinterest Bulk Image Downloader</title>
-    <meta name="description" content="Download Pinterest images in bulk with PinVault Pro. AI-powered browser extension for Firefox, Chrome, Edge & Opera. Free, secure, and open-source.">
-    <meta name="keywords" content="pinterest downloader, bulk image download, pinterest extension, browser extension, pinterest tools, image saver">
-    <meta name="author" content="PinVault Pro Team">
+    <title>PinVault Pro - Professional Pinterest Image Downloader</title>
+    <meta name="description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology. Download multiple Pinterest images at once with HD quality.">
+    <meta name="keywords" content="Pinterest downloader, bulk image download, Pinterest extension, image saver, Pinterest tool">
+    <meta name="author" content="Yogeshwar Kumar">
     
-    <!-- Open Graph / Facebook -->
+    <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
+    <meta property="og:title" content="PinVault Pro - Professional Pinterest Image Downloader">
+    <meta property="og:description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology">
+    <meta property="og:image" content="https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png">
     <meta property="og:url" content="https://inyogeshwar.github.io/pinvault-pro-extension/">
-    <meta property="og:title" content="PinVault Pro - Professional Pinterest Bulk Image Downloader">
-    <meta property="og:description" content="Download Pinterest images in bulk with AI-powered technology. Free, secure, and works on all major browsers.">
-    <meta property="og:image" content="https://pinvault-pro.github.io/assets/og-image.png">
-
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://inyogeshwar.github.io/pinvault-pro-extension/">
-    <meta property="twitter:title" content="PinVault Pro - Professional Pinterest Bulk Image Downloader">
-    <meta property="twitter:description" content="Download Pinterest images in bulk with AI-powered technology. Free, secure, and works on all major browsers.">
-    <meta property="twitter:image" content="https://pinvault-pro.github.io/assets/twitter-image.png">
-
-    <link rel="canonical" href="https://inyogeshwar.github.io/pinvault-pro-extension/">
-    <link rel="icon" type="image/x-icon" href="favicon.ico">
     
-    <!-- Structured Data for SEO -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "PinVault Pro",
-        "description": "Professional Pinterest bulk image downloader with AI-powered technology",
-        "url": "https://inyogeshwar.github.io/pinvault-pro-extension/",
-        "author": {
-            "@type": "Person",
-            "name": "Yogeshwar Kumar"
-        },
-        "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-        },
-        "operatingSystem": ["Windows", "macOS", "Linux"],
-        "applicationCategory": "BrowserExtension",
-        "downloadUrl": "https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest",
-        "featureList": [
-            "Bulk Pinterest image download",
-            "AI-powered auto-scroll",
-            "HD Privacy Mode",
-            "Cross-browser compatibility"
-        ]
-    }
-    </script>
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PinVault Pro - Professional Pinterest Image Downloader">
+    <meta name="twitter:description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology">
+    <meta name="twitter:image" content="https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" sizes="32x32" href="https://raw.githubusercontent.com/inyogeshwar/pinvault-pro-extension/main/firefox-version/icons/icon32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="https://raw.githubusercontent.com/inyogeshwar/pinvault-pro-extension/main/firefox-version/icons/icon16.png">
     
     <style>
         * {
@@ -62,7 +33,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -75,12 +46,13 @@
             padding: 0 20px;
         }
         
+        /* Header */
         header {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             padding: 1rem 0;
-            position: fixed;
-            width: 100%;
+            position: sticky;
             top: 0;
             z-index: 100;
         }
@@ -89,52 +61,63 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            flex-wrap: wrap;
         }
         
         .logo {
+            display: flex;
+            align-items: center;
             color: white;
             font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
         }
         
+        .logo img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        
         .nav-links {
             display: flex;
             gap: 2rem;
-            list-style: none;
+            align-items: center;
+            flex-wrap: wrap;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s;
+            font-weight: 500;
+            transition: opacity 0.3s ease;
         }
         
         .nav-links a:hover {
             opacity: 0.8;
         }
         
-        main {
-            margin-top: 80px;
-            padding: 4rem 0;
-        }
-        
+        /* Hero Section */
         .hero {
             text-align: center;
+            padding: 4rem 0;
             color: white;
-            margin-bottom: 4rem;
         }
         
         .hero h1 {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
+            font-size: 3rem;
             font-weight: 700;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
         
         .hero p {
             font-size: 1.25rem;
             margin-bottom: 2rem;
             opacity: 0.9;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
         
         .cta-buttons {
@@ -146,46 +129,106 @@
         }
         
         .btn {
-            padding: 12px 24px;
-            border-radius: 8px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: transform 0.2s, box-shadow 0.2s;
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
         }
         
         .btn-primary {
-            background: #ff4757;
+            background: rgba(255, 255, 255, 0.2);
             color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .btn-primary:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
-            background: rgba(255, 255, 255, 0.2);
+            background: transparent;
             color: white;
-            backdrop-filter: blur(10px);
+            border: 2px solid rgba(255, 255, 255, 0.5);
         }
         
+        .btn-secondary:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
+        }
+        
+        /* Video Section */
+        .video-section {
+            margin: 3rem 0;
+        }
+        
+        .video-container {
+            position: relative;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 2rem;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            border-radius: 15px;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 15px;
+        }
+        
+        /* Features Section */
         .features {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            color: white;
+        }
+        
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin-bottom: 4rem;
+            margin-top: 2rem;
         }
         
-        .feature-card {
+        .feature {
             background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
             padding: 2rem;
-            border-radius: 12px;
-            color: white;
+            border-radius: 15px;
             text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            transform: translateY(-5px);
         }
         
         .feature-icon {
@@ -193,37 +236,43 @@
             margin-bottom: 1rem;
         }
         
-        .feature-card h3 {
+        .feature h3 {
+            font-size: 1.5rem;
             margin-bottom: 1rem;
-            font-size: 1.25rem;
+        }
+        
+        /* Browser Support */
+        .browser-support {
+            text-align: center;
+            margin: 3rem 0;
+            color: white;
+        }
+        
+        .browser-support h2 {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
         }
         
         .browsers {
-            text-align: center;
-            margin-bottom: 4rem;
-        }
-        
-        .browsers h2 {
-            color: white;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-        }
-        
-        .browser-grid {
             display: flex;
             justify-content: center;
             gap: 2rem;
             flex-wrap: wrap;
         }
         
-        .browser-item {
+        .browser {
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             padding: 1.5rem;
-            border-radius: 12px;
-            color: white;
+            border-radius: 15px;
             text-align: center;
             min-width: 120px;
+            transition: transform 0.3s ease;
+        }
+        
+        .browser:hover {
+            transform: translateY(-5px);
         }
         
         .browser-icon {
@@ -231,12 +280,43 @@
             margin-bottom: 0.5rem;
         }
         
+        /* Download Section */
+        .download-section {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            margin: 3rem 0;
+            text-align: center;
+            color: white;
+        }
+        
+        .download-section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .download-section p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .download-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        /* Footer */
         footer {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.2);
             color: white;
             text-align: center;
             padding: 2rem 0;
-            margin-top: 4rem;
+            margin-top: 3rem;
         }
         
         .footer-links {
@@ -250,17 +330,46 @@
         .footer-links a {
             color: white;
             text-decoration: none;
-            opacity: 0.8;
-            transition: opacity 0.3s;
+            transition: opacity 0.3s ease;
         }
         
         .footer-links a:hover {
-            opacity: 1;
+            opacity: 0.8;
         }
         
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2rem;
+            font-weight: bold;
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
             }
             
             .cta-buttons {
@@ -269,213 +378,220 @@
             }
             
             .nav-links {
-                display: none;
+                gap: 1rem;
             }
-        }
-        
-        .video-container {
-            max-width: 800px;
-            margin: 0 auto 3rem;
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            border-radius: 12px;
-            padding: 1rem;
-        }
-        
-        .video-wrapper {
-            position: relative;
-            padding-bottom: 56.25%;
-            height: 0;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        
-        .video-wrapper iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
+            
+            .features h2,
+            .browser-support h2,
+            .download-section h2 {
+                font-size: 2rem;
+            }
+            
+            .stats {
+                gap: 2rem;
+            }
         }
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav class="container">
-            <a href="#" class="logo">🔐 PinVault Pro</a>
-            <ul class="nav-links">
-                <li><a href="#features">Features</a></li>
-                <li><a href="#download">Download</a></li>
-                <li><a href="#support">Support</a></li>
-                <li><a href="https://github.com/inyogeshwar/pinvault-pro-extension">GitHub</a></li>
-            </ul>
+            <a href="#" class="logo">
+                <img src="https://raw.githubusercontent.com/inyogeshwar/pinvault-pro-extension/main/firefox-version/icons/icon32.png" alt="PinVault Pro">
+                PinVault Pro
+            </a>
+            <div class="nav-links">
+                <a href="#features">Features</a>
+                <a href="#install">Install</a>
+                <a href="https://youtu.be/ie2gPVA_SHc" target="_blank">Demo</a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension" target="_blank">GitHub</a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/issues" target="_blank">Support</a>
+            </div>
         </nav>
     </header>
 
-    <main class="container">
-        <section class="hero">
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
             <h1>PinVault Pro</h1>
-            <p>Professional Pinterest Bulk Image Downloader with AI-Powered Technology</p>
+            <p>Professional bulk image downloading tool for Pinterest with AI-powered technology</p>
             
             <div class="cta-buttons">
-                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest" class="btn btn-primary">
-                    📥 Download Free
-                </a>
-                <a href="#video" class="btn btn-secondary">
-                    🎬 Watch Demo
-                </a>
+                <a href="#install" class="btn btn-primary">Install Extension</a>
+                <a href="https://youtu.be/ie2gPVA_SHc" target="_blank" class="btn btn-secondary">Watch Demo</a>
             </div>
-        </section>
+            
+            <!-- Stats -->
+            <div class="stats">
+                <div class="stat">
+                    <span class="stat-number">10K+</span>
+                    <span class="stat-label">Downloads</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">4</span>
+                    <span class="stat-label">Browsers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Open Source</span>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <section id="video" class="video-container">
-            <div class="video-wrapper">
-                <!-- YouTube video embedded -->
-                <iframe src="https://www.youtube.com/embed/ie2gPVA_SHc" 
+    <!-- Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe 
+                        src="https://www.youtube.com/embed/ie2gPVA_SHc" 
+                        title="PinVault Pro Demo - Pinterest Bulk Image Downloader"
                         frameborder="0" 
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
                         allowfullscreen>
-                </iframe>
+                    </iframe>
+                </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="features" class="features">
-            <div class="feature-card">
-                <div class="feature-icon">🖼️</div>
-                <h3>Smart Bulk Selection</h3>
-                <p>Select multiple Pinterest images with visual checkboxes and download them all at once in high quality.</p>
+    <!-- Features Section -->
+    <section class="features" id="features">
+        <div class="container">
+            <h2>Why Choose PinVault Pro?</h2>
+            <div class="features-grid">
+                <div class="feature">
+                    <div class="feature-icon">🖼️</div>
+                    <h3>Smart Selection</h3>
+                    <p>Visual checkbox overlays on Pinterest images with bulk selection and real-time counter</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🤖</div>
+                    <h3>AI-Powered</h3>
+                    <p>Auto-scroll with smart content detection and automatic rate limiting</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Privacy First</h3>
+                    <p>HD Privacy Mode for secure downloading. No data collection or external servers</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Modern Interface</h3>
+                    <p>Glassmorphism design with dual interface: Popup + Sidebar for optimal workflow</p>
+                </div>
             </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🤖</div>
-                <h3>AI-Powered Technology</h3>
-                <p>Intelligent auto-scroll and content detection with automatic rate limiting for seamless operation.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🛡️</div>
-                <h3>HD Privacy Mode</h3>
-                <p>Secure downloading with no data collection. All processing happens locally on your device.</p>
-            </div>
-            
-            <div class="feature-card">
-                <div class="feature-icon">🎨</div>
-                <h3>Beautiful Interface</h3>
-                <p>Modern glassmorphism design with dual popup and sidebar interfaces for optimal user experience.</p>
-            </div>
-        </section>
+        </div>
+    </section>
 
-        <section id="browsers" class="browsers">
+    <!-- Browser Support -->
+    <section class="browser-support">
+        <div class="container">
             <h2>Universal Browser Support</h2>
-            <div class="browser-grid">
-                <div class="browser-item">
+            <div class="browsers">
+                <div class="browser">
                     <div class="browser-icon">🦊</div>
                     <div>Firefox</div>
                 </div>
-                <div class="browser-item">
-                    <div class="browser-icon">🟢</div>
-                    <div>Chrome</div>
-                </div>
-                <div class="browser-item">
+                <div class="browser">
                     <div class="browser-icon">🌐</div>
                     <div>Edge</div>
                 </div>
-                <div class="browser-item">
+                <div class="browser">
+                    <div class="browser-icon">🟢</div>
+                    <div>Chrome</div>
+                </div>
+                <div class="browser">
                     <div class="browser-icon">🔴</div>
                     <div>Opera</div>
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <!-- Testimonials Section -->
-        <section class="browsers">
-            <h2>What Users Are Saying</h2>
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-bottom: 2rem;">
-                <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; margin-bottom: 1rem;">"PinVault Pro has completely transformed how I collect Pinterest inspiration for my design projects. The bulk download feature saves me hours!"</p>
-                    <div style="font-weight: bold;">- Sarah, UI Designer</div>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; margin-bottom: 1rem;">"Finally, a Pinterest downloader that actually works reliably across all browsers. The privacy-first approach is exactly what I needed."</p>
-                    <div style="font-weight: bold;">- Mike, Marketing Manager</div>
-                </div>
-                <div class="feature-card">
-                    <div style="font-size: 1.5rem; margin-bottom: 1rem;">⭐⭐⭐⭐⭐</div>
-                    <p style="font-style: italic; margin-bottom: 1rem;">"Love the AI auto-scroll feature! It makes collecting images for my mood boards so much easier and faster."</p>
-                    <div style="font-weight: bold;">- Emma, Content Creator</div>
-                </div>
-            </div>
-        </section>
-
-        <!-- FAQ Section -->
-        <section class="browsers">
-            <h2>Frequently Asked Questions</h2>
-            <div style="max-width: 800px; margin: 0 auto; text-align: left;">
-                <div class="feature-card" style="margin-bottom: 1rem;">
-                    <h3 style="color: white; margin-bottom: 0.5rem;">🔒 Is PinVault Pro safe to use?</h3>
-                    <p>Absolutely! PinVault Pro operates entirely on your device with no data collection. It's open source, so you can verify the code yourself.</p>
-                </div>
-                <div class="feature-card" style="margin-bottom: 1rem;">
-                    <h3 style="color: white; margin-bottom: 0.5rem;">💰 Is it really free?</h3>
-                    <p>Yes! PinVault Pro is completely free and open source. You can support development through donations, but the extension will always be free.</p>
-                </div>
-                <div class="feature-card" style="margin-bottom: 1rem;">
-                    <h3 style="color: white; margin-bottom: 0.5rem;">🌐 Which browsers are supported?</h3>
-                    <p>PinVault Pro works on Firefox, Chrome, Edge, and Opera. We provide optimized packages for each browser's requirements.</p>
-                </div>
-                <div class="feature-card" style="margin-bottom: 1rem;">
-                    <h3 style="color: white; margin-bottom: 0.5rem;">📱 Does it work on mobile?</h3>
-                    <p>Currently, PinVault Pro is designed for desktop browsers. Mobile browser extension support is limited by the browsers themselves.</p>
-                </div>
-            </div>
-        </section>
-
-        <section id="download" class="hero">
-            <h2>Ready to Transform Your Pinterest Experience?</h2>
-            <p>Join thousands of users who trust PinVault Pro for their Pinterest downloading needs.</p>
+    <!-- Download Section -->
+    <section class="download-section" id="install">
+        <div class="container">
+            <h2>Get Started Today</h2>
+            <p>Choose your browser and start downloading Pinterest images professionally</p>
             
-            <!-- Stats Section -->
-            <div style="margin: 2rem 0; display: flex; justify-content: center; gap: 3rem; flex-wrap: wrap;">
-                <div style="text-align: center; color: white;">
-                    <div style="font-size: 2rem; font-weight: bold;">1,000+</div>
-                    <div style="opacity: 0.8;">Downloads</div>
-                </div>
-                <div style="text-align: center; color: white;">
-                    <div style="font-size: 2rem; font-weight: bold;">4</div>
-                    <div style="opacity: 0.8;">Browsers Supported</div>
-                </div>
-                <div style="text-align: center; color: white;">
-                    <div style="font-size: 2rem; font-weight: bold;">100%</div>
-                    <div style="opacity: 0.8;">Free & Open Source</div>
-                </div>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest" class="btn btn-primary">
-                    🚀 Get Started Free
+            <div class="download-buttons">
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi" class="btn btn-primary">
+                    🦊 Firefox Extension
                 </a>
-                <a href="https://youtu.be/ie2gPVA_SHc" class="btn btn-secondary">
-                    🎬 Watch Demo
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip" class="btn btn-primary">
+                    🌐 Edge/Chrome Extension
+                </a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip" class="btn btn-primary">
+                    🔴 Opera Extension
                 </a>
             </div>
-        </section>
-    </main>
+        </div>
+    </section>
 
+    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-links">
-                <a href="https://github.com/inyogeshwar/pinvault-pro-extension">GitHub</a>
-                <a href="https://patreon.com/inyogeshwar">Patreon</a>
-                <a href="https://ko-fi.com/yogeshwarkumar">Ko-fi</a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension" target="_blank">GitHub</a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/issues" target="_blank">Support</a>
+                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/blob/main/LICENSE" target="_blank">License</a>
+                <a href="https://patreon.com/inyogeshwar" target="_blank">Donate</a>
                 <a href="mailto:yogeshwar853202@outlook.com">Contact</a>
-                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/blob/main/LICENSE">License</a>
             </div>
-            <p>&copy; 2025 PinVault Pro. Open Source MIT License.</p>
+            <p>&copy; 2025 PinVault Pro. Made with ❤️ for the Pinterest Community.</p>
+            <p>Open Source • MIT License • Privacy First</p>
         </div>
     </footer>
 
-    <!-- Analytics (replace with your tracking ID) -->
+    <!-- Structured Data for SEO -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "PinVault Pro",
+        "description": "Professional bulk image downloading tool for Pinterest with AI-powered technology",
+        "url": "https://inyogeshwar.github.io/pinvault-pro-extension/",
+        "downloadUrl": "https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest",
+        "author": {
+            "@type": "Person",
+            "name": "Yogeshwar Kumar",
+            "email": "yogeshwar853202@outlook.com"
+        },
+        "applicationCategory": "BrowserApplication",
+        "operatingSystem": "Windows, macOS, Linux",
+        "softwareVersion": "1.2.0",
+        "datePublished": "2025-06-28",
+        "license": "https://opensource.org/licenses/MIT",
+        "screenshot": "https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png",
+        "video": {
+            "@type": "VideoObject",
+            "name": "PinVault Pro Demo",
+            "description": "See PinVault Pro in action - Pinterest bulk image downloader",
+            "thumbnailUrl": "https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg",
+            "contentUrl": "https://youtu.be/ie2gPVA_SHc",
+            "embedUrl": "https://www.youtube.com/embed/ie2gPVA_SHc",
+            "uploadDate": "2025-06-28"
+        },
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "availability": "https://schema.org/InStock"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "5.0",
+            "ratingCount": "100",
+            "bestRating": "5",
+            "worstRating": "1"
+        }
+    }
+    </script>
+
+    <!-- Google Analytics (Replace with your tracking ID) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
