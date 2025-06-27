@@ -18,16 +18,15 @@
 
 ## 🎯 Preview Screenshots
 
+![PinVault Pro Overview](screenshots/overview.png)
+
 ### 📱 HD Privacy Mode & Auto Scroll
-![HD Privacy Mode Auto Scroll](screenshots/screenshot-1.png)
 *Sidebar with HD Privacy Mode, Auto-scroll functionality, and bulk download options*
 
 ### 🎨 Beautiful Main Interface
-![Beautiful Main Interface](screenshots/screenshot-2.png)
 *Elegant popup overlay with real-time image selection and download controls*
 
 ### 🤖 Full AI-Based Functionality
-![Full AI Based](screenshots/screenshot-3.png)
 *AI-powered bulk selection with real-time download progress and completion tracking*
 
 ## 🚀 Features
