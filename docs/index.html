@@ -471,6 +471,31 @@
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
             animation: fadeInUp 2.2s ease-out;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .browser::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            transform: rotate(45deg);
+            transition: all 0.6s;
+            opacity: 0;
+        }
+        
+        .browser:hover::before {
+            opacity: 1;
+            animation: browserShimmer 1.5s ease-in-out;
+        }
+        
+        @keyframes browserShimmer {
+            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
         }
         
         .browser:hover {
@@ -479,12 +504,25 @@
             background: rgba(255, 255, 255, 0.2);
         }
         
+        .browser-name {
+            margin-top: 0.5rem;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .browser:hover .browser-name {
+            color: #e0e7ff;
+            transform: scale(1.1);
+        }
+        
         .browser-icon {
             width: 48px;
             height: 48px;
             margin: 0 auto 0.5rem;
             transition: all 0.3s ease;
             filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
+            border-radius: 8px;
         }
         
         .browser:hover .browser-icon {
@@ -492,19 +530,19 @@
         }
         
         .firefox-icon {
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF7139" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/><path fill="%23FF7139" d="M12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z"/></svg>') center/contain no-repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzBfMSkiLz4KPHA0aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iIzAwNTZEMiIvPgo8cGF0aCBkPSJNMTEuOCAyMS45QzEyLjMgMjAuNSAxMy4yIDE5LjMgMTQuNCAxOC41QzE1LjYgMTcuNyAxNyAxNy4zIDE4LjUgMTcuM0MxOS45IDE3LjMgMjEuMiAxNy44IDIyLjMgMTguNkMyMy40IDE5LjQgMjQuMiAyMC41IDI0LjcgMjJDMjUuMiAyMC41IDI2IDM5LjQgMjYuNyAyMi4zQzI3IDIzIDI3LjEgMjMuNyAyNyAyNC40QzI2LjkgMjUuMSAyNi42IDI1LjggMjYuMSAyNi4yQzI1LjYgMjYuNiAyNSAyNi44IDI0LjMgMjYuOEMyMy42IDI2LjggMjMgMjYuNiAyMi41IDI2LjFDMjEuOSAyNS42IDIxLjYgMjQuOSAyMS42IDI0LjJDMjEuNiAyMy41IDIxLjkgMjIuOCAyMi41IDIyLjNDMjMgMjEuOCAyMy42IDIxLjYgMjQuMyAyMS42QzI0LjYgMjEuNiAyNC45IDIxLjcgMjUuMiAyMS44QzI1LjMgMjEuNCAyNS4zIDIwLjkgMjUuMiAyMC41QzI1IDIwIDI0LjcgMTkuNiAyNC4zIDE5LjNDMjMuOSAxOSAyMy40IDE4LjggMjMgMTguOEMyMi4zIDE4LjggMjEuNyAxOS4xIDIxLjIgMTkuNkMyMC43IDIwLjEgMjAuNCAyMC44IDIwLjQgMjEuNUMyMC40IDIyLjIgMjAuNyAyMi45IDIxLjIgMjMuNEMyMS43IDIzLjkgMjIuMyAyNC4yIDIzIDI0LjJDMjMuNyAyNC4yIDI0LjMgMjMuOSAyNC44IDIzLjRDMjUuMyAyMi45IDI1LjYgMjIuMiAyNS42IDIxLjVDMjUuNiAyMS4yIDI1LjUgMjAuOSAyNS40IDIwLjZIMjQuOEgyMy45SDIzVjIxLjlIMjMuOUgyNC44SDI1LjNDMjUuNCAxOS43IDI1LjEgMTcuNSAyNC4zIDE1LjVDMjMuNSAxMy41IDIyLjIgMTEuOCAyMC42IDEwLjZDMTkgOS40IDE3LjEgOC43IDE1LjEgOC42QzE4LjUgMTAuNSAyMS40IDEzLjUgMjMuMyAxNy4yQzI1LjIgMjAuOSAyNi4xIDI1IDI1LjggMjkuMUMyNS41IDMzLjIgMjQuMSAzNy4yIDIxLjcgNDAuNUMxOS4zIDQzLjggMTYgNDYuNSAxMi4zIDQ4SDMzLjhDMzQuNCA0NiAzNS4xIDQzLjkgMzUuOSA0MS44QzM2LjcgMzkuNyAzNy42IDM3LjYgMzguNyAzNS42UzQwIDMxLjYgNDAuNyAyOS43QzQxLjQgMjcuOCA0MS44IDI2IDQxLjggMjQuMUM0MS44IDIyLjIgNDEuNCAyMC4zIDQwLjcgMTguNEM0MC4xIDE2LjUgMzkuMyAxNC43IDM4LjIgMTMuMUMzNy4xIDExLjUgMzUuOCAxMC4xIDM0LjMgOUgzMS4zSDI3LjJIMjIuNUMxOC44IDkgMTUuMiAxMC4yIDEyLjQgMTIuNEM5LjY2IDE0LjYgNy45IDE3LjcgNy4zIDIxLjFDNi43IDI0LjUgNy4xIDI4IDguNiAzMS4yQzEwLjEgMzQuNCAzMi43IDM2LjggMTYuMSAzOEMxOS4yIDM5IDIyLjQgMzkuMyAyNS42IDM4LjdDMjguOCAzOC4xIDMxLjggMzYuNyAzNC4zIDM0LjZDMzMuNiAzNS42IDMyLjcgMzYuNSAzMS43IDM3LjJDMzAuNyAzNy45IDI5LjYgMzguNCAyOC40IDM4LjdDMjcuMiAzOSAyNS45IDM5IDI0LjcgMzguOEMyMy41IDM4LjYgMjIuMyAzOC4yIDIxLjIgMzguMkMxOSAzNi40IDE3LjQgMzQgMTYuNCAzMS4zQzE1LjQgMjguNiAxNS4xIDI1LjcgMTUuNSAyMi45QzEzLjQgMjMuMSAxMS42IDIyLjcgMTEuOCAyMS45WiIgZmlsbD0iI0ZGNzEzOSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfbGluZWFyXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDgiIHkyPSI0OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZBMTM1Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGNDI5MyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=') center/contain no-repeat;
         }
         
         .edge-icon {
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%230078D4" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/><path fill="%230078D4" d="M12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z"/></svg>') center/contain no-repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzFfMSkiLz4KPHA+aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iIzAwNTZEMiIvPgo8cGF0aCBkPSJNMzUuNzEgMjRDMzUuNzEgMzAuNDI1IDMwLjQyNSAzNS43MSAyNCAzNS43MUMxNy41NzUgMzUuNzEgMTIuMjkgMzAuNDI1IDEyLjI5IDI0QzEyLjI5IDE3LjU3NSAxNy41NzUgMTIuMjkgMjQgMTIuMjlDMzAuNDI1IDEyLjI5IDM1LjcxIDE3LjU3NSAzNS43MSAyNFoiIGZpbGw9IiMwMDc4RDQiLz4KPHA+aCBkPSJNMzQuNzQ5IDI0QzM0Ljc0OSAyOS45MzIgMjkuOTMyIDM0Ljc0OSAyNCAzNC43NDlDMTguMDY4IDM0Ljc0OSAxMy4yNTEgMjkuOTMyIDEzLjI1MSAyNEMxMy4yNTEgMTguMDY4IDE4LjA2OCAxMy4yNTEgMjQgMTMuMjUxQzI5LjkzMiAxMy4yNTEgMzQuNzQ5IDE4LjA2OCAzNC43NDkgMjRaIiBmaWxsPSIjNDBFMEQwIi8+CjxwYXRoIGQ9Ik0yNC4wNzQgMzMuNUMxOS4xNiAzMy41IDE1LjIzNSAyOS41MjIgMTQuNTQgMjQuNTU4QzE0LjI3IDIzLjc1NCAxNS4wMTEgMjMuMTk0IDE1LjgxNyAyMy4yOTJDMTYuNzUyIDIzLjQxMSAxNy41IDI0LjA3NSAxNy41IDI1QzE3LjUgMjguNTkgMjAuNDEgMzEuNSAyNCAzMS41QzI0LjgzNSAzMS41IDI1LjU4NiAzMi4yNTEgMjUuNTg2IDMzLjA4NkMyNS41ODYgMzMuNTgzIDI1LjMzOSAzNC4wMjYgMjQuOTA2IDM0LjIzMUMyNC42ODYgMzQuMzUyIDI0LjM4NyAzMy41IDI0LjA3NCAzMy41WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8xXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjQ4IiB5Mj0iNDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwN0JENCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDc4RDQiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K') center/contain no-repeat;
         }
         
         .chrome-icon {
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><circle fill="%234285F4" cx="12" cy="12" r="10"/><circle fill="white" cx="12" cy="12" r="6"/><circle fill="%23EA4335" cx="12" cy="12" r="3"/><path fill="%2334A853" d="M12 2a10 10 0 0 1 8.66 5H12a5 5 0 0 0-4.33 2.5L4.34 5A10 10 0 0 1 12 2z"/><path fill="%23FBBC04" d="M2 12a10 10 0 0 1 2.34-6.4l3.33 4.9A5 5 0 0 0 7 12a5 5 0 0 0 .67 2.5l-3.33 4.9A10 10 0 0 1 2 12z"/></svg>') center/contain no-repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMTUiIGZpbGw9IiM0Mjg1RjQiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMTIiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjkiIGZpbGw9IiNGQkJDMDUiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iNiIgZmlsbD0iI0VBNDMzNSIvPgo8Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIzIiBmaWxsPSIjNDI4NUY0Ii8+CjxwYXRoIGQ9Ik0yNCA5QTExLjk1IDExLjk1IDAgMCAxIDM2IDIxSDI0QTMgMyAwIDAgMCAyMSAyNFY5WiIgZmlsbD0iIzM0QTg1MyIvPgo8cGF0aCBkPSJNOSAyNEExNSAxNSAwIDAgMSAxNSA5TDI0IDIxQTMgMyAwIDAgMCAyNyAyNFY5WiIgZmlsbD0iI0ZCQkMwNSIvPgo8L3N2Zz4K') center/contain no-repeat;
         }
         
         .opera-icon {
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="%23FF1B2D" d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.6 0 12 0zm0 22C6.5 22 2 17.5 2 12S6.5 2 12 2s10 4.5 10 10-4.5 10-10 10z"/><path fill="%23FF1B2D" d="M12 4c-4.4 0-8 3.6-8 8s3.6 8 8 8 8-3.6 8-8-3.6-8-8-8z"/></svg>') center/contain no-repeat;
+            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzNfMSkiLz4KPHA+aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iI0ZGMUIyRCIvPgo8ZWxsaXBzZSBjeD0iMjQiIGN5PSIyNCIgcng9IjUiIHJ5PSIxMiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8zXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjQ4IiB5Mj0iNDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGMUIyRCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGQTJCM0EiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K') center/contain no-repeat;
         }
         
         /* Download Section */
@@ -761,19 +799,19 @@
             <div class="browsers">
                 <div class="browser">
                     <div class="browser-icon firefox-icon"></div>
-                    <div>Firefox</div>
+                    <div class="browser-name">Firefox</div>
                 </div>
                 <div class="browser">
                     <div class="browser-icon edge-icon"></div>
-                    <div>Edge</div>
+                    <div class="browser-name">Edge</div>
                 </div>
                 <div class="browser">
                     <div class="browser-icon chrome-icon"></div>
-                    <div>Chrome</div>
+                    <div class="browser-name">Chrome</div>
                 </div>
                 <div class="browser">
                     <div class="browser-icon opera-icon"></div>
-                    <div>Opera</div>
+                    <div class="browser-name">Opera</div>
                 </div>
             </div>
         </div>
