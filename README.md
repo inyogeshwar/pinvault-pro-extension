@@ -145,6 +145,9 @@
 | 🌐 **Edge** | Chromium | V3 | 60.0 KB | ✅ Ready |
 | 🟢 **Chrome** | 88.0+ | V3 | 60.0 KB | ✅ Ready |
 | 🔴 **Opera** | 77.0+ | V3 | 60.3 KB | ✅ Ready |
+| 🦁 **Brave** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
+| 🌊 **Vivaldi** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
+| 🔄 **Yandex** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
 
 </div>
 
@@ -217,6 +220,36 @@ wget https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/downl
 
 </details>
 
+<details>
+<summary><b>🦁 Brave/Vivaldi/Yandex Installation (Auto-Compatible)</b></summary>
+
+<br>
+
+#### **🦁 Brave Browser**
+1. 🌐 Open Brave Browser
+2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
+3. 🔍 Search for "PinVault Pro"
+4. ✅ Click "Add to Brave" (appears as "Add to Chrome")
+5. 🎉 Extension automatically works in Brave!
+
+#### **🌊 Vivaldi Browser**
+1. 🌐 Open Vivaldi Browser
+2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
+3. 🔍 Search for "PinVault Pro"
+4. ✅ Click "Add to Vivaldi" (appears as "Add to Chrome")
+5. 🎉 Extension automatically works in Vivaldi!
+
+#### **🔄 Yandex Browser**
+1. 🌐 Open Yandex Browser
+2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore) **OR** [Opera Add-ons](https://addons.opera.com)
+3. 🔍 Search for "PinVault Pro"
+4. ✅ Click "Add to Yandex" (appears as "Add to Chrome/Opera")
+5. 🎉 Extension automatically works in Yandex!
+
+**Note**: These browsers use Chrome Web Store extensions automatically - no separate packages needed!
+
+</details>
+
 <div align="center">
 
 ### 📦 **Download Packages**
@@ -226,6 +259,7 @@ wget https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/downl
 | 🦊 Firefox | [`PinVault-Pro-Firefox-v1.2.0.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi) | 61.4 KB | XPI |
 | 🌐 Edge/Chrome | [`PinVault-Pro-Edge-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip) | 60.0 KB | ZIP |
 | 🔴 Opera | [`PinVault-Pro-Opera-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) | 60.3 KB | ZIP |
+| 🦁🌊🔄 Brave/Vivaldi/Yandex | *Use Chrome Web Store* | - | Auto-Compatible |
 
 </div>
 
