@@ -1,12 +1,6 @@
 # PinVault Pro - Bulk Image Downloader
 
-[![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)]├── 📦 PinVault-Pro-Firefox-v1.2.0.zip      # Firefox package
-├── 📦 PinVault-Pro-Firefox-v1.2.0.xpi      # Firefox XPI
-├── 📦 PinVault-Pro-Edge-v1.2.0.zip         # Edge/Chrome package
-├── 📦 PinVault-Pro-Opera-v1.2.0.zip        # Opera package
-├── 📦 PinVault-Pro-Opera-v1.2.0.nex        # Opera NEX format
-├── 📁 screenshots/                          # Preview screenshots
-└── 📄 README.md                             # This file://addons.mozilla.org)
+[![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)](https://addons.mozilla.org)
 [![Edge Add-on](https://img.shields.io/badge/Edge-Compatible-blue?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Compatible-green?logo=googlechrome)](https://chrome.google.com/webstore)
 [![Opera Add-on](https://img.shields.io/badge/Opera-Compatible-red?logo=opera)](https://addons.opera.com)
@@ -88,7 +82,7 @@
 ### Interface Options
 
 #### 🎛️ **Popup Interface** (Primary)
-- Click the PinSaver Pro icon in your browser toolbar
+- Click the PinVault Pro icon in your browser toolbar
 - Quick access to all controls and image counts
 - Perfect for fast operations
 
@@ -125,7 +119,7 @@ pinvault-pro-extension/
 │   ├── sidebar.html/js/css     # Side panel interface
 │   └── icons/                  # Extension icons
 │
-├── � opera-version/            # Opera Manifest V3
+├── 📁 opera-version/                # Opera Manifest V3
 │   ├── manifest.json           # Opera-specific manifest
 │   ├── background.js           # Service worker
 │   ├── content.js              # Pinterest page injection
@@ -133,12 +127,13 @@ pinvault-pro-extension/
 │   ├── sidebar.html/js/css     # Side panel interface
 │   └── icons/                  # Extension icons
 │
-├── �📦 PinSaver-Pro-Firefox-v1.1.3.zip    # Firefox package
-├── 📦 PinSaver-Pro-Firefox-v1.1.3.xpi    # Firefox XPI
-├── 📦 PinSaver-Pro-Edge-v1.1.3.zip       # Edge/Chrome package
-├── 📦 PinSaver-Pro-Opera-v1.1.3.zip      # Opera package
-├── 📦 PinSaver-Pro-Opera-v1.1.3.nex      # Opera NEX format
-└── 📄 README.md                           # This file
+├── 📦 PinVault-Pro-Firefox-v1.2.0.zip      # Firefox package
+├── 📦 PinVault-Pro-Firefox-v1.2.0.xpi      # Firefox XPI
+├── 📦 PinVault-Pro-Edge-v1.2.0.zip         # Edge/Chrome package
+├── 📦 PinVault-Pro-Opera-v1.2.0.zip        # Opera package
+├── 📦 PinVault-Pro-Opera-v1.2.0.nex        # Opera NEX format
+├── 📁 screenshots/                          # Preview screenshots
+└── 📄 README.md                             # This file
 ```
 
 ## 📥 Releases
