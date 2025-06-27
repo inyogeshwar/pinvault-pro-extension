@@ -38,108 +38,12 @@
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             min-height: 100vh;
-            cursor: default;
-            overflow-x: hidden;
-        }
-        
-        /* Custom Cursor */
-        * {
-            cursor: none;
-        }
-        
-        .cursor {
-            width: 20px;
-            height: 20px;
-            border: 2px solid rgba(255, 255, 255, 0.8);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9999;
-            transition: transform 0.1s ease;
-            backdrop-filter: blur(2px);
-        }
-        
-        .cursor-trail {
-            width: 8px;
-            height: 8px;
-            background: rgba(255, 255, 255, 0.6);
-            border-radius: 50%;
-            position: fixed;
-            pointer-events: none;
-            z-index: 9998;
-            transition: all 0.3s ease;
-        }
-        
-        /* Floating Particles Animation */
-        .particles {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            pointer-events: none;
-            z-index: 1;
-        }
-        
-        .particle {
-            position: absolute;
-            width: 4px;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            animation: float 6s ease-in-out infinite;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); opacity: 0; }
-            50% { transform: translateY(-100px) rotate(180deg); opacity: 1; }
-        }
-        
-        /* Fade In Animation */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-        
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
-            position: relative;
-            z-index: 2;
         }
         
         /* Header */
@@ -151,7 +55,6 @@
             position: sticky;
             top: 0;
             z-index: 100;
-            animation: fadeInUp 0.8s ease-out;
         }
         
         nav {
@@ -168,20 +71,12 @@
             font-size: 1.5rem;
             font-weight: bold;
             text-decoration: none;
-            transition: all 0.3s ease;
-            animation: fadeInLeft 1s ease-out;
-        }
-        
-        .logo:hover {
-            transform: scale(1.05);
-            filter: brightness(1.2);
         }
         
         .logo img {
             width: 32px;
             height: 32px;
             margin-right: 10px;
-            animation: pulse 2s ease-in-out infinite;
         }
         
         .nav-links {
@@ -189,22 +84,17 @@
             gap: 2rem;
             align-items: center;
             flex-wrap: wrap;
-            animation: fadeInRight 1s ease-out;
         }
         
         .nav-links a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: all 0.3s ease;
-            position: relative;
-            padding: 0.5rem 1rem;
-            border-radius: 25px;
+            transition: opacity 0.3s ease;
         }
         
         .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.1);
-            transform: translateY(-2px);
+            opacity: 0.8;
         }
         
         /* Hero Section */
@@ -212,7 +102,6 @@
             text-align: center;
             padding: 4rem 0;
             color: white;
-            position: relative;
         }
         
         .hero h1 {
@@ -220,11 +109,6 @@
             font-weight: 700;
             margin-bottom: 1rem;
             text-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            animation: fadeInUp 1.2s ease-out;
-            background: linear-gradient(45deg, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .hero p {
@@ -234,7 +118,6 @@
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
-            animation: fadeInUp 1.4s ease-out;
         }
         
         .cta-buttons {
@@ -243,7 +126,6 @@
             justify-content: center;
             flex-wrap: wrap;
             margin-bottom: 3rem;
-            animation: fadeInUp 1.6s ease-out;
         }
         
         .btn {
@@ -253,59 +135,37 @@
             border-radius: 50px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            transition: all 0.3s ease;
             border: none;
+            cursor: pointer;
             font-size: 1rem;
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(45deg, transparent, transparent);
-        }
-        
-        .btn::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-        
-        .btn:hover::before {
-            left: 100%;
         }
         
         .btn-primary {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
+            background: rgba(255, 255, 255, 0.2);
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.3);
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
         }
         
         .btn-primary:hover {
-            background: linear-gradient(45deg, rgba(255, 255, 255, 0.4), rgba(255, 255, 255, 0.2));
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
         }
         
         .btn-secondary {
             background: transparent;
             color: white;
             border: 2px solid rgba(255, 255, 255, 0.5);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
         }
         
         .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.15);
-            transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-2px);
         }
         
         /* Video Section */
         .video-section {
             margin: 3rem 0;
-            animation: fadeInUp 2s ease-out;
         }
         
         .video-container {
@@ -316,14 +176,6 @@
             padding: 2rem;
             max-width: 800px;
             margin: 0 auto;
-            transition: all 0.4s ease;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .video-container:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            background: rgba(255, 255, 255, 0.15);
         }
         
         .video-wrapper {
@@ -332,7 +184,6 @@
             height: 0;
             overflow: hidden;
             border-radius: 15px;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
         }
         
         .video-wrapper iframe {
@@ -342,11 +193,6 @@
             width: 100%;
             height: 100%;
             border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-        
-        .video-container:hover .video-wrapper iframe {
-            transform: scale(1.02);
         }
         
         /* Features Section */
@@ -357,7 +203,6 @@
             padding: 3rem 2rem;
             margin: 3rem 0;
             color: white;
-            animation: fadeInUp 1.8s ease-out;
         }
         
         .features h2 {
@@ -365,10 +210,6 @@
             font-size: 2.5rem;
             margin-bottom: 2rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .features-grid {
@@ -383,61 +224,21 @@
             padding: 2rem;
             border-radius: 15px;
             text-align: center;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.5s;
-            opacity: 0;
-        }
-        
-        .feature:hover::before {
-            opacity: 1;
-            animation: shimmer 1.5s ease-in-out;
-        }
-        
-        @keyframes shimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            transition: transform 0.3s ease;
         }
         
         .feature:hover {
-            transform: translateY(-10px) scale(1.02);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.15);
-            border-color: rgba(255, 255, 255, 0.3);
+            transform: translateY(-5px);
         }
         
         .feature-icon {
             font-size: 3rem;
             margin-bottom: 1rem;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-        }
-        
-        .feature:hover .feature-icon {
-            transform: scale(1.2) rotate(10deg);
         }
         
         .feature h3 {
             font-size: 1.5rem;
             margin-bottom: 1rem;
-            transition: all 0.3s ease;
-        }
-        
-        .feature:hover h3 {
-            color: #e0e7ff;
         }
         
         /* Browser Support */
@@ -445,7 +246,6 @@
             text-align: center;
             margin: 3rem 0;
             color: white;
-            animation: fadeInUp 2s ease-out;
         }
         
         .browser-support h2 {
@@ -468,81 +268,24 @@
             border-radius: 15px;
             text-align: center;
             min-width: 120px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            animation: fadeInUp 2.2s ease-out;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .browser::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-            transform: rotate(45deg);
-            transition: all 0.6s;
-            opacity: 0;
-        }
-        
-        .browser:hover::before {
-            opacity: 1;
-            animation: browserShimmer 1.5s ease-in-out;
-        }
-        
-        @keyframes browserShimmer {
-            0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
-            100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+            transition: transform 0.3s ease;
         }
         
         .browser:hover {
-            transform: translateY(-10px) scale(1.05);
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-            background: rgba(255, 255, 255, 0.2);
-        }
-        
-        .browser-name {
-            margin-top: 0.5rem;
-            font-weight: 600;
-            font-size: 0.95rem;
-            transition: all 0.3s ease;
-        }
-        
-        .browser:hover .browser-name {
-            color: #e0e7ff;
-            transform: scale(1.1);
+            transform: translateY(-5px);
         }
         
         .browser-icon {
             width: 48px;
             height: 48px;
-            margin: 0 auto 0.5rem;
-            transition: all 0.3s ease;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.2));
-            border-radius: 8px;
+            margin-bottom: 0.5rem;
+            display: inline-block;
         }
         
-        .browser:hover .browser-icon {
-            transform: scale(1.2) rotate(5deg);
-        }
-        
-        .firefox-icon {
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzBfMSkiLz4KPHA0aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iIzAwNTZEMiIvPgo8cGF0aCBkPSJNMTEuOCAyMS45QzEyLjMgMjAuNSAxMy4yIDE5LjMgMTQuNCAxOC41QzE1LjYgMTcuNyAxNyAxNy4zIDE4LjUgMTcuM0MxOS45IDE3LjMgMjEuMiAxNy44IDIyLjMgMTguNkMyMy40IDE5LjQgMjQuMiAyMC41IDI0LjcgMjJDMjUuMiAyMC41IDI2IDM5LjQgMjYuNyAyMi4zQzI3IDIzIDI3LjEgMjMuNyAyNyAyNC40QzI2LjkgMjUuMSAyNi42IDI1LjggMjYuMSAyNi4yQzI1LjYgMjYuNiAyNSAyNi44IDI0LjMgMjYuOEMyMy42IDI2LjggMjMgMjYuNiAyMi41IDI2LjFDMjEuOSAyNS42IDIxLjYgMjQuOSAyMS42IDI0LjJDMjEuNiAyMy41IDIxLjkgMjIuOCAyMi41IDIyLjNDMjMgMjEuOCAyMy42IDIxLjYgMjQuMyAyMS42QzI0LjYgMjEuNiAyNC45IDIxLjcgMjUuMiAyMS44QzI1LjMgMjEuNCAyNS4zIDIwLjkgMjUuMiAyMC41QzI1IDIwIDI0LjcgMTkuNiAyNC4zIDE5LjNDMjMuOSAxOSAyMy40IDE4LjggMjMgMTguOEMyMi4zIDE4LjggMjEuNyAxOS4xIDIxLjIgMTkuNkMyMC43IDIwLjEgMjAuNCAyMC44IDIwLjQgMjEuNUMyMC40IDIyLjIgMjAuNyAyMi45IDIxLjIgMjMuNEMyMS43IDIzLjkgMjIuMyAyNC4yIDIzIDI0LjJDMjMuNyAyNC4yIDI0LjMgMjMuOSAyNC44IDIzLjRDMjUuMyAyMi45IDI1LjYgMjIuMiAyNS42IDIxLjVDMjUuNiAyMS4yIDI1LjUgMjAuOSAyNS40IDIwLjZIMjQuOEgyMy45SDIzVjIxLjlIMjMuOUgyNC44SDI1LjNDMjUuNCAxOS43IDI1LjEgMTcuNSAyNC4zIDE1LjVDMjMuNSAxMy41IDIyLjIgMTEuOCAyMC42IDEwLjZDMTkgOS40IDE3LjEgOC43IDE1LjEgOC42QzE4LjUgMTAuNSAyMS40IDEzLjUgMjMuMyAxNy4yQzI1LjIgMjAuOSAyNi4xIDI1IDI1LjggMjkuMUMyNS41IDMzLjIgMjQuMSAzNy4yIDIxLjcgNDAuNUMxOS4zIDQzLjggMTYgNDYuNSAxMi4zIDQ4SDMzLjhDMzQuNCA0NiAzNS4xIDQzLjkgMzUuOSA0MS44QzM2LjcgMzkuNyAzNy42IDM3LjYgMzguNyAzNS42UzQwIDMxLjYgNDAuNyAyOS43QzQxLjQgMjcuOCA0MS44IDI2IDQxLjggMjQuMUM0MS44IDIyLjIgNDEuNCAyMC4zIDQwLjcgMTguNEM0MC4xIDE2LjUgMzkuMyAxNC43IDM4LjIgMTMuMUMzNy4xIDExLjUgMzUuOCAxMC4xIDM0LjMgOUgzMS4zSDI3LjJIMjIuNUMxOC44IDkgMTUuMiAxMC4yIDEyLjQgMTIuNEM5LjY2IDE0LjYgNy45IDE3LjcgNy4zIDIxLjFDNi43IDI0LjUgNy4xIDI4IDguNiAzMS4yQzEwLjEgMzQuNCAzMi43IDM2LjggMTYuMSAzOEMxOS4yIDM5IDIyLjQgMzkuMyAyNS42IDM4LjdDMjguOCAzOC4xIDMxLjggMzYuNyAzNC4zIDM0LjZDMzMuNiAzNS42IDMyLjcgMzYuNSAzMS43IDM3LjJDMzAuNyAzNy45IDI5LjYgMzguNCAyOC40IDM4LjdDMjcuMiAzOSAyNS45IDM5IDI0LjcgMzguOEMyMy41IDM4LjYgMjIuMyAzOC4yIDIxLjIgMzguMkMxOSAzNi40IDE3LjQgMzQgMTYuNCAzMS4zQzE1LjQgMjguNiAxNS4xIDI1LjcgMTUuNSAyMi45QzEzLjQgMjMuMSAxMS42IDIyLjcgMTEuOCAyMS45WiIgZmlsbD0iI0ZGNzEzOSIvPgo8ZGVmcz4KPGxpbmVhckdyYWRpZW50IGlkPSJncmFkaWVudDBfbGluZWFyXzBfMSIgeDE9IjAiIHkxPSIwIiB4Mj0iNDgiIHkyPSI0OCIgZ3JhZGllbnRVbml0cz0idXNlclNwYWNlT25Vc2UiPgo8c3RvcCBzdG9wLWNvbG9yPSIjRkZBMTM1Ii8+CjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI0ZGNDI5MyIvPgo8L2xpbmVhckdyYWRpZW50Pgo8L2RlZnM+Cjwvc3ZnPgo=') center/contain no-repeat;
-        }
-        
-        .edge-icon {
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzFfMSkiLz4KPHA+aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iIzAwNTZEMiIvPgo8cGF0aCBkPSJNMzUuNzEgMjRDMzUuNzEgMzAuNDI1IDMwLjQyNSAzNS43MSAyNCAzNS43MUMxNy41NzUgMzUuNzEgMTIuMjkgMzAuNDI1IDEyLjI5IDI0QzEyLjI5IDE3LjU3NSAxNy41NzUgMTIuMjkgMjQgMTIuMjlDMzAuNDI1IDEyLjI5IDM1LjcxIDE3LjU3NSAzNS43MSAyNFoiIGZpbGw9IiMwMDc4RDQiLz4KPHA+aCBkPSJNMzQuNzQ5IDI0QzM0Ljc0OSAyOS45MzIgMjkuOTMyIDM0Ljc0OSAyNCAzNC43NDlDMTguMDY4IDM0Ljc0OSAxMy4yNTEgMjkuOTMyIDEzLjI1MSAyNEMxMy4yNTEgMTguMDY4IDE4LjA2OCAxMy4yNTEgMjQgMTMuMjUxQzI5LjkzMiAxMy4yNTEgMzQuNzQ5IDE4LjA2OCAzNC43NDkgMjRaIiBmaWxsPSIjNDBFMEQwIi8+CjxwYXRoIGQ9Ik0yNC4wNzQgMzMuNUMxOS4xNiAzMy41IDE1LjIzNSAyOS41MjIgMTQuNTQgMjQuNTU4QzE0LjI3IDIzLjc1NCAxNS4wMTEgMjMuMTk0IDE1LjgxNyAyMy4yOTJDMTYuNzUyIDIzLjQxMSAxNy41IDI0LjA3NSAxNy41IDI1QzE3LjUgMjguNTkgMjAuNDEgMzEuNSAyNCAzMS41QzI0LjgzNSAzMS41IDI1LjU4NiAzMi4yNTEgMjUuNTg2IDMzLjA4NkMyNS41ODYgMzMuNTgzIDI1LjMzOSAzNC4wMjYgMjQuOTA2IDM0LjIzMUMyNC42ODYgMzQuMzUyIDI0LjM4NyAzMy41IDI0LjA3NCAzMy41WiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8xXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjQ4IiB5Mj0iNDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iIzAwN0JENCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiMwMDc4RDQiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K') center/contain no-repeat;
-        }
-        
-        .chrome-icon {
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0id2hpdGUiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMTUiIGZpbGw9IiM0Mjg1RjQiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iMTIiIGZpbGw9IndoaXRlIi8+CjxjaXJjbGUgY3g9IjI0IiBjeT0iMjQiIHI9IjkiIGZpbGw9IiNGQkJDMDUiLz4KPGNpcmNsZSBjeD0iMjQiIGN5PSIyNCIgcj0iNiIgZmlsbD0iI0VBNDMzNSIvPgo8Y2lyY2xlIGN4PSIyNCIgY3k9IjI0IiByPSIzIiBmaWxsPSIjNDI4NUY0Ii8+CjxwYXRoIGQ9Ik0yNCA5QTExLjk1IDExLjk1IDAgMCAxIDM2IDIxSDI0QTMgMyAwIDAgMCAyMSAyNFY5WiIgZmlsbD0iIzM0QTg1MyIvPgo8cGF0aCBkPSJNOSAyNEExNSAxNSAwIDAgMSAxNSA5TDI0IDIxQTMgMyAwIDAgMCAyNyAyNFY5WiIgZmlsbD0iI0ZCQkMwNSIvPgo8L3N2Zz4K') center/contain no-repeat;
-        }
-        
-        .opera-icon {
-            background: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDgiIGhlaWdodD0iNDgiIHZpZXdCb3g9IjAgMCA0OCA0OCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQ4IiBoZWlnaHQ9IjQ4IiByeD0iOCIgZmlsbD0idXJsKCNncmFkaWVudDBfbGluZWFyXzNfMSkiLz4KPHA+aCBkPSJNMjQgOUMxNS43MTYgOSA5IDE1LjcxNiA5IDI0QzkgMzIuMjg0IDE1LjcxNiAzOSAyNCAzOUMzMi4yODQgMzkgMzkgMzIuMjg0IDM5IDI0QzM5IDE1LjcxNiAzMi4yODQgOSAyNCA5WiIgZmlsbD0iI0ZGMUIyRCIvPgo8ZWxsaXBzZSBjeD0iMjQiIGN5PSIyNCIgcng9IjUiIHJ5PSIxMiIgZmlsbD0id2hpdGUiLz4KPGRlZnM+CjxsaW5lYXJHcmFkaWVudCBpZD0iZ3JhZGllbnQwX2xpbmVhcl8zXzEiIHgxPSIwIiB5MT0iMCIgeDI9IjQ4IiB5Mj0iNDgiIGdyYWRpZW50VW5pdHM9InVzZXJTcGFjZU9uVXNlIj4KPHN0b3Agc3RvcC1jb2xvcj0iI0ZGMUIyRCIvPgo8c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNGQTJCM0EiLz4KPC9saW5lYXJHcmFkaWVudD4KPC9kZWZzPgo8L3N2Zz4K') center/contain no-repeat;
+        .browser-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         /* Download Section */
@@ -554,18 +297,12 @@
             margin: 3rem 0;
             text-align: center;
             color: white;
-            animation: fadeInUp 2.4s ease-out;
-            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .download-section h2 {
             font-size: 2.5rem;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
-            background: linear-gradient(45deg, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
         }
         
         .download-section p {
@@ -579,18 +316,6 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
-        }
-        
-        .download-buttons .btn {
-            animation: fadeInUp 2.6s ease-out;
-        }
-        
-        .download-buttons .btn:nth-child(2) {
-            animation-delay: 0.2s;
-        }
-        
-        .download-buttons .btn:nth-child(3) {
-            animation-delay: 0.4s;
         }
         
         /* Footer */
@@ -627,33 +352,17 @@
             gap: 3rem;
             margin: 2rem 0;
             flex-wrap: wrap;
-            animation: fadeInUp 1.8s ease-out;
         }
         
         .stat {
             text-align: center;
             color: white;
-            transition: all 0.3s ease;
-            padding: 1rem;
-            border-radius: 15px;
-            background: rgba(255, 255, 255, 0.05);
-            backdrop-filter: blur(5px);
-        }
-        
-        .stat:hover {
-            transform: translateY(-5px) scale(1.1);
-            background: rgba(255, 255, 255, 0.1);
         }
         
         .stat-number {
             font-size: 2rem;
             font-weight: bold;
             display: block;
-            background: linear-gradient(45deg, #fff, #e0e7ff);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            animation: pulse 3s ease-in-out infinite;
         }
         
         .stat-label {
@@ -693,13 +402,6 @@
     </style>
 </head>
 <body>
-    <!-- Custom Cursor -->
-    <div class="cursor"></div>
-    <div class="cursor-trail"></div>
-    
-    <!-- Floating Particles -->
-    <div class="particles" id="particles"></div>
-    
     <!-- Header -->
     <header>
         <nav class="container">
@@ -798,20 +500,28 @@
             <h2>Universal Browser Support</h2>
             <div class="browsers">
                 <div class="browser">
-                    <div class="browser-icon firefox-icon"></div>
-                    <div class="browser-name">Firefox</div>
+                    <div class="browser-icon">
+                        <img src="icons/firefox.svg" alt="Firefox" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg';">
+                    </div>
+                    <div>Firefox</div>
                 </div>
                 <div class="browser">
-                    <div class="browser-icon edge-icon"></div>
-                    <div class="browser-name">Edge</div>
+                    <div class="browser-icon">
+                        <img src="icons/edge.svg" alt="Microsoft Edge" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftedge/microsoftedge-original.svg';">
+                    </div>
+                    <div>Edge</div>
                 </div>
                 <div class="browser">
-                    <div class="browser-icon chrome-icon"></div>
-                    <div class="browser-name">Chrome</div>
+                    <div class="browser-icon">
+                        <img src="icons/chrome.svg" alt="Google Chrome" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg';">
+                    </div>
+                    <div>Chrome</div>
                 </div>
                 <div class="browser">
-                    <div class="browser-icon opera-icon"></div>
-                    <div class="browser-name">Opera</div>
+                    <div class="browser-icon">
+                        <img src="icons/opera.svg" alt="Opera" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opera/opera-original.svg';">
+                    </div>
+                    <div>Opera</div>
                 </div>
             </div>
         </div>
@@ -904,91 +614,6 @@
         function gtag(){dataLayer.push(arguments);}
         gtag('js', new Date());
         gtag('config', 'GA_TRACKING_ID');
-    </script>
-
-    <!-- Custom Cursor Animation -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const cursor = document.querySelector('.cursor');
-            const cursorTrail = document.querySelector('.cursor-trail');
-            
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX + 'px';
-                cursor.style.top = e.clientY + 'px';
-                
-                setTimeout(() => {
-                    cursorTrail.style.left = e.clientX + 'px';
-                    cursorTrail.style.top = e.clientY + 'px';
-                }, 100);
-            });
-
-            // Cursor hover effects
-            const hoverElements = document.querySelectorAll('a, .btn, .browser, .feature');
-            hoverElements.forEach(element => {
-                element.addEventListener('mouseenter', () => {
-                    cursor.style.transform = 'scale(1.5)';
-                    cursor.style.borderColor = 'rgba(255, 255, 255, 1)';
-                });
-                
-                element.addEventListener('mouseleave', () => {
-                    cursor.style.transform = 'scale(1)';
-                    cursor.style.borderColor = 'rgba(255, 255, 255, 0.8)';
-                });
-            });
-
-            // Create floating particles
-            function createParticles() {
-                const particles = document.getElementById('particles');
-                const particleCount = 50;
-
-                for (let i = 0; i < particleCount; i++) {
-                    const particle = document.createElement('div');
-                    particle.className = 'particle';
-                    particle.style.left = Math.random() * 100 + '%';
-                    particle.style.animationDelay = Math.random() * 6 + 's';
-                    particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
-                    particles.appendChild(particle);
-                }
-            }
-
-            createParticles();
-
-            // Smooth scroll for anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const target = document.querySelector(this.getAttribute('href'));
-                    if (target) {
-                        target.scrollIntoView({
-                            behavior: 'smooth',
-                            block: 'start'
-                        });
-                    }
-                });
-            });
-
-            // Add scroll animations
-            const observerOptions = {
-                threshold: 0.1,
-                rootMargin: '0px 0px -50px 0px'
-            };
-
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.style.opacity = '1';
-                        entry.target.style.transform = 'translateY(0)';
-                    }
-                });
-            }, observerOptions);
-
-            document.querySelectorAll('.feature, .browser, .video-container').forEach(el => {
-                el.style.opacity = '0';
-                el.style.transform = 'translateY(20px)';
-                el.style.transition = 'all 0.6s ease-out';
-                observer.observe(el);
-            });
-        });
     </script>
 </body>
 </html>
