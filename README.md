@@ -12,12 +12,36 @@
 [![Version](https://img.shields.io/badge/Version-1.2.0-brightgreen?style=flat)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/github/downloads/inyogeshwar/pinvault-pro-extension/total?style=flat&logo=download&logoColor=white)](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+[![Stars](https://img.shields.io/github/stars/inyogeshwar/pinvault-pro-extension?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/stargazers)
+[![Demo Video](https://img.shields.io/badge/Demo-YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/ie2gPVA_SHc)
 
 **🎯 Professional bulk image downloading tool for Pinterest with AI-powered technology**
+
+![GitHub repo size](https://img.shields.io/github/repo-size/inyogeshwar/pinvault-pro-extension?style=flat-square)
+![GitHub code size](https://img.shields.io/github/languages/code-size/inyogeshwar/pinvault-pro-extension?style=flat-square)
+![GitHub last commit](https://img.shields.io/github/last-commit/inyogeshwar/pinvault-pro-extension?style=flat-square)
 
 [📥 Download](#-installation) • [🎬 Demo Video](https://youtu.be/ie2gPVA_SHc) • [🔧 Features](#-features) • [📚 Documentation](#-usage) • [🚀 Contribute](#-contributing)
 
 </div>
+
+---
+
+## 📋 Table of Contents
+
+- [🎬 Demo Video](#-demo-video)
+- [🖼️ Preview Gallery](#-preview-gallery)
+- [✨ Features](#-features)
+- [📥 Installation](#-installation)
+- [🎯 Usage](#-usage)
+- [🏗️ Project Structure](#-project-structure)
+- [📥 Releases](#-releases)
+- [🔧 Development](#-development)
+- [🤝 Contributing](#-contributing)
+- [📋 Permissions](#-permissions-explained)
+- [🛡️ Privacy & Security](#-privacy--security)
+- [📞 Support](#-support)
+- [🌟 Support PinVault Pro](#-support-pinvault-pro)
 
 ---
 
@@ -33,7 +57,7 @@
 
 ---
 
-##  Preview Gallery
+## 🖼️ Preview Gallery
 
 <div align="center">
 
