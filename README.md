@@ -3,6 +3,7 @@
 [![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)](https://addons.mozilla.org)
 [![Edge Add-on](https://img.shields.io/badge/Edge-Compatible-blue?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Compatible-green?logo=googlechrome)](https://chrome.google.com/webstore)
+[![Opera Add-on](https://img.shields.io/badge/Opera-Compatible-red?logo=opera)](https://addons.opera.com)
 [![GitHub Release](https://img.shields.io/github/v/release/inyogeshwar/pinvault-pro-extension?logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Downloads](https://img.shields.io/github/downloads/inyogeshwar/pinvault-pro-extension/total?logo=download)](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
@@ -32,6 +33,7 @@
 - **📱 Firefox for Android** (113.0+)
 - **🌐 Microsoft Edge** (Chromium-based)
 - **🟢 Google Chrome** (Manifest V3)
+- **🔴 Opera Browser** (77.0+)
 
 ## 📦 Installation
 
@@ -48,6 +50,14 @@
 3. **Manual Installation:**
    - Download `PinSaver-Pro-Edge-v1.1.3.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Extract and load as unpacked extension
+
+### Opera
+1. **From Opera Add-ons:** [Install PinSaver Pro](https://addons.opera.com) *(Coming Soon)*
+2. **From GitHub Releases:** [Download Opera ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Opera-v1.1.3.zip)
+3. **Manual Installation:**
+   - Download `PinSaver-Pro-Opera-v1.1.3.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+   - Extract ZIP file
+   - Open `opera://extensions/` → Enable Developer mode → Load unpacked
 
 ## 🎯 Usage
 
@@ -98,9 +108,19 @@ pinvault-pro-extension/
 │   ├── sidebar.html/js/css     # Side panel interface
 │   └── icons/                  # Extension icons
 │
-├── 📦 PinSaver-Pro-Firefox-v1.1.3.zip    # Firefox package
+├── � opera-version/            # Opera Manifest V3
+│   ├── manifest.json           # Opera-specific manifest
+│   ├── background.js           # Service worker
+│   ├── content.js              # Pinterest page injection
+│   ├── popup.html/js/css       # Action popup interface
+│   ├── sidebar.html/js/css     # Side panel interface
+│   └── icons/                  # Extension icons
+│
+├── �📦 PinSaver-Pro-Firefox-v1.1.3.zip    # Firefox package
 ├── 📦 PinSaver-Pro-Firefox-v1.1.3.xpi    # Firefox XPI
 ├── 📦 PinSaver-Pro-Edge-v1.1.3.zip       # Edge/Chrome package
+├── 📦 PinSaver-Pro-Opera-v1.1.3.zip      # Opera package
+├── 📦 PinSaver-Pro-Opera-v1.1.3.nex      # Opera NEX format
 └── 📄 README.md                           # This file
 ```
 
@@ -111,6 +131,7 @@ All extension packages are available in [GitHub Releases](https://github.com/iny
 ### Latest Release: v1.1.3
 - **🦊 Firefox:** [`PinSaver-Pro-Firefox-v1.1.3.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Firefox-v1.1.3.xpi) *(61.4 KB)*
 - **🌐 Edge/Chrome:** [`PinSaver-Pro-Edge-v1.1.3.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Edge-v1.1.3.zip) *(60.0 KB)*
+- **🔴 Opera:** [`PinSaver-Pro-Opera-v1.1.3.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Opera-v1.1.3.zip) *(58.8 KB)*
 
 ### Installation from Releases
 1. **Visit:** [GitHub Releases Page](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
@@ -146,6 +167,10 @@ cd edge-version
    - Open Extensions page → Developer mode
    - Load unpacked from `edge-version/` folder
 
+3. **Opera:**
+   - Open `opera://extensions/` → Developer mode
+   - Load unpacked from `opera-version/` folder
+
 ### Building Packages
 ```bash
 # Create Firefox package
@@ -153,6 +178,9 @@ python create_pinsaver_package.py
 
 # Create Edge package  
 python create_edge_package.py
+
+# Create Opera package
+python create_opera_package.py
 ```
 
 ## 🤝 Contributing
@@ -183,6 +211,15 @@ We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.
 - **`*://*.pinterest.com/*`** - Access Pinterest domains globally
 
 ### Edge/Chrome Version
+- **`downloads`** - Save images to your computer
+- **`storage`** - Remember your settings and preferences
+- **`contextMenus`** - Right-click menu options
+- **`activeTab`** - Access current Pinterest tab
+- **`scripting`** - Inject content scripts (Manifest V3)
+- **`sidePanel`** - Modern sidebar interface
+- **`windows`** - Window management
+
+### Opera Version
 - **`downloads`** - Save images to your computer
 - **`storage`** - Remember your settings and preferences
 - **`contextMenus`** - Right-click menu options
