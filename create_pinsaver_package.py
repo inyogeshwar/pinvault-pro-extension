@@ -10,8 +10,8 @@ def create_firefox_package():
     source_dir = "firefox-version"
     
     # Output files
-    zip_name = "PinSaver-Pro-Firefox-v1.1.3.zip"
-    xpi_name = "PinSaver-Pro-Firefox-v1.1.3.xpi"
+    zip_name = "PinVault-Pro-Firefox-v1.2.0.zip"
+    xpi_name = "PinVault-Pro-Firefox-v1.2.0.xpi"
     
     # Remove existing packages
     for file in [zip_name, xpi_name]:
@@ -44,7 +44,7 @@ def create_firefox_package():
     print(f"\nPackage size: {zip_size:,} bytes ({zip_size/1024:.1f} KB)")
     
     print(f"\nExtension Details:")
-    print(f"- Name: PinSaver Pro - Bulk Image Downloader")
+    print(f"- Name: PinVault Pro - Bulk Image Downloader")
     print(f"- ID: pinsaver-pro@extension.com")
     print(f"- Firefox Desktop: 79.0+")
     print(f"- Firefox Android: 113.0+")

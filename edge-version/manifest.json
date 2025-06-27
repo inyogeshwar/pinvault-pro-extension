@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
-  "name": "PinSaver Pro Downloader",
-  "version": "1.1.3",
+  "name": "PinVault Pro - Bulk Image Downloader",
+  "version": "1.2.0",
   "description": "Professional bulk image downloading tool featuring AI-powered auto-scroll technology, real-time dual-interface synchronization, distinctive glassmorphism UI, and intelligent timestamped vault organization. Engineered for content creators and power users requiring advanced bulk image downloading capabilities.",
   "permissions": [
     "downloads",

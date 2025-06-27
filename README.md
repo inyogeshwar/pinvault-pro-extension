@@ -1,6 +1,12 @@
-# PinSaver Pro - Bulk Image Downloader
+# PinVault Pro - Bulk Image Downloader
 
-[![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)](https://addons.mozilla.org)
+[![Firefox Add-on](https://img.shields.io/badge/Firefox-Compatible-orange?logo=firefox)]├── 📦 PinVault-Pro-Firefox-v1.2.0.zip      # Firefox package
+├── 📦 PinVault-Pro-Firefox-v1.2.0.xpi      # Firefox XPI
+├── 📦 PinVault-Pro-Edge-v1.2.0.zip         # Edge/Chrome package
+├── 📦 PinVault-Pro-Opera-v1.2.0.zip        # Opera package
+├── 📦 PinVault-Pro-Opera-v1.2.0.nex        # Opera NEX format
+├── 📁 screenshots/                          # Preview screenshots
+└── 📄 README.md                             # This file://addons.mozilla.org)
 [![Edge Add-on](https://img.shields.io/badge/Edge-Compatible-blue?logo=microsoftedge)](https://microsoftedge.microsoft.com/addons)
 [![Chrome Extension](https://img.shields.io/badge/Chrome-Compatible-green?logo=googlechrome)](https://chrome.google.com/webstore)
 [![Opera Add-on](https://img.shields.io/badge/Opera-Compatible-red?logo=opera)](https://addons.opera.com)
@@ -10,7 +16,19 @@
 
 > **Professional bulk image downloading tool for Pinterest with AI-powered auto-scroll technology, real-time dual-interface synchronization, and intelligent vault organization.**
 
-![PinSaver Pro Demo](https://via.placeholder.com/800x400/667eea/ffffff?text=PinSaver+Pro+Demo)
+## 🎯 Preview Screenshots
+
+### 📱 HD Privacy Mode & Auto Scroll
+![HD Privacy Mode Auto Scroll](screenshots/screenshot-1.png)
+*Sidebar with HD Privacy Mode, Auto-scroll functionality, and bulk download options*
+
+### 🎨 Beautiful Main Interface
+![Beautiful Main Interface](screenshots/screenshot-2.png)
+*Elegant popup overlay with real-time image selection and download controls*
+
+### 🤖 Full AI-Based Functionality
+![Full AI Based](screenshots/screenshot-3.png)
+*AI-powered bulk selection with real-time download progress and completion tracking*
 
 ## 🚀 Features
 
@@ -38,24 +56,24 @@
 ## 📦 Installation
 
 ### Firefox
-1. **From Mozilla Add-ons (AMO):** [Install PinSaver Pro](https://addons.mozilla.org) *(Coming Soon)*
-2. **From GitHub Releases:** [Download Firefox XPI](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Firefox-v1.1.3.xpi)
+1. **From Mozilla Add-ons (AMO):** [Install PinVault Pro](https://addons.mozilla.org) *(Coming Soon)*
+2. **From GitHub Releases:** [Download Firefox XPI](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi)
 3. **Manual Installation:**
-   - Download `PinSaver-Pro-Firefox-v1.1.3.xpi` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+   - Download `PinVault-Pro-Firefox-v1.2.0.xpi` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Open Firefox → Add-ons Manager → Install Add-on From File
 
 ### Edge/Chrome
-1. **From Microsoft Edge Add-ons:** [Install PinSaver Pro](https://microsoftedge.microsoft.com/addons) *(Coming Soon)*
-2. **From GitHub Releases:** [Download Edge ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Edge-v1.1.3.zip)
+1. **From Microsoft Edge Add-ons:** [Install PinVault Pro](https://microsoftedge.microsoft.com/addons) *(Coming Soon)*
+2. **From GitHub Releases:** [Download Edge ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip)
 3. **Manual Installation:**
-   - Download `PinSaver-Pro-Edge-v1.1.3.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+   - Download `PinVault-Pro-Edge-v1.2.0.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Extract and load as unpacked extension
 
 ### Opera
-1. **From Opera Add-ons:** [Install PinSaver Pro](https://addons.opera.com) *(Coming Soon)*
-2. **From GitHub Releases:** [Download Opera ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Opera-v1.1.3.zip)
+1. **From Opera Add-ons:** [Install PinVault Pro](https://addons.opera.com) *(Coming Soon)*
+2. **From GitHub Releases:** [Download Opera ZIP](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip)
 3. **Manual Installation:**
-   - Download `PinSaver-Pro-Opera-v1.1.3.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
+   - Download `PinVault-Pro-Opera-v1.2.0.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
    - Extract ZIP file
    - Open `opera://extensions/` → Enable Developer mode → Load unpacked
 
@@ -128,10 +146,10 @@ pinvault-pro-extension/
 
 All extension packages are available in [GitHub Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases):
 
-### Latest Release: v1.1.3
-- **🦊 Firefox:** [`PinSaver-Pro-Firefox-v1.1.3.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Firefox-v1.1.3.xpi) *(61.4 KB)*
-- **🌐 Edge/Chrome:** [`PinSaver-Pro-Edge-v1.1.3.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Edge-v1.1.3.zip) *(60.0 KB)*
-- **🔴 Opera:** [`PinSaver-Pro-Opera-v1.1.3.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinSaver-Pro-Opera-v1.1.3.zip) *(58.8 KB)*
+### Latest Release: v1.2.0
+- **🦊 Firefox:** [`PinVault-Pro-Firefox-v1.2.0.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi) *(61.4 KB)*
+- **🌐 Edge/Chrome:** [`PinVault-Pro-Edge-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip) *(60.0 KB)*
+- **🔴 Opera:** [`PinVault-Pro-Opera-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) *(60.3 KB)*
 
 ### Installation from Releases
 1. **Visit:** [GitHub Releases Page](https://github.com/inyogeshwar/pinvault-pro-extension/releases)

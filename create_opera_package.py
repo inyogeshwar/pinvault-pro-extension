@@ -10,8 +10,8 @@ def create_opera_package():
     source_dir = "opera-version"
     
     # Output files
-    zip_name = "PinSaver-Pro-Opera-v1.1.3.zip"
-    nex_name = "PinSaver-Pro-Opera-v1.1.3.nex"
+    zip_name = "PinVault-Pro-Opera-v1.2.0.zip"
+    nex_name = "PinVault-Pro-Opera-v1.2.0.nex"
     
     # Remove existing packages
     for file in [zip_name, nex_name]:
@@ -44,7 +44,7 @@ def create_opera_package():
     print(f"\nPackage size: {zip_size:,} bytes ({zip_size/1024:.1f} KB)")
     
     print(f"\nExtension Details:")
-    print(f"- Name: PinSaver Pro - Bulk Image Downloader")
+    print(f"- Name: PinVault Pro - Bulk Image Downloader")
     print(f"- Manifest: V3 (Chromium/Opera compatible)")
     print(f"- Platform: Opera Add-ons Store")
     print(f"- Minimum Opera Version: 77.0+")

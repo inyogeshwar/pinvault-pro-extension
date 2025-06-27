@@ -10,7 +10,7 @@ def create_edge_package():
     source_dir = "edge-version"
     
     # Output files
-    zip_name = "PinSaver-Pro-Edge-v1.1.3.zip"
+    zip_name = "PinVault-Pro-Edge-v1.2.0.zip"
     
     # Remove existing packages
     if os.path.exists(zip_name):
@@ -38,7 +38,7 @@ def create_edge_package():
     print(f"\nPackage size: {zip_size:,} bytes ({zip_size/1024:.1f} KB)")
     
     print(f"\nExtension Details:")
-    print(f"- Name: PinSaver Pro Downloader")
+    print(f"- Name: PinVault Pro Downloader")
     print(f"- Manifest: V3 (Chrome/Edge compatible)")
     print(f"- Platform: Microsoft Edge Add-ons")
     print(f"\n✅ Ready for Edge Add-ons submission!")
