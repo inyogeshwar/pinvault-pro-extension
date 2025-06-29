@@ -4,7 +4,7 @@
 
 ![PinVault Pro Logo](https://img.shields.io/badge/PinVault-Pro-6366f1?style=for-the-badge&logo=pinterest&logoColor=white)
 
-[![Firefox](https://img.shields.io/badge/Firefox-Compatible-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org)
+[![Firefox](https://img.shields.io/badge/Firefox-Compatible-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinsaver-pro-downloader/)
 [![Edge](https://img.shields.io/badge/Edge-Compatible-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons)
 [![Chrome](https://img.shields.io/badge/Chrome-Compatible-4285F4?style=flat&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 [![Opera](https://img.shields.io/badge/Opera-Compatible-FF1B2D?style=flat&logo=opera&logoColor=white)](https://addons.opera.com)
@@ -191,21 +191,22 @@
 
 <br>
 
-#### **Method 1: Direct Download (Recommended)**
+#### **Method 1: Mozilla Add-ons Store (Recommended) ✅**
+🎉 **Officially Approved!** Install directly from Mozilla Add-ons Store:
+- 🏪 **[Install from Mozilla Add-ons Store](https://addons.mozilla.org/addon/pinsaver-pro-downloader/)**
+
+#### **Method 2: Direct Download**
 ```bash
 # Download the XPI file directly
 wget https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi
 ```
 
-#### **Method 2: Manual Installation**
+#### **Method 3: Manual Installation**
 1. 📁 Download `PinVault-Pro-Firefox-v1.2.0.xpi` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
 2. 🔧 Open Firefox → `about:addons`
 3. ⚙️ Click gear icon → "Install Add-on From File"
 4. 📂 Select the downloaded XPI file
 5. ✅ Click "Add" to confirm installation
-
-#### **Method 3: Store Installation**
-- 🔄 *Coming Soon* - [Mozilla Add-ons Store](https://addons.mozilla.org)
 
 </details>
 
