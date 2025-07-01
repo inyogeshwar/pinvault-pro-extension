@@ -10,189 +10,207 @@
     <!-- Toast Notification Container -->
     <div id="toastContainer" class="toast-container"></div>
     
-    <div class="sidebar-container">
+    <div class="sidebar-container" role="main" aria-label="PinVault Pro Extension Sidebar">
         <div class="sidebar-header">
             <div class="logo-section">
-                <img src="icons/icon32.png" alt="PinVault Pro" class="logo">
+                <img src="icons/icon32.png" alt="PinVault Pro Logo" class="logo">
                 <h1>PinVault Pro</h1>
                 <div class="creator">Pro Edition</div>
             </div>
             <div class="header-controls">
-                <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle theme">
-                    <span class="theme-icon">🌙</span>
+                <button class="theme-toggle" id="themeToggle" title="Toggle theme" aria-label="Toggle between light, dark, and auto theme">
+                    <span class="theme-icon" aria-hidden="true">🌙</span>
                 </button>
-                <div class="version">v1.2.0</div>
+                <div class="version" aria-label="Version 1.2.0">v1.2.0</div>
             </div>
         </div>
 
-        <div class="status-section">
+        <div class="status-section" role="status" aria-live="polite">
             <div class="connection-status" id="connectionStatus">
-                <span class="status-indicator" id="statusIndicator"></span>
+                <span class="status-indicator" id="statusIndicator" aria-hidden="true"></span>
                 <span id="statusText">Checking Pinterest...</span>
             </div>
         </div>
 
-        <div class="stats-section">
+        <div class="stats-section" role="region" aria-label="Image Statistics">
             <div class="stat-card">
-                <div class="stat-value" id="totalImages">0</div>
+                <div class="stat-value" id="totalImages" aria-label="Total images found">0</div>
                 <div class="stat-label">Images Found</div>
             </div>
             <div class="stat-card">
-                <div class="stat-value" id="selectedCount">0</div>
+                <div class="stat-value" id="selectedCount" aria-label="Images selected">0</div>
                 <div class="stat-label">Selected</div>
             </div>
         </div>
 
-        <div class="controls-section">
+        <div class="controls-section" role="region" aria-label="Quick Actions">
             <h3>Quick Actions</h3>
             
             <div class="control-group">
-                <button class="sidebar-btn primary" id="selectAllBtn">
-                    <span class="icon">☑️</span>
+                <button class="sidebar-btn primary" id="selectAllBtn" aria-describedby="selectAllDesc">
+                    <span class="icon" aria-hidden="true">☑️</span>
                     Select All Images
                 </button>
-                <button class="sidebar-btn secondary" id="deselectAllBtn">
-                    <span class="icon">☐</span>
+                <div id="selectAllDesc" class="sr-only">Select all images visible on the current Pinterest page</div>
+                
+                <button class="sidebar-btn secondary" id="deselectAllBtn" aria-describedby="deselectAllDesc">
+                    <span class="icon" aria-hidden="true">☐</span>
                     Clear Selection
                 </button>
+                <div id="deselectAllDesc" class="sr-only">Clear all currently selected images</div>
             </div>
 
             <div class="control-group">
-                <button class="sidebar-btn success" id="downloadBtn" disabled>
-                    <span class="icon">📥</span>
+                <button class="sidebar-btn success" id="downloadBtn" disabled aria-describedby="downloadDesc">
+                    <span class="icon" aria-hidden="true">📥</span>
                     Download Selected
-                    <span class="download-count" id="downloadCount">(0)</span>
+                    <span class="download-count" id="downloadCount" aria-label="Number of images selected">(0)</span>
                 </button>
+                <div id="downloadDesc" class="sr-only">Download all currently selected images to your computer</div>
             </div>
         </div>
 
-        <div class="settings-section">
+        <div class="settings-section" role="region" aria-label="Download Settings">
             <h3>Download Settings</h3>
             
             <div class="setting-item">
-                <label class="setting-label">Format Quality</label>
-                <select class="modern-select" id="formatSelect">
+                <label class="setting-label" for="formatSelect">Format Quality</label>
+                <select class="modern-select" id="formatSelect" aria-describedby="formatDesc">
                     <option value="original">Original Quality</option>
                     <option value="high" selected>High Quality</option>
                     <option value="medium">Medium Quality</option>
                 </select>
+                <div id="formatDesc" class="sr-only">Choose the quality level for downloaded images</div>
             </div>
 
             <div class="setting-item">
                 <label class="setting-toggle">
-                    <input type="checkbox" id="privacyMode">
-                    <span class="toggle-slider"></span>
+                    <input type="checkbox" id="privacyMode" aria-describedby="privacyDesc">
+                    <span class="toggle-slider" aria-hidden="true"></span>
                     <span class="setting-text">Privacy Mode</span>
                 </label>
+                <div id="privacyDesc" class="sr-only">Enable privacy mode to avoid tracking during downloads</div>
             </div>
 
             <div class="setting-item">
                 <label class="setting-toggle">
-                    <input type="checkbox" id="autoScrollToggle">
-                    <span class="toggle-slider"></span>
+                    <input type="checkbox" id="autoScrollToggle" aria-describedby="autoScrollDesc">
+                    <span class="toggle-slider" aria-hidden="true"></span>
                     <span class="setting-text">Auto-scroll</span>
                 </label>
+                <div id="autoScrollDesc" class="sr-only">Automatically scroll the page to load more images</div>
             </div>
 
             <div class="setting-item">
                 <label class="setting-toggle">
-                    <input type="checkbox" id="showPreview" checked>
-                    <span class="toggle-slider"></span>
+                    <input type="checkbox" id="showPreview" checked aria-describedby="previewDesc">
+                    <span class="toggle-slider" aria-hidden="true"></span>
                     <span class="setting-text">Show Preview Grid</span>
                 </label>
+                <div id="previewDesc" class="sr-only">Display a thumbnail grid of selected images</div>
             </div>
         </div>
 
         <!-- Pin Preview Grid Section -->
-        <div class="preview-section" id="previewSection">
+        <div class="preview-section" id="previewSection" role="region" aria-label="Selected Images Preview">
             <h3>Selected Images Preview</h3>
-            <div class="preview-grid" id="previewGrid">
+            <div class="preview-grid" id="previewGrid" role="grid" aria-label="Grid of selected image thumbnails">
                 <div class="preview-placeholder">
-                    <div class="preview-icon">🖼️</div>
+                    <div class="preview-icon" aria-hidden="true">🖼️</div>
                     <p>Select images to see preview</p>
                 </div>
             </div>
         </div>
 
         <!-- Download Queue Section -->
-        <div class="queue-section" id="queueSection" style="display: none;">
+        <div class="queue-section" id="queueSection" style="display: none;" role="region" aria-label="Download Queue">
             <h3>Download Queue</h3>
             <div class="queue-controls">
-                <button class="queue-btn primary" id="pauseResumeBtn">
-                    <span class="icon">⏸️</span>
+                <button class="queue-btn primary" id="pauseResumeBtn" aria-describedby="pauseResumeDesc">
+                    <span class="icon" aria-hidden="true">⏸️</span>
                     Pause Queue
                 </button>
-                <button class="queue-btn danger" id="clearQueueBtn">
-                    <span class="icon">🗑️</span>
+                <div id="pauseResumeDesc" class="sr-only">Pause or resume the download queue</div>
+                
+                <button class="queue-btn danger" id="clearQueueBtn" aria-describedby="clearQueueDesc">
+                    <span class="icon" aria-hidden="true">🗑️</span>
                     Clear Queue
                 </button>
+                <div id="clearQueueDesc" class="sr-only">Clear all items from the download queue</div>
             </div>
-            <div class="queue-list" id="queueList"></div>
+            <div class="queue-list" id="queueList" role="list" aria-label="Download queue items"></div>
         </div>
 
-        <div class="progress-section" id="progressSection" style="display: none;">
+        <div class="progress-section" id="progressSection" style="display: none;" role="region" aria-label="Download Progress">
             <h3>Download Progress</h3>
             <div class="progress-container">
-                <div class="circular-progress" id="circularProgress">
-                    <svg class="progress-ring" viewBox="0 0 120 120">
+                <div class="circular-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-labelledby="progressPercentage">
+                    <svg class="progress-ring" viewBox="0 0 120 120" aria-hidden="true">
                         <circle class="progress-ring-background" cx="60" cy="60" r="50"></circle>
                         <circle class="progress-ring-fill" cx="60" cy="60" r="50" id="progressRingFill"></circle>
                     </svg>
                     <div class="progress-percentage" id="progressPercentage">0%</div>
                 </div>
-                <div class="progress-details" id="progressDetails">
+                <div class="progress-details" id="progressDetails" aria-live="polite">
                     Preparing downloads...
                 </div>
             </div>
-            <button class="sidebar-btn danger small" id="cancelDownloadBtn">
-                <span class="icon">⏹️</span>
+            <button class="sidebar-btn danger small" id="cancelDownloadBtn" aria-describedby="cancelDesc">
+                <span class="icon" aria-hidden="true">⏹️</span>
                 Cancel Download
             </button>
+            <div id="cancelDesc" class="sr-only">Cancel the current download operation</div>
         </div>
 
-        <div class="not-pinterest" id="notPinterest" style="display: none;">
+        <div class="not-pinterest" id="notPinterest" style="display: none;" role="alert">
             <div class="empty-state">
-                <div class="empty-icon">🌐</div>
+                <div class="empty-icon" aria-hidden="true">🌐</div>
                 <h3>Not on Pinterest</h3>
                 <p>Navigate to Pinterest to start downloading images</p>
-                <button class="sidebar-btn primary" id="openPinterestBtn">
+                <button class="sidebar-btn primary" id="openPinterestBtn" aria-describedby="openPinterestDesc">
                     Open Pinterest
                 </button>
+                <div id="openPinterestDesc" class="sr-only">Open Pinterest in a new tab</div>
             </div>
         </div>
 
-        <div class="sidebar-footer">
+        <div class="sidebar-footer" role="contentinfo" aria-label="Credits and Information">
             <div class="footer-credits">
                 <div class="credit-section">
                     <h4>Credits & Attribution</h4>
                     <p class="developer-credit">
-                        <span class="icon">👨‍💻</span>
+                        <span class="icon" aria-hidden="true">👨‍💻</span>
                         Developed by <strong>@inyogeshwar</strong>
                     </p>
-                    <div class="credit-links">
-                        <a href="#" id="githubLink" class="credit-link" title="GitHub Repository">
-                            <span class="icon">🔗</span>
+                    <div class="credit-links" role="navigation" aria-label="Extension Links">
+                        <a href="#" id="githubLink" class="credit-link" title="GitHub Repository" aria-describedby="githubDesc">
+                            <span class="icon" aria-hidden="true">🔗</span>
                             GitHub
                         </a>
-                        <a href="#" id="helpLink" class="credit-link" title="Help & Documentation">
-                            <span class="icon">❓</span>
+                        <div id="githubDesc" class="sr-only">Visit the GitHub repository for this extension</div>
+                        
+                        <a href="#" id="helpLink" class="credit-link" title="Help & Documentation" aria-describedby="helpDesc">
+                            <span class="icon" aria-hidden="true">❓</span>
                             Help
                         </a>
-                        <a href="#" id="feedbackLink" class="credit-link" title="Send Feedback">
-                            <span class="icon">📧</span>
+                        <div id="helpDesc" class="sr-only">Open help and documentation</div>
+                        
+                        <a href="#" id="feedbackLink" class="credit-link" title="Send Feedback" aria-describedby="feedbackDesc">
+                            <span class="icon" aria-hidden="true">📧</span>
                             Feedback
                         </a>
+                        <div id="feedbackDesc" class="sr-only">Send feedback to the developer</div>
                     </div>
                     <div class="license-info">
-                        <span class="icon">⚖️</span>
+                        <span class="icon" aria-hidden="true">⚖️</span>
                         MIT License
                     </div>
                 </div>
             </div>
             
-            <div class="keyboard-shortcuts">
+            <div class="keyboard-shortcuts" role="region" aria-label="Keyboard Shortcuts">
                 <div class="shortcut-hint">
-                    <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd> to toggle sidebar
+                    <kbd aria-label="Control">Ctrl</kbd> + <kbd aria-label="Shift">Shift</kbd> + <kbd aria-label="P">P</kbd> to toggle sidebar
                 </div>
             </div>
         </div>

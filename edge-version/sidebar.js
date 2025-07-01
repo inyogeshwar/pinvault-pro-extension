@@ -204,23 +204,41 @@ class PinVaultProSidebar {
         if (this.selectedImages.size === 0) {
             previewGrid.innerHTML = `
                 <div class="preview-placeholder">
-                    <div class="preview-icon">🖼️</div>
+                    <div class="preview-icon" aria-hidden="true">🖼️</div>
                     <p>Select images to see preview</p>
                 </div>
             `;
+            previewGrid.setAttribute('aria-label', 'No images selected for preview');
             return;
         }
         
         previewGrid.innerHTML = '';
+        previewGrid.setAttribute('aria-label', `Preview grid showing ${this.selectedImages.size} selected images`);
+        
+        let itemIndex = 0;
         this.previewImages.forEach((imageData, imageId) => {
             if (this.selectedImages.has(imageId)) {
                 const previewItem = document.createElement('div');
                 previewItem.className = 'preview-item';
-                previewItem.innerHTML = `<img src="${imageData.thumbnail}" alt="Preview" loading="lazy">`;
+                previewItem.setAttribute('role', 'gridcell');
+                previewItem.setAttribute('tabindex', '0');
+                previewItem.setAttribute('aria-label', `Selected image: ${imageData.title || 'Untitled'}`);
+                previewItem.innerHTML = `<img src="${imageData.thumbnail}" alt="${imageData.title || 'Preview'}" loading="lazy">`;
+                
+                // Keyboard navigation
+                previewItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.showImageDetails(imageData);
+                    }
+                });
+                
                 previewItem.addEventListener('click', () => {
                     this.showImageDetails(imageData);
                 });
+                
                 previewGrid.appendChild(previewItem);
+                itemIndex++;
             }
         });
     }
@@ -271,12 +289,15 @@ class PinVaultProSidebar {
         
         queueSection.style.display = 'block';
         queueList.innerHTML = '';
+        queueList.setAttribute('aria-label', `Download queue with ${this.downloadQueue.length} items`);
         
         this.downloadQueue.forEach((item, index) => {
             const queueItem = document.createElement('div');
             queueItem.className = 'queue-item';
+            queueItem.setAttribute('role', 'listitem');
+            queueItem.setAttribute('aria-label', `Queue item ${index + 1}: ${item.title || `Image ${index + 1}`}, status: ${item.status}`);
             queueItem.innerHTML = `
-                <div class="queue-item-status ${item.status}"></div>
+                <div class="queue-item-status ${item.status}" aria-hidden="true"></div>
                 <span>${item.title || `Image ${index + 1}`}</span>
             `;
             queueList.appendChild(queueItem);
@@ -721,6 +742,7 @@ class PinVaultProSidebar {
         const progressRingFill = document.getElementById('progressRingFill');
         const progressPercentage = document.getElementById('progressPercentage');
         const progressDetails = document.getElementById('progressDetails');
+        const progressContainer = document.querySelector('.circular-progress');
         
         // Calculate stroke-dashoffset for circular progress
         // Total circumference is approximately 314 (2 * π * r where r = 50)
@@ -731,6 +753,12 @@ class PinVaultProSidebar {
         }
         if (progressPercentage) progressPercentage.textContent = Math.round(progress) + '%';
         if (progressDetails) progressDetails.textContent = details;
+        
+        // Update accessibility attributes
+        if (progressContainer) {
+            progressContainer.setAttribute('aria-valuenow', Math.round(progress).toString());
+            progressContainer.setAttribute('aria-valuetext', `${Math.round(progress)}% - ${details}`);
+        }
         
         // Update queue if downloading
         if (progress > 0 && progress < 100) {
