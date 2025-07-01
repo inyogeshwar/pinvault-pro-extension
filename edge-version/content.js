@@ -31,6 +31,7 @@ class PinVaultContent {
         try {
             this.injectStyles();
             this.setupMessageListener();
+            this.setupKeyboardShortcuts();
             this.scanForImages();
             this.setupMutationObserver();
             this.setupContextMenu();
@@ -38,6 +39,63 @@ class PinVaultContent {
         } catch (error) {
             console.error('PinVault Pro content script initialization error:', error);
         }
+    }
+
+    setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Shift+P to toggle sidebar
+            if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+                e.preventDefault();
+                this.toggleSidebar();
+            }
+        });
+    }
+
+    async toggleSidebar() {
+        try {
+            // Send message to background script to toggle sidebar
+            chrome.runtime.sendMessage({ action: 'toggleSidebar' });
+            
+            // Show notification
+            this.showNotification('Sidebar toggled via keyboard shortcut', 'info');
+        } catch (error) {
+            console.error('Error toggling sidebar:', error);
+        }
+    }
+
+    showNotification(message, type = 'info') {
+        // Create a temporary notification overlay
+        const notification = document.createElement('div');
+        notification.className = `pinvault-notification ${type}`;
+        notification.textContent = message;
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 10000;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            animation: slideIn 0.3s ease-out;
+        `;
+
+        document.body.appendChild(notification);
+
+        // Remove after 3 seconds
+        setTimeout(() => {
+            notification.style.animation = 'slideOut 0.3s ease-in forwards';
+            setTimeout(() => {
+                if (notification.parentNode) {
+                    notification.parentNode.removeChild(notification);
+                }
+            }, 300);
+        }, 3000);
     }
 
     injectStyles() {
