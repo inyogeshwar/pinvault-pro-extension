@@ -8,6 +8,7 @@
 [![Edge](https://img.shields.io/badge/Edge-Compatible-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons)
 [![Chrome](https://img.shields.io/badge/Chrome-Compatible-4285F4?style=flat&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 [![Opera](https://img.shields.io/badge/Opera-Compatible-FF1B2D?style=flat&logo=opera&logoColor=white)](https://addons.opera.com)
+[![Website Manager](https://img.shields.io/badge/Website-Manager-6366F1?style=flat&logo=globe&logoColor=white)](https://inyogeshwar.github.io/pinvault-pro-extension/)
 
 [![Version](https://img.shields.io/badge/Version-1.2.0-brightgreen?style=flat)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](https://opensource.org/licenses/MIT)
@@ -525,7 +526,7 @@ Found a bug or have a feature request? Please create an issue:
 
 ## 📊 Changelog
 
-### v1.2.0 (2025-06-28)
+### v1.2.0 (2025-07-01)
 - **🎨 Complete Rebranding** - Updated from PinSaver Pro to PinVault Pro
 - **💖 Enhanced Support** - Added Patreon, Ko-fi, and GitHub Sponsors integration
 - **🌐 Multi-Browser Support** - Added Opera support alongside Firefox, Edge, Chrome
