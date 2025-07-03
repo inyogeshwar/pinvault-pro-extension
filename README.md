@@ -4,7 +4,7 @@
 
 ![PinVault Pro Logo](https://img.shields.io/badge/PinVault-Pro-6366f1?style=for-the-badge&logo=pinterest&logoColor=white)
 
-[![Firefox](https://img.shields.io/badge/Firefox-Compatible-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinsaver-pro-downloader/)
+[![Firefox](https://img.shields.io/badge/Firefox-Compatible-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinvault-pro/)
 [![Edge](https://img.shields.io/badge/Edge-Compatible-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons)
 [![Chrome](https://img.shields.io/badge/Chrome-Compatible-4285F4?style=flat&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 [![Opera](https://img.shields.io/badge/Opera-Compatible-FF1B2D?style=flat&logo=opera&logoColor=white)](https://addons.opera.com)
@@ -193,7 +193,7 @@
 
 #### **Method 1: Mozilla Add-ons Store (Recommended) ✅**
 🎉 **Officially Approved!** Install directly from Mozilla Add-ons Store:
-- 🏪 **[Install from Mozilla Add-ons Store](https://addons.mozilla.org/addon/pinsaver-pro-downloader/)**
+- 🏪 **[Install from Mozilla Add-ons Store](https://addons.mozilla.org/addon/pinvault-pro/)**
 
 #### **Method 2: Direct Download**
 ```bash
