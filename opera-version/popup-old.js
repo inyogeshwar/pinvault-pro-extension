@@ -1,4 +1,4 @@
-// Popup script for PinVault Pro Extension (Firefox Version)
+// Popup script for PinVault Pro Extension
 class PinVaultProPopup {
     constructor() {
         this.selectedImages = new Set();
@@ -60,47 +60,17 @@ class PinVaultProPopup {
     }
 
     async loadSettings() {
-        const settings = await browser.storage.sync.get({
+        const settings = await chrome.storage.sync.get({
             language: 'en',
             highQuality: true,
             privacyMode: false,
-            autoScroll: false,
-            theme: 'default',
-            advancedFeaturesEnabled: false,
-            smartFeaturesEnabled: false,
-            autoDownloadScheduler: false,
-            batchProcessing: false,
-            imageSizeFilter: 'all',
-            duplicateDetection: true,
-            customWatermark: false
+            autoScroll: false
         });
 
         this.language = settings.language;
         document.getElementById('highQuality').checked = settings.highQuality;
         document.getElementById('privacyMode').checked = settings.privacyMode;
         document.getElementById('autoScrollToggle').checked = settings.autoScroll;
-        
-        // Apply theme
-        this.applyTheme(settings.theme);
-        const themeSelector = document.getElementById('themeSelector');
-        if (themeSelector) themeSelector.value = settings.theme;
-        
-        // Apply advanced settings
-        this.toggleAdvancedFeatures(settings.advancedFeaturesEnabled);
-        this.toggleSmartFeatures(settings.smartFeaturesEnabled);
-        
-        // Apply smart feature settings
-        const autoDownloadEl = document.getElementById('autoDownloadScheduler');
-        const batchProcessingEl = document.getElementById('batchProcessing');
-        const imageSizeFilterEl = document.getElementById('imageSizeFilter');
-        const duplicateDetectionEl = document.getElementById('duplicateDetection');
-        const customWatermarkEl = document.getElementById('customWatermark');
-        
-        if (autoDownloadEl) autoDownloadEl.checked = settings.autoDownloadScheduler;
-        if (batchProcessingEl) batchProcessingEl.checked = settings.batchProcessing;
-        if (imageSizeFilterEl) imageSizeFilterEl.value = settings.imageSizeFilter;
-        if (duplicateDetectionEl) duplicateDetectionEl.checked = settings.duplicateDetection;
-        if (customWatermarkEl) customWatermarkEl.checked = settings.customWatermark;
     }
 
     setupEventListeners() {
@@ -117,36 +87,6 @@ class PinVaultProPopup {
         document.getElementById('downloadBtn').addEventListener('click', () => this.startDownload());
         document.getElementById('cancelDownloadBtn').addEventListener('click', () => this.cancelDownload());
         
-        // Theme controls
-        const themeSelector = document.getElementById('themeSelector');
-        if (themeSelector) {
-            themeSelector.addEventListener('change', (e) => this.changeTheme(e.target.value));
-        }
-        
-        // Advanced and Smart Features toggle
-        const advancedToggle = document.getElementById('advancedFeaturesToggle');
-        const smartToggle = document.getElementById('smartFeaturesToggle');
-        
-        if (advancedToggle) {
-            advancedToggle.addEventListener('change', (e) => this.toggleAdvancedFeatures(e.target.checked));
-        }
-        if (smartToggle) {
-            smartToggle.addEventListener('change', (e) => this.toggleSmartFeatures(e.target.checked));
-        }
-        
-        // Smart feature controls
-        const smartFeatureInputs = ['autoDownloadScheduler', 'batchProcessing', 'imageSizeFilter', 'duplicateDetection', 'customWatermark'];
-        smartFeatureInputs.forEach(id => {
-            const element = document.getElementById(id);
-            if (element) {
-                if (element.type === 'checkbox') {
-                    element.addEventListener('change', (e) => this.saveSetting(id, e.target.checked));
-                } else {
-                    element.addEventListener('change', (e) => this.saveSetting(id, e.target.value));
-                }
-            }
-        });
-        
         // Settings (only for remaining checkboxes)
         document.getElementById('highQuality').addEventListener('change', (e) => this.saveSetting('highQuality', e.target.checked));
         document.getElementById('privacyMode').addEventListener('change', (e) => this.saveSetting('privacyMode', e.target.checked));
@@ -160,8 +100,7 @@ class PinVaultProPopup {
 
     async checkPinterestConnection() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             
             if (!tab || !tab.url) {
                 this.showNotPinterest();
@@ -198,14 +137,16 @@ class PinVaultProPopup {
     async ensureContentScriptInjected(tabId) {
         try {
             // Check if content script is already loaded
-            const results = await browser.tabs.executeScript(tabId, {
-                code: 'window.pinVaultContentLoaded || false'
+            const results = await chrome.scripting.executeScript({
+                target: { tabId },
+                func: () => window.pinVaultContentLoaded || false
             });
 
-            if (!results[0]) {
+            if (!results[0]?.result) {
                 // Content script not loaded, inject it
-                await browser.tabs.executeScript(tabId, {
-                    file: 'content.js'
+                await chrome.scripting.executeScript({
+                    target: { tabId },
+                    files: ['content.js']
                 });
                 
                 // Wait a moment for the script to initialize
@@ -255,8 +196,7 @@ class PinVaultProPopup {
 
     async updateImageCounts() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             
             if (!tab || !tab.id || !this.isPinterestUrl(tab.url)) {
                 return;
@@ -265,7 +205,7 @@ class PinVaultProPopup {
             // Ensure content script is injected
             await this.ensureContentScriptInjected(tab.id);
 
-            const response = await browser.tabs.sendMessage(tab.id, {
+            const response = await chrome.tabs.sendMessage(tab.id, {
                 action: 'getImageCounts'
             });
 
@@ -302,8 +242,7 @@ class PinVaultProPopup {
         } catch (error) {
             console.log('Error updating image counts:', error);
             try {
-                const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-                const tab = tabs[0];
+                const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
                 if (tab?.url && this.isPinterestUrl(tab.url)) {
                     await this.fallbackUpdateCounts(tab.id);
                 }
@@ -327,39 +266,38 @@ class PinVaultProPopup {
     }
 
     async fallbackUpdateCounts(tabId) {
-        const results = await browser.tabs.executeScript(tabId, {
-            code: `
-                (() => {
-                    // Trigger a rescan if content script is available
-                    if (window.pinVaultContent) {
-                        window.pinVaultContent.scanForImages();
-                        const selectedIds = Array.from(window.pinVaultContent.selectedImages);
-                        return {
-                            total: window.pinVaultContent.imageElements.size,
-                            selected: selectedIds
-                        };
-                    }
-                    
-                    // Fallback to direct DOM counting
-                    const images = document.querySelectorAll('img[src*="pinimg.com"], img[data-src*="pinimg.com"]');
-                    const selectedImages = document.querySelectorAll('img[data-pinvault-selected="true"]');
-                    
-                    // Create a simple ID array for selected images
-                    const selectedIds = [];
-                    selectedImages.forEach((img, index) => {
-                        selectedIds.push(\`fallback-\${index}\`);
-                    });
-                    
+        const results = await chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            function: () => {
+                // Trigger a rescan if content script is available
+                if (window.pinVaultContent) {
+                    window.pinVaultContent.scanForImages();
+                    const selectedIds = Array.from(window.pinVaultContent.selectedImages);
                     return {
-                        total: images.length,
+                        total: window.pinVaultContent.imageElements.size,
                         selected: selectedIds
                     };
-                })()
-            `
+                }
+                
+                // Fallback to direct DOM counting
+                const images = document.querySelectorAll('img[src*="pinimg.com"], img[data-src*="pinimg.com"]');
+                const selectedImages = document.querySelectorAll('img[data-pinvault-selected="true"]');
+                
+                // Create a simple ID array for selected images
+                const selectedIds = [];
+                selectedImages.forEach((img, index) => {
+                    selectedIds.push(`fallback-${index}`);
+                });
+                
+                return {
+                    total: images.length,
+                    selected: selectedIds
+                };
+            }
         });
 
         if (results && results[0]) {
-            const response = results[0];
+            const response = results[0].result;
             this.totalImages = response.total || 0;
             this.selectedImages = new Set(response.selected || []);
             
@@ -390,8 +328,7 @@ class PinVaultProPopup {
 
     async selectAllImages() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             
             if (!tab || !tab.id || !this.isPinterestUrl(tab.url)) {
                 console.warn('Not on a Pinterest page');
@@ -401,7 +338,7 @@ class PinVaultProPopup {
             // Ensure content script is injected before sending message
             await this.ensureContentScriptInjected(tab.id);
 
-            await browser.tabs.sendMessage(tab.id, {
+            await chrome.tabs.sendMessage(tab.id, {
                 action: 'selectAllImages'
             });
             
@@ -414,8 +351,7 @@ class PinVaultProPopup {
 
     async deselectAllImages() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             
             if (!tab || !tab.id || !this.isPinterestUrl(tab.url)) {
                 console.warn('Not on a Pinterest page');
@@ -425,7 +361,7 @@ class PinVaultProPopup {
             // Ensure content script is injected before sending message
             await this.ensureContentScriptInjected(tab.id);
             
-            await browser.tabs.sendMessage(tab.id, {
+            await chrome.tabs.sendMessage(tab.id, {
                 action: 'deselectAllImages'
             });
             
@@ -439,8 +375,7 @@ class PinVaultProPopup {
 
     async toggleAutoScroll(enabled) {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             const stopBtn = document.getElementById('stopScrollBtn');
             
             if (!tab || !tab.id || !this.isPinterestUrl(tab.url)) {
@@ -455,7 +390,7 @@ class PinVaultProPopup {
                 // Ensure content script is injected
                 await this.ensureContentScriptInjected(tab.id);
                 
-                await browser.tabs.sendMessage(tab.id, {
+                await chrome.tabs.sendMessage(tab.id, {
                     action: 'startAutoScroll'
                 });
                 
@@ -483,8 +418,7 @@ class PinVaultProPopup {
 
     async stopAutoScroll() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             const autoScrollToggle = document.getElementById('autoScrollToggle');
             const stopBtn = document.getElementById('stopScrollBtn');
             
@@ -499,7 +433,7 @@ class PinVaultProPopup {
             }
             
             if (tab && tab.id && this.isPinterestUrl(tab.url)) {
-                await browser.tabs.sendMessage(tab.id, {
+                await chrome.tabs.sendMessage(tab.id, {
                     action: 'stopAutoScroll'
                 });
             }
@@ -517,8 +451,7 @@ class PinVaultProPopup {
 
     async startDownload() {
         try {
-            const tabs = await browser.tabs.query({ active: true, currentWindow: true });
-            const tab = tabs[0];
+            const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
             
             if (!tab || !tab.id || !this.isPinterestUrl(tab.url)) {
                 alert('Please navigate to a Pinterest page first.');
@@ -542,7 +475,7 @@ class PinVaultProPopup {
             try {
                 await this.ensureContentScriptInjected(tab.id);
                 
-                const response = await browser.tabs.sendMessage(tab.id, {
+                const response = await chrome.tabs.sendMessage(tab.id, {
                     action: 'getSelectedImages',
                     settings: {}
                 });
@@ -558,32 +491,31 @@ class PinVaultProPopup {
             // Fallback to DOM selection if content script fails
             if (selectedImages.length === 0) {
                 console.log('Using DOM fallback to get selected images');
-                const results = await browser.tabs.executeScript(tab.id, {
-                    code: `
-                        (() => {
-                            const selected = document.querySelectorAll('img[data-pinvault-selected="true"]');
-                            const imageData = [];
-                            
-                            selected.forEach((img, index) => {
-                                if (img.src && img.src.includes('pinimg.com')) {
-                                    imageData.push({
-                                        id: \`img_\${Date.now()}_\${index}\`,
-                                        url: img.src,
-                                        title: img.alt || img.title || \`Pinterest Image \${index + 1}\`,
-                                        board: document.title || 'Pinterest',
-                                        domain: window.location.hostname,
-                                        originalFilename: img.src.split('/').pop()
-                                    });
-                                }
-                            });
-                            
-                            return imageData;
-                        })()
-                    `
+                const results = await chrome.scripting.executeScript({
+                    target: { tabId: tab.id },
+                    function: () => {
+                        const selected = document.querySelectorAll('img[data-pinvault-selected="true"]');
+                        const imageData = [];
+                        
+                        selected.forEach((img, index) => {
+                            if (img.src && img.src.includes('pinimg.com')) {
+                                imageData.push({
+                                    id: `img_${Date.now()}_${index}`,
+                                    url: img.src,
+                                    title: img.alt || img.title || `Pinterest Image ${index + 1}`,
+                                    board: document.title || 'Pinterest',
+                                    domain: window.location.hostname,
+                                    originalFilename: img.src.split('/').pop()
+                                });
+                            }
+                        });
+                        
+                        return imageData;
+                    }
                 });
 
-                if (results && results[0] && results[0].length > 0) {
-                    selectedImages = results[0];
+                if (results && results[0] && results[0].result.length > 0) {
+                    selectedImages = results[0].result;
                     console.log(`DOM fallback found ${selectedImages.length} selected images`);
                 } else {
                     alert('No images found for download. Please try selecting images again.');
@@ -604,22 +536,26 @@ class PinVaultProPopup {
             if (downloadBtn) downloadBtn.disabled = true;
 
             // Use background script for download (same as sidebar)
-            const response = await browser.runtime.sendMessage({
+            chrome.runtime.sendMessage({
                 action: 'downloadImages',
                 images: selectedImages,
                 settings: {
                     highQuality: document.getElementById('highQuality').checked,
                     privacyMode: document.getElementById('privacyMode').checked
                 }
+            }, (response) => {
+                if (chrome.runtime.lastError) {
+                    console.error('Download error:', chrome.runtime.lastError);
+                    alert('Error starting download: ' + chrome.runtime.lastError.message);
+                    this.hideProgress();
+                } else if (response && response.success) {
+                    console.log('Download started successfully:', response);
+                } else {
+                    console.error('Download failed:', response);
+                    alert('Download failed: ' + (response?.error || 'Unknown error'));
+                    this.hideProgress();
+                }
             });
-
-            if (response && response.success) {
-                console.log('Download started successfully:', response);
-            } else {
-                console.error('Download failed:', response);
-                alert('Download failed: ' + (response?.error || 'Unknown error'));
-                this.hideProgress();
-            }
 
         } catch (error) {
             console.error('Error starting download:', error);
@@ -782,136 +718,41 @@ class PinVaultProPopup {
     }
 
     async saveSetting(key, value) {
-        await browser.storage.sync.set({ [key]: value });
-    }
-    
-    // Theme Management
-    async changeTheme(theme) {
-        this.applyTheme(theme);
-        await this.saveSetting('theme', theme);
-    }
-    
-    applyTheme(theme) {
-        document.body.className = '';
-        document.body.classList.add(`theme-${theme}`);
-        
-        // Update CSS custom properties for the selected theme
-        const themeColors = {
-            default: {
-                '--primary-color': '#e60023',
-                '--secondary-color': '#767676',
-                '--background-color': '#ffffff',
-                '--text-color': '#333333',
-                '--border-color': '#e0e0e0',
-                '--accent-color': '#f5f5f5'
-            },
-            dark: {
-                '--primary-color': '#ff4458',
-                '--secondary-color': '#999999',
-                '--background-color': '#1a1a1a',
-                '--text-color': '#ffffff',
-                '--border-color': '#333333',
-                '--accent-color': '#2a2a2a'
-            },
-            light: {
-                '--primary-color': '#d4006f',
-                '--secondary-color': '#888888',
-                '--background-color': '#fafafa',
-                '--text-color': '#222222',
-                '--border-color': '#e8e8e8',
-                '--accent-color': '#f0f0f0'
-            },
-            purple: {
-                '--primary-color': '#8e44ad',
-                '--secondary-color': '#9b59b6',
-                '--background-color': '#f8f5ff',
-                '--text-color': '#2c3e50',
-                '--border-color': '#d7bde2',
-                '--accent-color': '#ebdef0'
-            },
-            rainbow: {
-                '--primary-color': 'linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #ffeaa7, #fd79a8)',
-                '--secondary-color': '#666666',
-                '--background-color': '#fff5f5',
-                '--text-color': '#2d3436',
-                '--border-color': '#fab1a0',
-                '--accent-color': '#ffeaa7'
-            },
-            ocean: {
-                '--primary-color': '#0984e3',
-                '--secondary-color': '#74b9ff',
-                '--background-color': '#f1f9ff',
-                '--text-color': '#2d3436',
-                '--border-color': '#a8dadc',
-                '--accent-color': '#e3f2fd'
-            }
-        };
-        
-        const colors = themeColors[theme] || themeColors.default;
-        Object.entries(colors).forEach(([property, value]) => {
-            document.documentElement.style.setProperty(property, value);
-        });
-    }
-    
-    // Feature Management
-    async toggleAdvancedFeatures(enabled) {
-        const advancedPanel = document.getElementById('advancedFeaturesPanel');
-        if (advancedPanel) {
-            advancedPanel.style.display = enabled ? 'block' : 'none';
-        }
-        
-        const advancedToggle = document.getElementById('advancedFeaturesToggle');
-        if (advancedToggle) {
-            advancedToggle.checked = enabled;
-        }
-        
-        await this.saveSetting('advancedFeaturesEnabled', enabled);
-    }
-    
-    async toggleSmartFeatures(enabled) {
-        const smartPanel = document.getElementById('smartFeaturesPanel');
-        if (smartPanel) {
-            smartPanel.style.display = enabled ? 'block' : 'none';
-        }
-        
-        const smartToggle = document.getElementById('smartFeaturesToggle');
-        if (smartToggle) {
-            smartToggle.checked = enabled;
-        }
-        
-        await this.saveSetting('smartFeaturesEnabled', enabled);
+        await chrome.storage.sync.set({ [key]: value });
     }
 
     openPinterest() {
-        browser.tabs.create({ url: 'https://www.pinterest.com' });
+        chrome.tabs.create({ url: 'https://www.pinterest.com' });
     }
 
     async openSidebar() {
         try {
-            // Firefox uses sidebarAction instead of sidePanel
-            if (browser.sidebarAction) {
-                await browser.sidebarAction.open();
-            } else {
-                // Fallback: Open sidebar in a new tab
-                browser.tabs.create({ url: browser.runtime.getURL('sidebar.html') });
-            }
+            // Get the current window first, then open the sidebar panel
+            const currentWindow = await chrome.windows.getCurrent();
+            await chrome.sidePanel.open({ windowId: currentWindow.id });
         } catch (error) {
             console.error('Error opening sidebar:', error);
-            // Final fallback: Open sidebar in a new tab
-            browser.tabs.create({ url: browser.runtime.getURL('sidebar.html') });
+            try {
+                // Fallback: Try without specifying window ID
+                await chrome.sidePanel.open({});
+            } catch (fallbackError) {
+                console.error('Fallback sidebar open failed:', fallbackError);
+                // Final fallback: Open sidebar in a new tab
+                chrome.tabs.create({ url: chrome.runtime.getURL('sidebar.html') });
+            }
         }
     }
 
     openHelp() {
-        browser.tabs.create({ url: 'https://github.com/inyogeshwar/pinvault-pro-extension#readme' });
+        chrome.tabs.create({ url: 'https://github.com/inyogeshwar/pinvault-pro-extension#readme' });
     }
 
     openFeedback() {
-        browser.tabs.create({ url: 'mailto:yogeshwar853202@outlook.com?subject=PinVault%20Pro%20Feedback&body=Hi%20Yogeshwar,%0A%0ARegarding%20PinVault%20Pro%20extension:%0A%0A' });
+        chrome.tabs.create({ url: 'mailto:yogeshwar853202@outlook.com?subject=PinVault%20Pro%20Feedback&body=Hi%20Yogeshwar,%0A%0ARegarding%20PinVault%20Pro%20extension:%0A%0A' });
     }
 
     openGithub() {
-        browser.tabs.create({ url: 'https://github.com/inyogeshwar/pinvault-pro-extension' });
+        chrome.tabs.create({ url: 'https://github.com/inyogeshwar/pinvault-pro-extension' });
     }
 }
 
@@ -922,7 +763,7 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 // Listen for messages from background script
-browser.runtime.onMessage.addListener((message, sender) => {
+chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     if (popupInstance) {
         if (message.action === 'downloadProgress') {
             popupInstance.updateProgress(message.progress, message.details);

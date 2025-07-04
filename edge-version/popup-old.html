@@ -3,89 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinVault Pro - Advanced Pinterest Downloader</title>
+    <title>PinVault Pro - Bulk Image Collector</title>
     <link rel="stylesheet" href="popup.css">
 </head>
-<body data-theme="default">
+<body>
     <div class="header">
-        <div class="header-top">
-            <div class="logo-section">
-                <img src="icons/icon32.png" alt="PinVault Pro" class="logo">
-                <div class="title-section">
-                    <h1>PinVault Pro</h1>
-                    <div class="subtitle">Advanced Pinterest Downloader</div>
-                </div>
-            </div>
-            <div class="header-controls">
-                <div class="version">v1.2.0</div>
-                <button class="theme-toggle" id="themeToggle" title="Switch Theme">
-                    <span class="theme-icon">🎨</span>
-                </button>
-                <button class="settings-btn" id="settingsBtn" title="Settings">
-                    <span class="settings-icon">⚙️</span>
-                </button>
-            </div>
-        </div>
-    </div>
-
-    <!-- Theme Selector Section -->
-    <div class="theme-selector-section">
-        <h3>Theme Selection</h3>
-        <select class="theme-selector" id="themeSelector">
-            <option value="default">🎨 Default Theme</option>
-            <option value="dark">🌙 Dark Mode</option>
-            <option value="light">☀️ Light Mode</option>
-            <option value="purple">💜 Purple Theme</option>
-            <option value="rainbow">🌈 Rainbow Theme</option>
-            <option value="ocean">🌊 Ocean Theme</option>
-        </select>
-    </div>
-
-    <!-- Feature Toggles -->
-    <div class="feature-toggle-section">
-        <div class="feature-toggle">
-            <label for="advancedFeaturesToggle">Advanced Features</label>
-            <input type="checkbox" id="advancedFeaturesToggle">
-        </div>
-        <div class="feature-toggle">
-            <label for="smartFeaturesToggle">Smart AI Features</label>
-            <input type="checkbox" id="smartFeaturesToggle">
-        </div>
-    </div>
-
-    <!-- Advanced Features Panel -->
-    <div class="feature-panel" id="advancedFeaturesPanel">
-        <h4>Advanced Options</h4>
-        <div class="smart-feature-item">
-            <label for="autoDownloadScheduler">Auto Download Scheduler</label>
-            <input type="checkbox" id="autoDownloadScheduler">
-        </div>
-        <div class="smart-feature-item">
-            <label for="batchProcessing">Batch Processing</label>
-            <input type="checkbox" id="batchProcessing">
-        </div>
-        <div class="smart-feature-item">
-            <label for="imageSizeFilter">Image Size Filter</label>
-            <select id="imageSizeFilter">
-                <option value="all">All Sizes</option>
-                <option value="large">Large Only</option>
-                <option value="medium">Medium+</option>
-                <option value="small">Small+</option>
-            </select>
-        </div>
-    </div>
-
-    <!-- Smart Features Panel -->
-    <div class="feature-panel" id="smartFeaturesPanel">
-        <h4>AI Smart Features</h4>
-        <div class="smart-feature-item">
-            <label for="duplicateDetection">Duplicate Detection</label>
-            <input type="checkbox" id="duplicateDetection" checked>
-        </div>
-        <div class="smart-feature-item">
-            <label for="customWatermark">Custom Watermark</label>
-            <input type="checkbox" id="customWatermark">
-        </div>
+        <img src="icons/icon32.png" alt="PinVault Pro" class="logo">
+        <h1>PinVault Pro</h1>
+        <div class="version">v1.1.2</div>
+        <div class="subtitle">Bulk Image Collector</div>
     </div>
 
     <div class="status-bar">
@@ -115,11 +41,11 @@
                 </button>
                 <button class="btn btn-secondary" id="deselectAllBtn">
                     <span class="icon">☐</span>
-                    Clear All
+                    Deselect All
                 </button>
                 <button class="btn btn-info" id="openSidebarBtn">
                     <span class="icon">📌</span>
-                    Sidebar
+                    Open in Sidebar
                 </button>
             </div>
 
@@ -223,7 +149,7 @@
                 <strong>PinVault Pro</strong> - Professional Pinterest Harvesting
             </div>
             <div class="creator-name">
-                by Yogeshwar Kumar
+                Professional image harvesting tool
             </div>
         </div>
         <div class="links">

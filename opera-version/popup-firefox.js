@@ -1,4 +1,4 @@
-// Popup script for PinVault Pro Extension (Firefox Version)
+// Popup script for PinVault Pro Extension (Opera Version)
 class PinVaultProPopup {
     constructor() {
         this.selectedImages = new Set();
@@ -60,7 +60,7 @@ class PinVaultProPopup {
     }
 
     async loadSettings() {
-        const settings = await browser.storage.sync.get({
+        const settings = await chrome.storage.sync.get({
             language: 'en',
             highQuality: true,
             privacyMode: false,

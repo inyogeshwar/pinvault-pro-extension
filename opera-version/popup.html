@@ -3,15 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinVault Pro - Bulk Image Collector</title>
+    <title>PinVault Pro - Advanced Pinterest Downloader</title>
     <link rel="stylesheet" href="popup.css">
 </head>
-<body>
+<body data-theme="default">
     <div class="header">
-        <img src="icons/icon32.png" alt="PinVault Pro" class="logo">
-        <h1>PinVault Pro</h1>
-        <div class="version">v1.1.2</div>
-        <div class="subtitle">Bulk Image Collector</div>
+        <div class="header-top">
+            <div class="logo-section">
+                <img src="icons/icon32.png" alt="PinVault Pro" class="logo">
+                <div class="title-section">
+                    <h1>PinVault Pro</h1>
+                    <div class="subtitle">Advanced Pinterest Downloader</div>
+                </div>
+            </div>
+            <div class="header-controls">
+                <div class="version">v1.2.0</div>
+                <button class="theme-toggle" id="themeToggle" title="Switch Theme">
+                    <span class="theme-icon">🎨</span>
+                </button>
+                <button class="settings-btn" id="settingsBtn" title="Settings">
+                    <span class="settings-icon">⚙️</span>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Theme Selector Dropdown -->
+    <div class="theme-selector" id="themeSelector" style="display: none;">
+        <div class="theme-option" data-theme="default">
+            <span class="theme-preview default-preview"></span>
+            <span>Default</span>
+        </div>
+        <div class="theme-option" data-theme="dark">
+            <span class="theme-preview dark-preview"></span>
+            <span>Dark Mode</span>
+        </div>
+        <div class="theme-option" data-theme="light">
+            <span class="theme-preview light-preview"></span>
+            <span>Light Mode</span>
+        </div>
+        <div class="theme-option" data-theme="purple">
+            <span class="theme-preview purple-preview"></span>
+            <span>Purple</span>
+        </div>
+        <div class="theme-option" data-theme="rainbow">
+            <span class="theme-preview rainbow-preview"></span>
+            <span>Rainbow</span>
+        </div>
+        <div class="theme-option" data-theme="ocean">
+            <span class="theme-preview ocean-preview"></span>
+            <span>Ocean</span>
+        </div>
     </div>
 
     <div class="status-bar">
@@ -41,13 +83,81 @@
                 </button>
                 <button class="btn btn-secondary" id="deselectAllBtn">
                     <span class="icon">☐</span>
-                    Deselect All
+                    Clear All
                 </button>
                 <button class="btn btn-info" id="openSidebarBtn">
                     <span class="icon">📌</span>
-                    Open in Sidebar
+                    Sidebar
                 </button>
             </div>
+
+            <div class="quick-actions">
+                <button class="btn btn-primary" id="downloadBtn">
+                    <span class="icon">📥</span>
+                    <span class="btn-text">Download Selected</span>
+                    <div class="btn-progress" id="downloadProgress"></div>
+                </button>
+                
+                <div class="action-row">
+                    <button class="btn btn-smart" id="smartFeaturesBtn">
+                        <span class="icon">🤖</span>
+                        <span>AI Features</span>
+                    </button>
+                    <button class="btn btn-advanced" id="advancedBtn">
+                        <span class="icon">🚀</span>
+                        <span>Advanced</span>
+                    </button>
+                </div>
+            </div>
+
+            <div class="auto-scroll-section">
+                <div class="auto-scroll-header">
+                    <h3>🔄 Auto Scroll</h3>
+                    <div class="auto-scroll-status" id="autoScrollStatus">Ready</div>
+                </div>
+                <div class="auto-scroll-controls">
+                    <button class="btn btn-success" id="startAutoScrollBtn">
+                        <span class="icon">▶️</span>
+                        Start Smart Scroll
+                    </button>
+                    <button class="btn btn-danger" id="stopAutoScrollBtn" style="display: none;">
+                        <span class="icon">⏹️</span>
+                        Stop Scroll
+                    </button>
+                </div>
+                <div class="scroll-progress" id="scrollProgress" style="display: none;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="scrollProgressFill"></div>
+                    </div>
+                    <div class="progress-text" id="scrollProgressText">Loading more images...</div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="quick-stats">
+                <div class="stat-card">
+                    <div class="stat-icon">📊</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Total Size</div>
+                        <div class="stat-value" id="totalSize">0 MB</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">⚡</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Speed</div>
+                        <div class="stat-value" id="downloadSpeed">0 MB/s</div>
+                    </div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-info">
+                        <div class="stat-label">Quality</div>
+                        <div class="stat-value" id="averageQuality">HD</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
             <div class="auto-scroll-controls">
                 <label class="toggle-switch">
@@ -101,6 +211,102 @@
             </div>
             <div class="progress-details">
                 <span id="progressDetails">Preparing downloads...</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Advanced Features Panel -->
+    <div class="advanced-panel" id="advancedPanel" style="display: none;">
+        <div class="panel-header">
+            <h3>🚀 Advanced Features</h3>
+            <button class="close-panel" id="closeAdvanced">×</button>
+        </div>
+        
+        <div class="feature-sections">
+            <div class="feature-section">
+                <h4>📸 Image Quality</h4>
+                <select class="quality-selector" id="qualitySelector">
+                    <option value="original">Original Quality</option>
+                    <option value="hd">HD (1080p)</option>
+                    <option value="4k">4K (2160p)</option>
+                    <option value="thumbnail">Thumbnail</option>
+                </select>
+            </div>
+
+            <div class="feature-section">
+                <h4>📁 Download Options</h4>
+                <div class="checkbox-group">
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="createSubfolders">
+                        <span class="checkmark"></span>
+                        Create subfolders by board
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="addTimestamp">
+                        <span class="checkmark"></span>
+                        Add timestamp to filenames
+                    </label>
+                    <label class="checkbox-label">
+                        <input type="checkbox" id="preventDuplicates">
+                        <span class="checkmark"></span>
+                        Prevent duplicate downloads
+                    </label>
+                </div>
+            </div>
+
+            <div class="feature-section">
+                <h4>⚡ Performance</h4>
+                <div class="slider-group">
+                    <label>Download Speed:</label>
+                    <div class="slider-container">
+                        <input type="range" id="speedSlider" min="1" max="10" value="5" class="slider">
+                        <span class="slider-value" id="speedValue">Medium</span>
+                    </div>
+                </div>
+                <div class="slider-group">
+                    <label>Batch Size:</label>
+                    <div class="slider-container">
+                        <input type="range" id="batchSlider" min="5" max="50" value="20" class="slider">
+                        <span class="slider-value" id="batchValue">20 images</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Smart Features Panel -->
+    <div class="smart-panel" id="smartPanel" style="display: none;">
+        <div class="panel-header">
+            <h3>🤖 AI Smart Features</h3>
+            <button class="close-panel" id="closeSmart">×</button>
+        </div>
+        
+        <div class="smart-features">
+            <div class="smart-feature">
+                <div class="feature-icon">🎯</div>
+                <div class="feature-info">
+                    <h4>Smart Selection</h4>
+                    <p>AI selects best quality images</p>
+                    <button class="feature-btn" id="smartSelectBtn">Enable</button>
+                </div>
+            </div>
+            
+            <div class="smart-feature">
+                <div class="feature-icon">📊</div>
+                <div class="feature-info">
+                    <h4>Image Analysis</h4>
+                    <p>Analyze image quality & size</p>
+                    <button class="feature-btn" id="analyzeBtn">Start Analysis</button>
+                </div>
+            </div>
+            
+            <div class="smart-feature">
+                <div class="feature-icon">🕒</div>
+                <div class="feature-info">
+                    <h4>Schedule Download</h4>
+                    <p>Download at specific time</p>
+                    <button class="feature-btn" id="scheduleBtn">Schedule</button>
+                </div>
             </div>
         </div>
     </div>
