@@ -1,5 +1,7 @@
 # PinVault Pro v1.2.0 - Release Bundle Information
 
+📦 **[Download All Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)**
+
 ## 📦 Package Summary
 
 ### All packages updated on: July 4, 2025

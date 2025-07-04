@@ -70,7 +70,7 @@
 ![GitHub repo size](https://img.shields.io/github/repo-size/inyogeshwar/pinvault-pro-extension?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/inyogeshwar/pinvault-pro-extension?style=flat-square)
 
-[📥 Quick Install](#-quick-install) • [🎬 Watch Demo](https://youtu.be/ie2gPVA_SHc) • [✨ Features](#-features) • [📚 Full Guide](#-usage)
+[📥 Quick Install](#-quick-install) • [🎬 Watch Demo](https://youtu.be/ie2gPVA_SHc) • [📦 All Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases) • [✨ Features](#-features) • [📚 Full Guide](#-usage)
 
 </div>
 
@@ -88,6 +88,8 @@
 | 🔴 **Opera** | ⚙️ Manual Install | [Download Opera Package](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) |
 
 **🎉 Supports 50+ browsers automatically via Chrome Web Store compatibility!**
+
+**📦 [View All Releases & Changelog](https://github.com/inyogeshwar/pinvault-pro-extension/releases)**
 
 </div>
 
