@@ -2,7 +2,57 @@
 
 <div align="center">
 
-![PinVault Pro Logo](https://img.shields.io/badge/PinVault-Pro-6366f1?style=for-the-badge&logo=pinterest&logoColor=white)
+![PinVault## ✨ Features
+
+<div align="center">
+
+### 🎯 **Why Choose PinVault Pro?**
+
+</div>
+
+| Feature | Description |
+|---------|-------------|
+| ⚡ **Lightning Fast** | Download multiple images in seconds with bulk selection |
+| 🛡️ **100% Safe** | No data collection, your privacy is guaranteed |
+| 🎯 **Super Simple** | Click checkboxes, hit download. Anyone can use it |
+| 💎 **Always Free** | No subscriptions, no limits, free forever |
+| 🤖 **Smart Technology** | Auto-scroll with intelligent content detection |
+| 🎨 **Modern Design** | Beautiful glassmorphism interface with dual popup/sidebar |
+| 🌍 **Universal Support** | Works on all major browsers (Firefox, Edge, Chrome, Opera + 50 more) |
+| 🔒 **Privacy First** | Local processing only, no external servers |
+
+### 🎨 **NEW: Theme Support (v1.2.0)**
+
+| Theme | Description | Perfect For |
+|-------|-------------|-------------|
+| 🌟 **Default** | Classic PinVault gradient | Professional use |
+| 🌙 **Dark** | Easy on the eyes | Night browsing |
+| ☀️ **Light** | Clean and minimal | Bright environments |
+| 💜 **Purple** | Rich purple gradients | Creative workflows |
+| 🌈 **Rainbow** | Vibrant multi-color | Fun and energetic |
+| 🌊 **Ocean** | Calm blue tones | Relaxing sessions |
+
+### 🚀 **NEW: Advanced Features Panel**
+
+| Feature | Description |
+|---------|-------------|
+| 📅 **Auto-Download Scheduler** | Set up automatic downloads at specific times |
+| 📦 **Batch Processing** | Process multiple image sets simultaneously |
+| 📏 **Image Size Filter** | Filter images by dimensions (width/height) |
+| 🔍 **Duplicate Detection** | Automatically detect and skip duplicate images |
+| 🏷️ **Auto-Tagging** | Add metadata tags to downloaded images |
+| 💾 **Custom Save Locations** | Choose specific folders for different downloads |
+
+### 🤖 **NEW: AI Smart Features Panel**
+
+| Feature | Description |
+|---------|-------------|
+| 🖼️ **Smart Watermark Removal** | AI-powered watermark detection and removal |
+| 🎯 **Auto Image Enhancement** | Automatically improve image quality |
+| 📊 **Content Analysis** | Analyze and categorize image content |
+| 🔄 **Smart Retry Logic** | Intelligent retry for failed downloads |
+| 📱 **Mobile Optimization** | Optimize images for mobile devices |
+| 🌐 **Multi-Language Support** | Interface available in multiple languages |/img.shields.io/badge/PinVault-Pro-6366f1?style=for-the-badge&logo=pinterest&logoColor=white)
 
 [![Firefox Store](https://img.shields.io/badge/Firefox-Live%20Store-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinvault-pro/)
 [![Edge Store](https://img.shields.io/badge/Edge-Live%20Store-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb)
@@ -48,6 +98,32 @@
 [![PinVault Pro Demo - Pinterest Bulk Image Downloader](https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg)](https://youtu.be/ie2gPVA_SHc)
 
 **🚀 Watch the complete PinVault Pro demonstration** - See bulk downloading, AI auto-scroll, and HD Privacy Mode in action!
+
+</div>
+
+---
+
+## 🎉 **What's New in v1.2.0**
+
+<div align="center">
+
+### ✨ **Major Feature Update - Transform Your Pinterest Experience!**
+
+</div>
+
+| 🚀 **New Feature** | 📝 **Description** | 🎯 **Benefit** |
+|-------------------|-------------------|-----------------|
+| 🎨 **6 Beautiful Themes** | Default, Dark, Light, Purple, Rainbow, Ocean | Personalize your experience |
+| 🚀 **Advanced Features Panel** | Scheduler, Batch Processing, Size Filters | Power user capabilities |
+| 🤖 **AI Smart Features** | Watermark removal, Enhancement, Analysis | Next-gen automation |
+| 🔧 **Enhanced UI/UX** | Improved accessibility and responsiveness | Smoother interactions |
+| 🌐 **Cross-Browser Sync** | Consistent experience across all browsers | Universal compatibility |
+| 🎯 **Performance Boost** | Faster processing and memory optimization | Lightning-fast downloads |
+
+<div align="center">
+
+**🎉 v1.2.0 includes 20+ new features and improvements!**  
+*Download the latest version to experience all new capabilities*
 
 </div>
 
@@ -279,6 +355,55 @@ This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) 
 </table>
 
 ![Complete Overview](screenshots/overview.png)
+
+---
+
+## 📚 **How to Use PinVault Pro v1.2.0**
+
+### 🚀 **Basic Usage**
+
+1. **📌 Visit Pinterest** - Go to any Pinterest board or search page
+2. **🔄 Open Extension** - Click the PinVault Pro icon in your browser toolbar  
+3. **✅ Select Images** - Click checkboxes on images you want to download
+4. **⬇️ Download** - Hit the "Download Selected" button
+
+### 🎨 **Using Themes (NEW in v1.2.0)**
+
+| Step | Action | Result |
+|------|--------|--------|
+| 1️⃣ | Click the **🎨 theme button** in popup header | Opens theme selector |
+| 2️⃣ | Choose from **6 themes**: Default, Dark, Light, Purple, Rainbow, Ocean | Interface changes instantly |
+| 3️⃣ | Your choice is **automatically saved** for future use | Personalized experience |
+
+### 🚀 **Advanced Features Panel**
+
+| Feature | How to Enable | What It Does |
+|---------|---------------|-------------|
+| **📅 Auto-Scheduler** | Toggle switch in Advanced panel | Schedule downloads for specific times |
+| **📦 Batch Processing** | Enable batch mode | Process multiple image sets simultaneously |
+| **📏 Size Filter** | Set width/height limits | Only download images meeting size criteria |
+| **🔍 Duplicate Detection** | Turn on auto-detection | Skip images you've already downloaded |
+| **🏷️ Auto-Tagging** | Enable metadata tagging | Add tags to downloaded images |
+| **💾 Custom Locations** | Set folder preferences | Organize downloads automatically |
+
+### 🤖 **AI Smart Features Panel**
+
+| AI Feature | Purpose | Benefit |
+|------------|---------|---------|
+| **🖼️ Watermark Removal** | Remove watermarks automatically | Cleaner images |
+| **🎯 Image Enhancement** | Improve quality automatically | Better visual quality |
+| **📊 Content Analysis** | Analyze and categorize content | Smart organization |
+| **🔄 Smart Retry** | Intelligent retry for failed downloads | Higher success rate |
+| **📱 Mobile Optimization** | Optimize for mobile devices | Perfect mobile viewing |
+| **🌐 Multi-Language** | Interface in multiple languages | Global accessibility |
+
+### 🎯 **Pro Tips for Power Users**
+
+- **🔥 Bulk Download**: Hold `Ctrl` (or `Cmd` on Mac) while clicking to select multiple images quickly
+- **⚡ Keyboard Shortcuts**: Use `Space` to toggle selection, `Enter` to download
+- **🎨 Theme Switching**: Themes sync across all your browser sessions
+- **🤖 AI Features**: Enable Smart Features for the best download experience
+- **📁 Organization**: Use folder organization settings for automatic sorting
 
 ---
 
