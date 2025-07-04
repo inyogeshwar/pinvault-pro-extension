@@ -32,9 +32,9 @@ For comprehensive documentation, visit our **[Project Wiki](WIKI.md)**:
 ## 🛠️ Installation
 
 ### From Microsoft Edge Add-ons Store (Recommended)
-1. Visit the Microsoft Edge Add-ons Store
-2. Search for "PinVault Pro"
-3. Click "Get" to install
+1. Visit the [Microsoft Edge Add-ons Store](https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb)
+2. Click "Get" to install
+3. Follow the browser prompts to complete installation
 
 ### Manual Installation (Developer Mode)
 1. Download or clone this repository
@@ -142,7 +142,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 
 ## 🔗 Links
 
-- [Microsoft Edge Add-ons Store](#) (Under Review - Store ID: 0RDCKC80KK2N)
+- [Microsoft Edge Add-ons Store](https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb) (Live - Store ID: 0RDCKC80KK2N)
 - [GitHub Repository](https://github.com/inyogeshwar/pinvault-pro-extension)
 - [Issues & Support](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
 

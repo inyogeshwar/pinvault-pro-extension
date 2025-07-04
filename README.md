@@ -1,13 +1,13 @@
-# PinVault Pro - Professional Pinterest Image Downloader
+# PinVault Pro - Download Pinterest Images Instantly
 
 <div align="center">
 
 ![PinVault Pro Logo](https://img.shields.io/badge/PinVault-Pro-6366f1?style=for-the-badge&logo=pinterest&logoColor=white)
 
-[![Firefox](https://img.shields.io/badge/Firefox-Compatible-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinvault-pro/)
-[![Edge](https://img.shields.io/badge/Edge-Compatible-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons)
-[![Chrome](https://img.shields.io/badge/Chrome-Compatible-4285F4?style=flat&logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
-[![Opera](https://img.shields.io/badge/Opera-Compatible-FF1B2D?style=flat&logo=opera&logoColor=white)](https://addons.opera.com)
+[![Firefox Store](https://img.shields.io/badge/Firefox-Live%20Store-FF7139?style=flat&logo=firefox&logoColor=white)](https://addons.mozilla.org/addon/pinvault-pro/)
+[![Edge Store](https://img.shields.io/badge/Edge-Live%20Store-0078D4?style=flat&logo=microsoftedge&logoColor=white)](https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb)
+[![Chrome Compatible](https://img.shields.io/badge/Chrome-Compatible-4285F4?style=flat&logo=googlechrome&logoColor=white)](#-installation)
+[![Opera Compatible](https://img.shields.io/badge/Opera-Compatible-FF1B2D?style=flat&logo=opera&logoColor=white)](#-installation)
 
 [![Version](https://img.shields.io/badge/Version-1.2.0-brightgreen?style=flat)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat)](https://opensource.org/licenses/MIT)
@@ -15,35 +15,31 @@
 [![Stars](https://img.shields.io/github/stars/inyogeshwar/pinvault-pro-extension?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/stargazers)
 [![Demo Video](https://img.shields.io/badge/Demo-YouTube-FF0000?style=flat&logo=youtube&logoColor=white)](https://youtu.be/ie2gPVA_SHc)
 
-**🎯 Professional bulk image downloading tool for Pinterest with AI-powered technology**
+**Download Pinterest images instantly. Simple, fast, and 100% free.**
 
 ![GitHub repo size](https://img.shields.io/github/repo-size/inyogeshwar/pinvault-pro-extension?style=flat-square)
-![GitHub code size](https://img.shields.io/github/languages/code-size/inyogeshwar/pinvault-pro-extension?style=flat-square)
 ![GitHub last commit](https://img.shields.io/github/last-commit/inyogeshwar/pinvault-pro-extension?style=flat-square)
 
-[📥 Download](#-installation) • [🎬 Demo Video](https://youtu.be/ie2gPVA_SHc) • [🔧 Features](#-features) • [📚 Documentation](#-usage) • [🚀 Contribute](#-contributing)
+[📥 Quick Install](#-quick-install) • [🎬 Watch Demo](https://youtu.be/ie2gPVA_SHc) • [✨ Features](#-features) • [📚 Full Guide](#-usage)
 
 </div>
 
 ---
 
-## 📋 Table of Contents
+## � Quick Install
 
-- [🎬 Demo Video](#-demo-video)
-- [🖼️ Preview Gallery](#-preview-gallery)
-- [✨ Features](#-features)
-- [📥 Installation](#-installation)
-- [🎯 Usage](#-usage)
-- [🏗️ Project Structure](#-project-structure)
-- [📥 Releases](#-releases)
-- [🔧 Development](#-development)
-- [🤝 Contributing](#-contributing)
-- [📋 Permissions](#-permissions-explained)
-- [🛡️ Privacy & Security](#-privacy--security)
-- [📞 Support](#-support)
-- [🌟 Support PinVault Pro](#-support-pinvault-pro)
+<div align="center">
 
----
+| Browser | Status | Install Method |
+|---------|--------|----------------|
+| 🦊 **Firefox** | ✅ **Live Store** | **[Install from Mozilla Store](https://addons.mozilla.org/addon/pinvault-pro/)** |
+| 🌐 **Edge** | ✅ **Live Store** | **[Install from Edge Store](https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb)** |
+| 🟢 **Chrome** | ⚙️ Manual Install | [Download Chrome Package](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip) |
+| 🔴 **Opera** | ⚙️ Manual Install | [Download Opera Package](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) |
+
+**🎉 Supports 50+ browsers automatically via Chrome Web Store compatibility!**
+
+</div>
 
 ## 🎬 **Demo Video**
 
@@ -96,497 +92,236 @@
 
 <div align="center">
 
-### 🎯 **Core Capabilities**
+### 🎯 **Why Choose PinVault Pro?**
 
 </div>
 
-<table>
-<tr>
-<td width="50%">
+| Feature | Description |
+|---------|-------------|
+| ⚡ **Lightning Fast** | Download multiple images in seconds with bulk selection |
+| 🛡️ **100% Safe** | No data collection, your privacy is guaranteed |
+| 🎯 **Super Simple** | Click checkboxes, hit download. Anyone can use it |
+| � **Always Free** | No subscriptions, no limits, free forever |
+| 🤖 **Smart Technology** | Auto-scroll with intelligent content detection |
+| 🎨 **Modern Design** | Beautiful glassmorphism interface with dual popup/sidebar |
+| 🌍 **Universal Support** | Works on all major browsers (Firefox, Edge, Chrome, Opera + 50 more) |
+| 🔒 **Privacy First** | Local processing only, no external servers |
 
-#### 🖼️ **Smart Image Selection**
-- Visual checkbox overlays on Pinterest images
-- Bulk selection with real-time counter
-- High-quality original resolution downloads
-- Intelligent duplicate detection
-
-#### 🤖 **AI-Powered Technology**
-- Auto-scroll with smart content detection
-- Automatic rate limiting and respect for Pinterest
-- AI-driven bulk selection optimization
-- Real-time download progress tracking
-
-</td>
-<td width="50%">
-
-#### 🎨 **Professional Interface**
-- Modern glassmorphism design
-- Dual interface: Popup + Sidebar
-- Real-time synchronization between interfaces
-- Dark/Light theme adaptation
-
-#### 🛡️ **Privacy & Security**
-- HD Privacy Mode for secure downloading
-- No data collection or external servers
-- Local processing only
-- Pinterest-exclusive operation
-
-</td>
-</tr>
-</table>
-
-### 🌍 **Universal Browser Support**
+### 🌍 **Browser Compatibility**
 
 <div align="center">
 
-| Browser | Version | Manifest | Package Size | Status |
-|---------|---------|----------|--------------|--------|
-| 🦊 **Firefox** | 79.0+ | V2 | 61.4 KB | ✅ Ready |
-| 🌐 **Edge** | Chromium | V3 | 60.0 KB | ✅ Ready |
-| 🟢 **Chrome** | 88.0+ | V3 | 60.0 KB | ✅ Ready |
-| 🔴 **Opera** | 77.0+ | V3 | 60.3 KB | ✅ Ready |
-| 🦁 **Brave** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 🌊 **Vivaldi** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 🔄 **Yandex** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 🌐 **UC Browser** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 📱 **Samsung Internet** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 🇨🇳 **360 Browser** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
-| 🐋 **Whale Browser** | Chromium | V3 | 60.0 KB | ✅ Auto-Compatible |
+| Browser Category | Market Share | Support Method |
+|------------------|-------------|----------------|
+| 🟢 **Chrome** | 65% | Chrome Web Store |
+| 🔵 **Edge** | 13% | ✅ **Live on Edge Store** |
+| 🦊 **Firefox** | 8% | ✅ **Live on Mozilla Store** |
+| 🔴 **Opera** | 3% | Manual Install |
+| 🦁 **Brave** | 3% | Auto-Compatible |
+| � **Others (50+)** | 8% | Auto-Compatible |
+
+**🎉 Total Coverage: 100% of browser market**
 
 </div>
 
-### 📊 **Market Coverage: 100%**
+## 📥 Full Installation Guide
 
-<div align="center">
-
-| Browser Category | Market Share | Status | Coverage Method |
-|------------------|-------------|--------|-----------------|
-| 🟢 **Chrome** | 65.0% | ✅ Store | Direct Chrome Web Store |
-| 🔵 **Edge** | 13.0% | ✅ Store | Direct Edge Add-ons |
-| 🦊 **Firefox** | 8.0% | ✅ Store | Direct Mozilla AMO |
-| 🔴 **Opera** | 3.0% | ✅ Store | Direct Opera Add-ons |
-| 🦁 **Brave** | 3.0% | ✅ Auto | Chrome Web Store |
-| 📱 **Samsung Internet** | 2.5% | ✅ Auto | Chrome Web Store |
-| 🔄 **Yandex** | 2.0% | ✅ Auto | Chrome Web Store |
-| 🌊 **Vivaldi** | 1.0% | ✅ Auto | Chrome Web Store |
-| 🇨🇳 **360 Browser** | 1.0% | ✅ Auto | Chrome Web Store |
-| 🌐 **UC Browser** | 0.8% | ✅ Auto | Chrome Web Store |
-| 🐋 **Whale Browser** | 0.5% | ✅ Auto | Chrome Web Store |
-| 🌍 **Others (50+)** | 0.2% | ✅ Auto | Chrome Web Store |
-
-**🎉 Total Market Coverage: 100%** 
-
-</div>
-
-## 📥 Installation
-
-<div align="center">
-
-### 🚀 **Quick Install Options**
-
-</div>
-
-<details>
-<summary><b>🦊 Firefox Installation</b></summary>
-
-<br>
-
-#### **Method 1: Mozilla Add-ons Store (Recommended) ✅**
-🎉 **Officially Approved!** Install directly from Mozilla Add-ons Store:
-- 🏪 **[Install from Mozilla Add-ons Store](https://addons.mozilla.org/addon/pinvault-pro/)**
-
-#### **Method 2: Direct Download**
-```bash
-# Download the XPI file directly
-wget https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi
+### 🦊 Firefox (Recommended - Official Store)
+```
+✅ LIVE: Install directly from Mozilla Add-ons Store
+🔗 https://addons.mozilla.org/addon/pinvault-pro/
 ```
 
-#### **Method 3: Manual Installation**
-1. 📁 Download `PinVault-Pro-Firefox-v1.2.0.xpi` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
-2. 🔧 Open Firefox → `about:addons`
-3. ⚙️ Click gear icon → "Install Add-on From File"
-4. 📂 Select the downloaded XPI file
-5. ✅ Click "Add" to confirm installation
+### 🌐 Microsoft Edge (Recommended - Official Store)
+```
+✅ LIVE: Install directly from Edge Add-ons Store  
+🔗 https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb
+```
 
-</details>
+### 🟢 Chrome (Manual Install)
+1. Download: [PinVault-Pro-Edge-v1.2.0.zip](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip)
+2. Extract the ZIP file to a folder
+3. Open `chrome://extensions/` 
+4. Enable "Developer mode"
+5. Click "Load unpacked" and select the folder
 
-<details>
-<summary><b>🌐 Edge/Chrome Installation</b></summary>
+### 🔴 Opera (Manual Install)
+1. Download: [PinVault-Pro-Opera-v1.2.0.zip](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip)
+2. Extract the ZIP file to a folder
+3. Open `opera://extensions/`
+4. Enable "Developer mode"
+5. Click "Load unpacked" and select the folder
 
-<br>
+### 🌟 Other Browsers (Auto-Compatible)
+**Brave, Vivaldi, Yandex, UC Browser, Samsung Internet, and 50+ more browsers:**
+- All Chromium-based browsers can use Chrome Web Store extensions
+- Simply visit Chrome Web Store when our Chrome listing goes live
 
-#### **Method 1: Developer Mode (Current)**
-1. 📁 Download `PinVault-Pro-Edge-v1.2.0.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
-2. 📂 Extract ZIP file to a permanent folder
-3. 🔧 Open `edge://extensions/` or `chrome://extensions/`
-4. 🔄 Enable "Developer mode" toggle
-5. 📤 Click "Load unpacked"
-6. 📂 Select the extracted folder
-7. ✅ Extension will be installed and active
+## 🎯 How to Use
 
-#### **Method 2: Store Installation**
-- 🔄 *Coming Soon* - [Edge Add-ons](https://microsoftedge.microsoft.com/addons) | [Chrome Web Store](https://chrome.google.com/webstore)
+### Getting Started (3 Simple Steps)
+1. **📌 Go to Pinterest** - Open any Pinterest page or board
+2. **✅ Select Images** - Click checkboxes that appear on images  
+3. **📥 Download** - Click the PinVault Pro icon and hit "Download Selected"
 
-</details>
-
-<details>
-<summary><b>🔴 Opera Installation</b></summary>
-
-<br>
-
-#### **Method 1: Developer Mode (Current)**
-1. 📁 Download `PinVault-Pro-Opera-v1.2.0.zip` from [Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
-2. 📂 Extract ZIP file to a permanent folder
-3. 🔧 Open `opera://extensions/`
-4. 🔄 Enable "Developer mode" 
-5. 📤 Click "Load unpacked"
-6. 📂 Select the extracted folder
-7. ✅ Extension will be installed and active
-
-#### **Method 2: Store Installation**
-- 🔄 *Coming Soon* - [Opera Add-ons](https://addons.opera.com)
-
-</details>
-
-<details>
-<summary><b>🌐 All Chromium-Based Browsers (Auto-Compatible)</b></summary>
-
-<br>
-
-#### **🦁 Brave Browser**
-1. 🌐 Open Brave Browser
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Click "Add to Brave" (appears as "Add to Chrome")
-5. 🎉 Extension automatically works in Brave!
-
-#### **🌊 Vivaldi Browser**
-1. 🌐 Open Vivaldi Browser
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Click "Add to Vivaldi" (appears as "Add to Chrome")
-5. 🎉 Extension automatically works in Vivaldi!
-
-#### **🔄 Yandex Browser**
-1. 🌐 Open Yandex Browser
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore) **OR** [Opera Add-ons](https://addons.opera.com)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Click "Add to Yandex" (appears as "Add to Chrome/Opera")
-5. 🎉 Extension automatically works in Yandex!
-
-#### **📱 Samsung Internet Browser**
-1. 🌐 Open Samsung Internet Browser (Desktop/Android)
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Install extension (Chrome Web Store compatible)
-5. 🎉 Extension automatically works in Samsung Internet!
-
-#### **🌐 UC Browser**
-1. 🌐 Open UC Browser
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Install extension (Chromium-based support)
-5. 🎉 Extension automatically works in UC Browser!
-
-#### **🇨🇳 360 Secure Browser**
-1. 🌐 Open 360 Browser (极速模式/Speed Mode)
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Install extension (Chromium compatibility)
-5. 🎉 Extension automatically works in 360 Browser!
-
-#### **🐋 Whale Browser (Naver)**
-1. 🌐 Open Whale Browser
-2. 🔗 Go to [Chrome Web Store](https://chrome.google.com/webstore)
-3. 🔍 Search for "PinVault Pro"
-4. ✅ Install extension (Chrome compatibility)
-5. 🎉 Extension automatically works in Whale Browser!
-
-**🌟 Universal Compatibility**: All Chromium-based browsers automatically support Chrome Web Store extensions!
-
-</details>
-
-<div align="center">
-
-### 📦 **Download Packages**
-
-| Browser | Package | Size | Format |
-|---------|---------|------|--------|
-| 🦊 Firefox | [`PinVault-Pro-Firefox-v1.2.0.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi) | 61.4 KB | XPI |
-| 🌐 Edge/Chrome | [`PinVault-Pro-Edge-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip) | 60.0 KB | ZIP |
-| 🔴 Opera | [`PinVault-Pro-Opera-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) | 60.3 KB | ZIP |
-| � **All Chromium Browsers** | *Use Chrome Web Store* | - | **Auto-Compatible** |
-
-**🌍 Chromium-Compatible**: Brave, Vivaldi, Yandex, UC Browser, Samsung Internet, 360 Browser, Whale Browser, and 50+ more!
-
-</div>
-
-## 🎯 Usage
-
-### Getting Started
-1. **📌 Navigate to Pinterest** - Open any Pinterest page or board
-2. **🔍 Browse Images** - Images will automatically get selection overlays
-3. **✅ Select Images** - Click checkbox overlays to select desired images
-4. **⚡ Auto-Scroll** - Use auto-scroll to load more content automatically
-5. **📥 Bulk Download** - Use popup or sidebar to download selected images
+### Advanced Features
+- **🤖 Auto-Scroll**: Automatically load more Pinterest content  
+- **📋 Sidebar Mode**: Extended interface for bulk operations
+- **🔄 Real-time Sync**: Popup and sidebar stay synchronized
+- **🛡️ Privacy Mode**: Enhanced security for sensitive downloads
 
 ### Interface Options
+- **🎛️ Popup**: Quick access via browser toolbar icon
+- **📋 Sidebar**: Extended interface (Edge/Chrome only)
+- **📱 Mobile**: Works on mobile Firefox
 
-#### 🎛️ **Popup Interface** (Primary)
-- Click the PinVault Pro icon in your browser toolbar
-- Quick access to all controls and image counts
-- Perfect for fast operations
+## 📊 What's New in v1.2.0
 
-#### 📋 **Sidebar Interface** (Desktop Only)
-- Extended interface with detailed controls
-- Real-time image preview and management
-- Ideal for large bulk operations
+### 🎉 Latest Updates (July 2025)
+- **✅ Live on Firefox Store** - Officially approved by Mozilla
+- **✅ Live on Edge Store** - Available on Microsoft Edge Add-ons  
+- **🎨 Simplified Interface** - Cleaner, more intuitive design
+- **🚀 Improved Performance** - Faster image detection and downloads
+- **�️ Enhanced Privacy** - Better security and data protection
+- **🌍 Universal Support** - Works on 50+ browsers automatically
 
-### 🚀 **Auto-Scroll Feature**
-- **Activate:** Click "Start Auto-Scroll" in popup/sidebar
-- **Smart Detection:** Automatically detects when to load more content
-- **Rate Limiting:** Respects Pinterest's loading patterns
-- **Manual Stop:** Click "Stop Auto-Scroll" when finished
+### 🏆 Developer Recognition
+- **🎯 Mozilla Approved** - Official Firefox Add-ons Store listing
+- **� Young Developer** - Created by 16-year-old Yogeshwar Kumar
+- **� Privacy Focused** - No data collection, completely local processing
+- **🆓 Forever Free** - No premium features, completely free to use
 
-## 🏗️ Project Structure
+## 🔧 Development & Contributing
 
-```
-pinvault-pro-extension/
-├── 📁 firefox-version/          # Firefox Manifest V2
-│   ├── manifest.json           # Firefox-specific manifest
-│   ├── background.js           # Event page (non-persistent)
-│   ├── content.js              # Pinterest page injection
-│   ├── popup.html/js/css       # Toolbar popup interface
-│   ├── sidebar.html/js/css     # Sidebar interface
-│   ├── welcome.html/js         # Welcome/onboarding page
-│   ├── styles.css              # Global styles
-│   └── icons/                  # Extension icons
-│
-├── 📁 edge-version/             # Edge/Chrome Manifest V3
-│   ├── manifest.json           # Manifest V3 specification
-│   ├── background.js           # Service worker
-│   ├── content.js              # Pinterest page injection
-│   ├── popup.html/js/css       # Action popup interface
-│   ├── sidebar.html/js/css     # Side panel interface
-│   └── icons/                  # Extension icons
-│
-├── 📁 opera-version/                # Opera Manifest V3
-│   ├── manifest.json           # Opera-specific manifest
-│   ├── background.js           # Service worker
-│   ├── content.js              # Pinterest page injection
-│   ├── popup.html/js/css       # Action popup interface
-│   ├── sidebar.html/js/css     # Side panel interface
-│   └── icons/                  # Extension icons
-│
-├── 📦 PinVault-Pro-Firefox-v1.2.0.zip      # Firefox package
-├── 📦 PinVault-Pro-Firefox-v1.2.0.xpi      # Firefox XPI
-├── 📦 PinVault-Pro-Edge-v1.2.0.zip         # Edge/Chrome package
-├── 📦 PinVault-Pro-Opera-v1.2.0.zip        # Opera package
-├── 📦 PinVault-Pro-Opera-v1.2.0.nex        # Opera NEX format
-├── 📁 screenshots/                          # Preview screenshots
-└── 📄 README.md                             # This file
-```
-
-## 📥 Releases
-
-All extension packages are available in [GitHub Releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases):
-
-### Latest Release: v1.2.0
-- **🦊 Firefox:** [`PinVault-Pro-Firefox-v1.2.0.xpi`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Firefox-v1.2.0.xpi) *(61.4 KB)*
-- **🌐 Edge/Chrome:** [`PinVault-Pro-Edge-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip) *(60.0 KB)*
-- **🔴 Opera:** [`PinVault-Pro-Opera-v1.2.0.zip`](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip) *(60.3 KB)*
-
-### Installation from Releases
-1. **Visit:** [GitHub Releases Page](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
-2. **Download:** The appropriate package for your browser
-3. **Install:** Follow platform-specific installation instructions above
-
-## 🔧 Development
-
-### Prerequisites
-- **Node.js** (for any build tools, optional)
-- **Git** for version control
-- **Browser** with developer mode enabled
-
-### Setup
+### For Developers
 ```bash
-# Clone the repository
+# Clone repository
 git clone https://github.com/inyogeshwar/pinvault-pro-extension.git
 cd pinvault-pro-extension
 
-# For Firefox development
+# Test in Firefox (recommended)
 cd firefox-version
+# Open about:debugging → Load temporary add-on
 
-# For Edge/Chrome development  
+# Test in Chrome/Edge  
 cd edge-version
+# Open chrome://extensions → Load unpacked
 ```
-
-### Testing
-1. **Firefox:**
-   - Open `about:debugging`
-   - Load temporary add-on from `firefox-version/manifest.json`
-
-2. **Edge/Chrome:**
-   - Open Extensions page → Developer mode
-   - Load unpacked from `edge-version/` folder
-
-3. **Opera:**
-   - Open `opera://extensions/` → Developer mode
-   - Load unpacked from `opera-version/` folder
 
 ### Building Packages
 ```bash
-# Create Firefox package
-python create_pinsaver_package.py
-
-# Create Edge package  
-python create_edge_package.py
-
-# Create Opera package
-python create_opera_package.py
+# Build all packages
+python create_pinsaver_package.py  # Firefox
+python create_edge_package.py      # Edge/Chrome  
+python create_opera_package.py     # Opera
 ```
 
-## 🤝 Contributing
-
-We welcome contributions! Please see our [Contributing Guidelines](CONTRIBUTING.md) for details.
-
-### Development Workflow
+### Contributing
 1. **🍴 Fork** the repository
-2. **🌿 Create** a feature branch (`git checkout -b feature/amazing-feature`)
-3. **💻 Commit** your changes (`git commit -m 'Add amazing feature'`)
-4. **📤 Push** to the branch (`git push origin feature/amazing-feature`)
-5. **🔄 Open** a Pull Request
+2. **🌿 Create** feature branch (`git checkout -b feature/amazing-feature`)
+3. **💻 Commit** changes (`git commit -m 'Add amazing feature'`)
+4. **📤 Push** branch (`git push origin feature/amazing-feature`)
+5. **🔄 Open** Pull Request
 
-### Code Style
-- **JavaScript:** ES6+ with async/await
-- **HTML:** Semantic HTML5
-- **CSS:** Modern CSS with custom properties
-- **Comments:** Clear, descriptive comments for complex logic
+## �️ Privacy & Security
 
-## 📋 Permissions Explained
-
-### Firefox Version
-- **`downloads`** - Save images to your computer
-- **`storage`** - Remember your settings and preferences
-- **`contextMenus`** - Right-click menu options
-- **`activeTab`** - Access current Pinterest tab
-- **`tabs`** - Manage extension tabs
-- **`*://*.pinterest.com/*`** - Access Pinterest domains globally
-
-### Edge/Chrome Version
-- **`downloads`** - Save images to your computer
-- **`storage`** - Remember your settings and preferences
-- **`contextMenus`** - Right-click menu options
-- **`activeTab`** - Access current Pinterest tab
-- **`scripting`** - Inject content scripts (Manifest V3)
-- **`sidePanel`** - Modern sidebar interface
-- **`windows`** - Window management
-
-### Opera Version
-- **`downloads`** - Save images to your computer
-- **`storage`** - Remember your settings and preferences
-- **`contextMenus`** - Right-click menu options
-- **`activeTab`** - Access current Pinterest tab
-- **`scripting`** - Inject content scripts (Manifest V3)
-- **`sidePanel`** - Modern sidebar interface
-- **`windows`** - Window management
-
-## 🛡️ Privacy & Security
-
-- **🔒 No Data Collection** - We don't collect or store any personal data
-- **💻 Local Processing** - All image processing happens on your device
-- **🚫 No External Servers** - No data is sent to external servers
-- **🎯 Pinterest Only** - Extension only works on Pinterest domains
+- **🔒 No Data Collection** - Zero tracking, no analytics
+- **💻 Local Processing** - Everything stays on your device  
+- **🚫 No External Servers** - No data sent anywhere
+- **🎯 Pinterest Only** - Works exclusively on Pinterest domains
 - **📝 Open Source** - Full source code available for inspection
 
-## 📄 License
+## 📄 License & Legal
 
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** - see the [LICENSE](LICENSE) file for details.
 
-## 🐛 Bug Reports & Feature Requests
-
-Found a bug or have a feature request? Please create an issue:
-
-1. **🐛 Bug Reports:** [Create Bug Report](https://github.com/inyogeshwar/pinvault-pro-extension/issues/new?template=bug_report.md)
-2. **✨ Feature Requests:** [Request Feature](https://github.com/inyogeshwar/pinvault-pro-extension/issues/new?template=feature_request.md)
-
-## 📞 Support
-
-- **📧 Email:** [yogeshwar853202@outlook.com](mailto:yogeshwar853202@outlook.com)
-- **🐙 GitHub Issues:** [Repository Issues](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
-- **📖 Documentation:** [Wiki](https://github.com/inyogeshwar/pinvault-pro-extension/wiki)
-
-## 🎉 Acknowledgments
-
-- **🎨 UI Inspiration** - Modern glassmorphism design trends
-- **🔧 Pinterest API** - Built to work seamlessly with Pinterest's interface
-- **🌐 Browser APIs** - Leveraging modern extension APIs for optimal performance
-- **👥 Community** - Thanks to all contributors and testers
-
-## 📊 Changelog
-
-### v1.2.0 (2025-06-28)
-- **🎨 Complete Rebranding** - Updated from PinSaver Pro to PinVault Pro
-- **💖 Enhanced Support** - Added Patreon, Ko-fi, and GitHub Sponsors integration
-- **🌐 Multi-Browser Support** - Added Opera support alongside Firefox, Edge, Chrome
-- **📱 Universal Compatibility** - Optimized for all major browsers with proper manifests
-- **🛡️ Privacy Focus** - Enhanced HD Privacy Mode and security features
-- **✨ UI Improvements** - Modern glassmorphism design with better UX
-
-### v1.1.3 (2025-06-26)
-- **🦊 Firefox Support** - Full Firefox desktop and Android compatibility
-- **🌐 Edge Support** - Manifest V3 with modern APIs
-- **✅ Validation** - Zero errors/warnings on Firefox AMO
-- **🎨 UI Updates** - Improved glassmorphism interface
-- **📱 Multi-platform** - Unified experience across browsers
+**Created by:** Yogeshwar Kumar (16-year-old developer from India)  
+**Contact:** [yogeshwar853202@outlook.com](mailto:yogeshwar853202@outlook.com)
 
 ---
 
 <div align="center">
 
-## 🌟 **Support PinVault Pro**
+## � Watch Demo
+
+[![PinVault Pro Demo](https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg)](https://youtu.be/ie2gPVA_SHc)
+
+**🚀 See PinVault Pro in action** - Bulk downloading, auto-scroll, and privacy features
+
+---
+
+## 🖼️ Screenshots
 
 <table>
 <tr>
-<td align="center">
+<td align="center" width="33%">
 
-### 💖 **Support Development**
-[![Patreon](https://img.shields.io/badge/Support-Patreon-FF424D?style=flat&logo=patreon&logoColor=white)](https://patreon.com/inyogeshwar)
-[![Ko-fi](https://img.shields.io/badge/Support-Ko--fi-FF5E5B?style=flat&logo=ko-fi&logoColor=white)](https://ko-fi.com/yogeshwarkumar)
-[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?style=flat&logo=github-sponsors)](https://github.com/sponsors/inyogeshwar)
-
-</td>
-<td align="center">
-
-### 📞 **Get Help**
-[![Email](https://img.shields.io/badge/Email-Support-blue?style=flat&logo=gmail)](mailto:yogeshwar853202@outlook.com)
-[![Issues](https://img.shields.io/badge/GitHub-Issues-red?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
+### � **Modern Interface**
+![Interface](screenshots/screenshot-1.png)
+*Clean popup design*
 
 </td>
-<td align="center">
+<td align="center" width="33%">
 
-### 🚀 **Contribute**
-[![Fork](https://img.shields.io/badge/Fork-Repository-green?style=flat&logo=git)](https://github.com/inyogeshwar/pinvault-pro-extension/fork)
-[![Star](https://img.shields.io/badge/Star-Repository-yellow?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension)
+### 🎨 **Bulk Selection**  
+![Selection](screenshots/screenshot-2.png)
+*Checkbox overlays*
 
 </td>
-<td align="center">
+<td align="center" width="33%">
 
-### � **Follow Updates**
-[![Release](https://img.shields.io/badge/Watch-Releases-purple?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
-[![Wiki](https://img.shields.io/badge/Read-Wiki-blue?style=flat&logo=wikipedia)](https://github.com/inyogeshwar/pinvault-pro-extension/wiki)
+### 🚀 **Download Progress**
+![Progress](screenshots/screenshot-3.png)
+*Real-time status*
 
 </td>
 </tr>
 </table>
 
-### 🏆 **Made with ❤️ for the Pinterest Community**
+![Complete Overview](screenshots/overview.png)
 
-**PinVault Pro** - Professional Pinterest bulk downloading with AI technology
+---
+
+## 🌟 Support This Project
+
+<table>
+<tr>
+<td align="center" width="25%">
+
+### 💖 **Support Development**
+[![GitHub Sponsor](https://img.shields.io/badge/Sponsor-GitHub-EA4AAA?style=flat&logo=github-sponsors)](https://github.com/sponsors/inyogeshwar)
+
+</td>
+<td align="center" width="25%">
+
+### ⭐ **Star Repository**
+[![Star](https://img.shields.io/badge/Star-Repository-yellow?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension)
+
+</td>
+<td align="center" width="25%">
+
+### � **Report Issues**
+[![Issues](https://img.shields.io/badge/Report-Issues-red?style=flat&logo=github)](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
+
+</td>
+<td align="center" width="25%">
+
+### 📧 **Get Support**
+[![Email](https://img.shields.io/badge/Email-Support-blue?style=flat&logo=gmail)](mailto:yogeshwar853202@outlook.com)
+
+</td>
+</tr>
+</table>
+
+---
+
+### 🏆 **Made with ❤️ by Yogeshwar Kumar**
+
+**16-year-old developer** • **Mozilla Approved** • **Privacy First** • **Forever Free**
 
 [![License](https://img.shields.io/badge/License-MIT-green?style=for-the-badge)](LICENSE)
 [![Version](https://img.shields.io/badge/Version-1.2.0-blue?style=for-the-badge)](https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest)
 
-*Transform your Pinterest experience with intelligent bulk downloading*
+*Download Pinterest images instantly - Simple, fast, and 100% secure*
 
 </div>

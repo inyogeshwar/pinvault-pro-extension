@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PinVault Pro - Universal Pinterest Downloader (100% Browser Coverage)</title>
-    <meta name="description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology. Officially available on Mozilla Add-ons store! Works on ALL browsers - 100% market coverage including Chrome, Firefox, Edge, Opera, Brave, Vivaldi, and 50+ more!">
-    <meta name="keywords" content="Pinterest downloader, bulk image download, Pinterest extension, image saver, Pinterest tool, all browsers, universal compatibility">
+    <title>PinVault Pro - Download Pinterest Images Instantly</title>
+    <meta name="description" content="Download Pinterest images effortlessly with PinVault Pro. Available on Firefox & Edge stores. Simple, fast, and 100% secure.">
+    <meta name="keywords" content="Pinterest downloader, bulk image download, Pinterest extension, image saver, Pinterest tool">
     <meta name="author" content="Yogeshwar Kumar">
     
     <!-- Open Graph / Social Media -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="PinVault Pro - Universal Pinterest Image Downloader (100% Browser Coverage)">
-    <meta property="og:description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology. Works on ALL browsers - 100% market coverage!">
+    <meta property="og:title" content="PinVault Pro - Download Pinterest Images Instantly">
+    <meta property="og:description" content="Download Pinterest images effortlessly. Available on Firefox & Edge stores.">
     <meta property="og:image" content="https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png">
     <meta property="og:url" content="https://inyogeshwar.github.io/pinvault-pro-extension/">
     
     <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="PinVault Pro - Universal Pinterest Downloader (100% Browser Coverage)">
-    <meta name="twitter:description" content="Professional bulk image downloading tool for Pinterest with AI-powered technology. Works on ALL browsers!">
+    <meta name="twitter:title" content="PinVault Pro - Download Pinterest Images">
+    <meta name="twitter:description" content="Download Pinterest images effortlessly. Simple, fast, and secure.">
     <meta name="twitter:image" content="https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png">
     
     <!-- Favicon -->
@@ -33,7 +33,7 @@
         }
         
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
             line-height: 1.6;
             color: #333;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -69,7 +69,7 @@
             align-items: center;
             color: white;
             font-size: 1.5rem;
-            font-weight: bold;
+            font-weight: 700;
             text-decoration: none;
         }
         
@@ -77,6 +77,7 @@
             width: 32px;
             height: 32px;
             margin-right: 10px;
+            border-radius: 6px;
         }
         
         .nav-links {
@@ -91,6 +92,7 @@
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s ease;
+            font-size: 0.95rem;
         }
         
         .nav-links a:hover {
@@ -100,24 +102,66 @@
         /* Hero Section */
         .hero {
             text-align: center;
-            padding: 4rem 0;
+            padding: 4rem 0 2rem 0;
             color: white;
         }
         
         .hero h1 {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
             text-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .hero p {
-            font-size: 1.25rem;
+            font-size: 1.4rem;
             margin-bottom: 2rem;
-            opacity: 0.9;
+            opacity: 0.95;
             max-width: 600px;
             margin-left: auto;
             margin-right: auto;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            font-weight: 400;
+        }
+        
+        .store-badges {
+            margin: 2rem 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 25px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: transform 0.2s ease;
+        }
+        
+        .badge:hover {
+            transform: translateY(-2px);
+        }
+        
+        .badge img {
+            width: 18px;
+            height: 18px;
+        }
+        
+        .badge span {
+            color: white;
+            font-weight: 600;
+            font-size: 0.85rem;
         }
         
         .cta-buttons {
@@ -163,13 +207,39 @@
             transform: translateY(-2px);
         }
         
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .stat {
+            text-align: center;
+            color: white;
+        }
+        
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            display: block;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.85;
+            font-weight: 500;
+        }
+        
         /* Video Section */
         .video-section {
             margin: 3rem 0;
         }
         
         .video-container {
-            position: relative;
             background: rgba(255, 255, 255, 0.1);
             backdrop-filter: blur(10px);
             border-radius: 20px;
@@ -180,7 +250,7 @@
         
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            padding-bottom: 56.25%;
             height: 0;
             overflow: hidden;
             border-radius: 15px;
@@ -208,15 +278,22 @@
         .features h2 {
             text-align: center;
             font-size: 2.5rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        .features-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            margin-bottom: 3rem;
+            opacity: 0.9;
         }
         
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
-            margin-top: 2rem;
         }
         
         .feature {
@@ -225,6 +302,7 @@
             border-radius: 15px;
             text-align: center;
             transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .feature:hover {
@@ -237,8 +315,15 @@
         }
         
         .feature h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
+            font-weight: 600;
+        }
+        
+        .feature p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            line-height: 1.5;
         }
         
         /* Browser Support */
@@ -249,9 +334,16 @@
         }
         
         .browser-support h2 {
-            font-size: 2rem;
-            margin-bottom: 2rem;
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
+        }
+        
+        .browser-support-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 2.5rem;
+            opacity: 0.9;
         }
         
         .browsers {
@@ -269,6 +361,7 @@
             text-align: center;
             min-width: 120px;
             transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         .browser:hover {
@@ -278,8 +371,8 @@
         .browser-icon {
             width: 48px;
             height: 48px;
-            margin-bottom: 0.5rem;
-            display: inline-block;
+            margin: 0 auto 0.5rem auto;
+            display: block;
         }
         
         .browser-icon img {
@@ -288,19 +381,14 @@
             object-fit: contain;
         }
         
-        /* Button Icons */
-        .btn-icon {
-            width: 20px;
-            height: 20px;
-            margin-right: 8px;
-            display: inline-block;
-            vertical-align: middle;
+        .browser-name {
+            font-weight: 600;
+            margin-bottom: 0.3rem;
         }
         
-        .btn-icon img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+        .browser-status {
+            font-size: 0.8rem;
+            opacity: 0.8;
         }
         
         /* Download Section */
@@ -318,11 +406,12 @@
             font-size: 2.5rem;
             margin-bottom: 1rem;
             text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            font-weight: 700;
         }
         
         .download-section p {
             font-size: 1.2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
             opacity: 0.9;
         }
         
@@ -331,6 +420,20 @@
             gap: 1rem;
             justify-content: center;
             flex-wrap: wrap;
+        }
+        
+        .btn-icon {
+            width: 20px;
+            height: 20px;
+            margin-right: 8px;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .btn-icon img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
         }
         
         /* Footer */
@@ -354,45 +457,26 @@
             color: white;
             text-decoration: none;
             transition: opacity 0.3s ease;
+            font-size: 0.95rem;
         }
         
         .footer-links a:hover {
             opacity: 0.8;
         }
         
-        /* Stats */
-        .stats {
-            display: flex;
-            justify-content: center;
-            gap: 3rem;
-            margin: 2rem 0;
-            flex-wrap: wrap;
-        }
-        
-        .stat {
-            text-align: center;
-            color: white;
-        }
-        
-        .stat-number {
-            font-size: 2rem;
-            font-weight: bold;
-            display: block;
-        }
-        
-        .stat-label {
-            font-size: 0.9rem;
+        .footer p {
+            margin: 0.5rem 0;
             opacity: 0.8;
         }
         
         /* Responsive */
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.5rem;
             }
             
             .hero p {
-                font-size: 1rem;
+                font-size: 1.1rem;
             }
             
             .cta-buttons {
@@ -412,6 +496,30 @@
             
             .stats {
                 gap: 2rem;
+            }
+            
+            .browsers {
+                gap: 1.5rem;
+            }
+            
+            .download-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .store-badges {
+                flex-direction: column;
+                gap: 10px;
             }
         }
     </style>
@@ -438,33 +546,39 @@
     <section class="hero">
         <div class="container">
             <h1>PinVault Pro</h1>
-            <p>Professional bulk image downloading tool for Pinterest with AI-powered technology<br>
-            <strong>✨ Works on ALL browsers - 100% market coverage!</strong></p>
+            <p>Download Pinterest images instantly.<br>
+            <strong>Simple. Fast. Free forever.</strong></p>
             
-            <!-- Mozilla Approval Badge -->
-            <div style="margin: 1.5rem 0; display: flex; justify-content: center; align-items: center; gap: 10px; background: rgba(255, 255, 255, 0.1); padding: 10px 20px; border-radius: 25px; backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.2); max-width: 350px; margin-left: auto; margin-right: auto;">
-                <img src="icons/firefox.svg" alt="Firefox" style="width: 20px; height: 20px;" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg';">
-                <span style="color: #4CAF50; font-weight: 600; font-size: 0.9rem;">✅ Officially Approved by Mozilla</span>
+            <!-- Store Badges -->
+            <div class="store-badges">
+                <div class="badge">
+                    <img src="icons/firefox.svg" alt="Firefox">
+                    <span>Firefox Store</span>
+                </div>
+                <div class="badge">
+                    <img src="icons/edge.svg" alt="Edge">
+                    <span>Edge Store</span>
+                </div>
             </div>
             
             <div class="cta-buttons">
-                <a href="#install" class="btn btn-primary">Install Extension</a>
+                <a href="#install" class="btn btn-primary">Get Extension</a>
                 <a href="https://youtu.be/ie2gPVA_SHc" target="_blank" class="btn btn-secondary">Watch Demo</a>
             </div>
             
-            <!-- Stats -->
+            <!-- Simple Stats -->
             <div class="stats">
                 <div class="stat">
-                    <span class="stat-number">10K+</span>
-                    <span class="stat-label">Downloads</span>
+                    <span class="stat-number">5K+</span>
+                    <span class="stat-label">Happy Users</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">50+</span>
+                    <span class="stat-number">4</span>
                     <span class="stat-label">Browsers</span>
                 </div>
                 <div class="stat">
-                    <span class="stat-number">100%</span>
-                    <span class="stat-label">Market Coverage</span>
+                    <span class="stat-number">Free</span>
+                    <span class="stat-label">Forever</span>
                 </div>
             </div>
         </div>
@@ -491,26 +605,27 @@
     <section class="features" id="features">
         <div class="container">
             <h2>Why Choose PinVault Pro?</h2>
+            <p class="features-subtitle">The easiest way to save Pinterest images</p>
             <div class="features-grid">
                 <div class="feature">
-                    <div class="feature-icon">🖼️</div>
-                    <h3>Smart Selection</h3>
-                    <p>Visual checkbox overlays on Pinterest images with bulk selection and real-time counter</p>
-                </div>
-                <div class="feature">
-                    <div class="feature-icon">🤖</div>
-                    <h3>AI-Powered</h3>
-                    <p>Auto-scroll with smart content detection and automatic rate limiting</p>
+                    <div class="feature-icon">⚡</div>
+                    <h3>Lightning Fast</h3>
+                    <p>Download multiple images in seconds. Just click and save.</p>
                 </div>
                 <div class="feature">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Privacy First</h3>
-                    <p>HD Privacy Mode for secure downloading. No data collection or external servers</p>
+                    <h3>100% Safe</h3>
+                    <p>No data collection. Your privacy is guaranteed.</p>
                 </div>
                 <div class="feature">
-                    <div class="feature-icon">🎨</div>
-                    <h3>Modern Interface</h3>
-                    <p>Glassmorphism design with dual interface: Popup + Sidebar for optimal workflow</p>
+                    <div class="feature-icon">🎯</div>
+                    <h3>Super Simple</h3>
+                    <p>Click checkboxes, hit download. Anyone can use it.</p>
+                </div>
+                <div class="feature">
+                    <div class="feature-icon">🆓</div>
+                    <h3>Always Free</h3>
+                    <p>No subscriptions, no limits. Free forever.</p>
                 </div>
             </div>
         </div>
@@ -519,58 +634,37 @@
     <!-- Browser Support -->
     <section class="browser-support">
         <div class="container">
-            <h2>100% Browser Market Coverage</h2>
-            <p style="text-align: center; margin-bottom: 2rem; color: #666; font-size: 1.1rem;">
-                Works on ALL major browsers + 50+ Chromium-based browsers automatically!
-            </p>
+            <h2>Works Everywhere</h2>
+            <p class="browser-support-subtitle">Available on all major browsers</p>
             <div class="browsers">
-                <!-- Primary Browsers -->
                 <div class="browser">
                     <div class="browser-icon">
-                        <img src="icons/firefox.svg" alt="Firefox" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg';">
+                        <img src="icons/firefox.svg" alt="Firefox">
                     </div>
-                    <div>Firefox</div>
-                    <small style="color: #666;">8% Market</small>
-                </div>
-                <div class="browser">
-                    <div class="browser-icon">
-                        <img src="icons/chrome.svg" alt="Google Chrome" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg';">
-                    </div>
-                    <div>Chrome</div>
-                    <small style="color: #666;">65% Market</small>
+                    <div class="browser-name">Firefox</div>
+                    <div class="browser-status">Official Store</div>
                 </div>
                 <div class="browser">
                     <div class="browser-icon">
-                        <img src="icons/edge.svg" alt="Microsoft Edge" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftedge/microsoftedge-original.svg';">
+                        <img src="icons/edge.svg" alt="Microsoft Edge">
                     </div>
-                    <div>Edge</div>
-                    <small style="color: #666;">13% Market</small>
+                    <div class="browser-name">Edge</div>
+                    <div class="browser-status">Official Store</div>
                 </div>
                 <div class="browser">
                     <div class="browser-icon">
-                        <img src="icons/opera.svg" alt="Opera" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opera/opera-original.svg';">
+                        <img src="icons/chrome.svg" alt="Google Chrome">
                     </div>
-                    <div>Opera</div>
-                    <small style="color: #666;">3% Market</small>
+                    <div class="browser-name">Chrome</div>
+                    <div class="browser-status">Compatible</div>
                 </div>
-            </div>
-            
-            <!-- Auto-Compatible Browsers -->
-            <div style="margin-top: 2rem; text-align: center;">
-                <h3 style="color: #333; margin-bottom: 1rem;">+ Auto-Compatible Browsers</h3>
-                <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 1rem; margin-bottom: 1rem;">
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🦁 Brave</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🌊 Vivaldi</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🔄 Yandex</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">📱 Samsung Internet</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🌐 UC Browser</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🇨🇳 360 Browser</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">🐋 Whale Browser</span>
-                    <span style="background: #f0f0f0; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.9rem;">+50 More</span>
+                <div class="browser">
+                    <div class="browser-icon">
+                        <img src="icons/opera.svg" alt="Opera">
+                    </div>
+                    <div class="browser-name">Opera</div>
+                    <div class="browser-status">Compatible</div>
                 </div>
-                <p style="color: #666; font-size: 0.95rem; font-style: italic;">
-                    All Chromium-based browsers automatically support Chrome Web Store extensions!
-                </p>
             </div>
         </div>
     </section>
@@ -579,32 +673,32 @@
     <section class="download-section" id="install">
         <div class="container">
             <h2>Get Started Today</h2>
-            <p>Choose your browser and start downloading Pinterest images professionally</p>
+            <p>Choose your browser and start downloading Pinterest images</p>
             
             <div class="download-buttons">
                 <a href="https://addons.mozilla.org/addon/pinvault-pro/" class="btn btn-primary" target="_blank">
                     <span class="btn-icon">
-                        <img src="icons/firefox.svg" alt="Firefox" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firefox/firefox-original.svg';">
+                        <img src="icons/firefox.svg" alt="Firefox">
                     </span>
-                    Firefox Extension
+                    Firefox Store
+                </a>
+                <a href="https://microsoftedge.microsoft.com/addons/detail/iijgkgkhgokhbajjppnnejepnmlakbgb" class="btn btn-primary" target="_blank">
+                    <span class="btn-icon">
+                        <img src="icons/edge.svg" alt="Microsoft Edge">
+                    </span>
+                    Edge Store
                 </a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip" class="btn btn-primary">
                     <span class="btn-icon">
-                        <img src="icons/chrome.svg" alt="Google Chrome" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/chrome/chrome-original.svg';">
+                        <img src="icons/chrome.svg" alt="Google Chrome">
                     </span>
-                    Chrome Extension
-                </a>
-                <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Edge-v1.2.0.zip" class="btn btn-primary">
-                    <span class="btn-icon">
-                        <img src="icons/edge.svg" alt="Microsoft Edge" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/microsoftedge/microsoftedge-original.svg';">
-                    </span>
-                    Edge Extension
+                    Chrome (Manual)
                 </a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest/download/PinVault-Pro-Opera-v1.2.0.zip" class="btn btn-primary">
                     <span class="btn-icon">
-                        <img src="icons/opera.svg" alt="Opera" onerror="this.onerror=null; this.src='https://cdn.jsdelivr.net/gh/devicons/devicon/icons/opera/opera-original.svg';">
+                        <img src="icons/opera.svg" alt="Opera">
                     </span>
-                    Opera Extension
+                    Opera (Manual)
                 </a>
             </div>
         </div>
@@ -617,10 +711,9 @@
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension" target="_blank">GitHub</a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/issues" target="_blank">Support</a>
                 <a href="https://github.com/inyogeshwar/pinvault-pro-extension/blob/main/LICENSE" target="_blank">License</a>
-                <a href="https://patreon.com/inyogeshwar" target="_blank">Donate</a>
                 <a href="mailto:yogeshwar853202@outlook.com">Contact</a>
             </div>
-            <p>&copy; 2025 PinVault Pro. Made with ❤️ for the Pinterest Community.</p>
+            <p>&copy; 2025 PinVault Pro. Made with ❤️ for Pinterest lovers by Yogeshwar Kumar.</p>
             <p>Open Source • MIT License • Privacy First</p>
         </div>
     </footer>
@@ -631,7 +724,7 @@
         "@context": "https://schema.org",
         "@type": "SoftwareApplication",
         "name": "PinVault Pro",
-        "description": "Professional bulk image downloading tool for Pinterest with AI-powered technology",
+        "description": "Download Pinterest images instantly with our simple browser extension",
         "url": "https://inyogeshwar.github.io/pinvault-pro-extension/",
         "downloadUrl": "https://github.com/inyogeshwar/pinvault-pro-extension/releases/latest",
         "author": {
@@ -642,17 +735,17 @@
         "applicationCategory": "BrowserApplication",
         "operatingSystem": "Windows, macOS, Linux",
         "softwareVersion": "1.2.0",
-        "datePublished": "2025-06-28",
+        "datePublished": "2025-01-25",
         "license": "https://opensource.org/licenses/MIT",
         "screenshot": "https://inyogeshwar.github.io/pinvault-pro-extension/screenshots/overview.png",
         "video": {
             "@type": "VideoObject",
             "name": "PinVault Pro Demo",
-            "description": "See PinVault Pro in action - Pinterest bulk image downloader",
+            "description": "See PinVault Pro in action",
             "thumbnailUrl": "https://img.youtube.com/vi/ie2gPVA_SHc/maxresdefault.jpg",
             "contentUrl": "https://youtu.be/ie2gPVA_SHc",
             "embedUrl": "https://www.youtube.com/embed/ie2gPVA_SHc",
-            "uploadDate": "2025-06-28"
+            "uploadDate": "2025-01-25"
         },
         "offers": {
             "@type": "Offer",
@@ -668,15 +761,6 @@
             "worstRating": "1"
         }
     }
-    </script>
-
-    <!-- Google Analytics (Replace with your tracking ID) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=GA_TRACKING_ID"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag(){dataLayer.push(arguments);}
-        gtag('js', new Date());
-        gtag('config', 'GA_TRACKING_ID');
     </script>
 </body>
 </html>
