@@ -1,14 +1,14 @@
-// Content script for PinSaver Pro Extension (Firefox Version)
-console.log('PinSaver Pro content script: Starting to load...');
+// Content script for PinVault Pro Extension (Firefox Version)
+console.log('PinVault Pro content script: Starting to load...');
 
 // Prevent multiple instances
-if (window.pinSaverContentLoaded) {
-    console.log('PinSaver Pro content script already loaded, skipping...');
+if (window.pinVaultContentLoaded) {
+    console.log('PinVault Pro content script already loaded, skipping...');
 } else {
-    window.pinSaverContentLoaded = true;
-    console.log('PinSaver Pro content script loading for first time...');
+    window.pinVaultContentLoaded = true;
+    console.log('PinVault Pro content script loading for first time...');
 
-class PinSaverContent {
+class PinVaultContent {
     constructor() {
         this.selectedImages = new Set();
         this.imageElements = new Map();
@@ -21,32 +21,32 @@ class PinSaverContent {
         this.maxScrollAttempts = 5;
         
         // Make sure we're available on window immediately
-        window.pinSaverContent = this;
+        window.pinVaultContent = this;
         
         this.init();
     }
 
     init() {
-        console.log('PinSaver Pro content script initializing...');
+        console.log('PinVault Pro content script initializing...');
         try {
             this.injectStyles();
             this.setupMessageListener();
             this.scanForImages();
             this.setupMutationObserver();
             this.setupContextMenu();
-            console.log('PinSaver Pro content script initialized successfully');
+            console.log('PinVault Pro content script initialized successfully');
         } catch (error) {
-            console.error('PinSaver Pro content script initialization error:', error);
+            console.error('PinVault Pro content script initialization error:', error);
         }
     }
 
     injectStyles() {
-        if (document.getElementById('pinsaver-styles')) return;
+        if (document.getElementById('pinvault-styles')) return;
 
         const style = document.createElement('style');
-        style.id = 'pinsaver-styles';
+        style.id = 'pinvault-styles';
         style.textContent = `
-            .pinsaver-overlay {
+            .pinvault-overlay {
                 position: absolute;
                 top: 8px;
                 right: 8px;
@@ -64,38 +64,38 @@ class PinSaverContent {
                 user-select: none;
             }
 
-            .pinsaver-overlay:hover {
+            .pinvault-overlay:hover {
                 background: rgba(0, 0, 0, 0.9);
                 transform: scale(1.1);
             }
 
-            .pinsaver-overlay.selected {
+            .pinvault-overlay.selected {
                 background: rgba(0, 123, 255, 0.9);
                 border-color: rgba(255, 255, 255, 0.8);
             }
 
-            .pinsaver-overlay.success {
+            .pinvault-overlay.success {
                 background: rgba(40, 167, 69, 0.9);
                 border-color: rgba(255, 255, 255, 0.8);
             }
 
-            .pinsaver-overlay.error {
+            .pinvault-overlay.error {
                 background: rgba(220, 53, 69, 0.9);
                 border-color: rgba(255, 255, 255, 0.8);
             }
 
-            .pinsaver-checkbox {
+            .pinvault-checkbox {
                 color: white;
                 font-size: 14px;
                 font-weight: bold;
                 pointer-events: none;
             }
 
-            .pinsaver-image-container {
+            .pinvault-image-container {
                 position: relative;
             }
 
-            .pinsaver-loading {
+            .pinvault-loading {
                 position: fixed;
                 top: 20px;
                 right: 20px;
@@ -110,12 +110,12 @@ class PinSaverContent {
                 transition: all 0.3s ease;
             }
 
-            .pinsaver-loading.hidden {
+            .pinvault-loading.hidden {
                 opacity: 0;
                 transform: translateY(-20px);
             }
 
-            .pinsaver-scroll-indicator {
+            .pinvault-scroll-indicator {
                 position: fixed;
                 bottom: 20px;
                 right: 20px;
@@ -140,9 +140,9 @@ class PinSaverContent {
     }
 
     setupMessageListener() {
-        console.log('PinSaver Pro: Setting up message listener...');
+        console.log('pinvault Pro: Setting up message listener...');
         browser.runtime.onMessage.addListener((request, sender) => {
-            console.log('PinSaver Pro: Received message:', request);
+            console.log('pinvault Pro: Received message:', request);
             return new Promise((resolve) => {
                 try {
                     switch (request.action) {
@@ -204,7 +204,7 @@ class PinSaverContent {
     }
 
     scanForImages() {
-        console.log('PinSaver Pro: Scanning for images...');
+        console.log('pinvault Pro: Scanning for images...');
         const beforeCount = this.imageElements.size;
         
         // Pinterest uses various selectors for images
@@ -226,7 +226,7 @@ class PinSaverContent {
         
         // Also scan for any newly loaded images that might not match selectors
         document.querySelectorAll('img').forEach(img => {
-            if (this.isValidPinterestImage(img) && !img.dataset.pinsaverProcessed) {
+            if (this.isValidPinterestImage(img) && !img.dataset.pinvaultProcessed) {
                 this.processImage(img);
             }
         });
@@ -235,22 +235,22 @@ class PinSaverContent {
         const newImages = afterCount - beforeCount;
         
         if (newImages > 0) {
-            console.log(`PinSaver Pro: Found ${newImages} new images. Total: ${afterCount}`);
+            console.log(`pinvault Pro: Found ${newImages} new images. Total: ${afterCount}`);
         }
         
         // Dispatch custom event to notify about image count update
-        window.dispatchEvent(new CustomEvent('pinsaverImagesUpdated', {
+        window.dispatchEvent(new CustomEvent('pinvaultImagesUpdated', {
             detail: { total: afterCount, new: newImages }
         }));
     }
 
     processImage(img) {
         // Skip if already processed or not a valid Pinterest image
-        if (img.dataset.pinsaverProcessed || !this.isValidPinterestImage(img)) {
+        if (img.dataset.pinvaultProcessed || !this.isValidPinterestImage(img)) {
             return;
         }
 
-        img.dataset.pinsaverProcessed = 'true';
+        img.dataset.pinvaultProcessed = 'true';
         
         // Generate unique ID for the image
         const imageId = this.generateImageId(img);
@@ -263,7 +263,7 @@ class PinSaverContent {
         if (getComputedStyle(container).position === 'static') {
             container.style.position = 'relative';
         }
-        container.classList.add('pinsaver-image-container');
+        container.classList.add('pinvault-image-container');
 
         // Create overlay
         const overlay = this.createOverlay(imageId, img);
@@ -333,11 +333,11 @@ class PinSaverContent {
 
     createOverlay(imageId, img) {
         const overlay = document.createElement('div');
-        overlay.className = 'pinsaver-overlay';
+        overlay.className = 'pinvault-overlay';
         overlay.dataset.imageId = imageId;
         
         const checkbox = document.createElement('span');
-        checkbox.className = 'pinsaver-checkbox';
+        checkbox.className = 'pinvault-checkbox';
         checkbox.textContent = '☐';
         
         overlay.appendChild(checkbox);
@@ -424,13 +424,13 @@ class PinSaverContent {
             // Deselect
             this.selectedImages.delete(imageId);
             overlay.classList.remove('selected');
-            imageData.element.setAttribute('data-pinsaver-selected', 'false');
+            imageData.element.setAttribute('data-pinvault-selected', 'false');
             checkbox.textContent = '☐';
         } else {
             // Select
             this.selectedImages.add(imageId);
             overlay.classList.add('selected');
-            imageData.element.setAttribute('data-pinsaver-selected', 'true');
+            imageData.element.setAttribute('data-pinvault-selected', 'true');
             checkbox.textContent = '☑';
         }
     }
@@ -440,8 +440,8 @@ class PinSaverContent {
             if (!this.selectedImages.has(imageId)) {
                 this.selectedImages.add(imageId);
                 imageData.overlay.classList.add('selected');
-                imageData.element.setAttribute('data-pinsaver-selected', 'true');
-                imageData.overlay.querySelector('.pinsaver-checkbox').textContent = '☑';
+                imageData.element.setAttribute('data-pinvault-selected', 'true');
+                imageData.overlay.querySelector('.pinvault-checkbox').textContent = '☑';
             }
         });
     }
@@ -451,8 +451,8 @@ class PinSaverContent {
             const imageData = this.imageElements.get(imageId);
             if (imageData) {
                 imageData.overlay.classList.remove('selected', 'success', 'error');
-                imageData.element.setAttribute('data-pinsaver-selected', 'false');
-                imageData.overlay.querySelector('.pinsaver-checkbox').textContent = '☐';
+                imageData.element.setAttribute('data-pinvault-selected', 'false');
+                imageData.overlay.querySelector('.pinvault-checkbox').textContent = '☐';
             }
         });
         this.selectedImages.clear();
@@ -529,18 +529,18 @@ class PinSaverContent {
     }
 
     showScrollIndicator() {
-        const existing = document.getElementById('pinsaver-scroll-indicator');
+        const existing = document.getElementById('pinvault-scroll-indicator');
         if (existing) existing.remove();
 
         const indicator = document.createElement('div');
-        indicator.id = 'pinsaver-scroll-indicator';
-        indicator.className = 'pinsaver-scroll-indicator';
+        indicator.id = 'pinvault-scroll-indicator';
+        indicator.className = 'pinvault-scroll-indicator';
         indicator.textContent = '🔄 Auto-scrolling for more images...';
         document.body.appendChild(indicator);
     }
 
     hideScrollIndicator() {
-        const indicator = document.getElementById('pinsaver-scroll-indicator');
+        const indicator = document.getElementById('pinvault-scroll-indicator');
         if (indicator) {
             indicator.remove();
         }
@@ -619,7 +619,7 @@ class PinSaverContent {
         if (!imageData) return;
 
         const overlay = imageData.overlay;
-        const checkbox = overlay.querySelector('.pinsaver-checkbox');
+        const checkbox = overlay.querySelector('.pinvault-checkbox');
 
         // Remove previous status classes
         overlay.classList.remove('success', 'error');
@@ -642,10 +642,10 @@ class PinSaverContent {
 // Initialize content script when DOM is ready
 if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', () => {
-        window.pinSaverContent = new PinSaverContent();
+        window.pinVaultContent = new PinVaultContent();
     });
 } else {
-    window.pinSaverContent = new PinSaverContent();
+    window.pinVaultContent = new PinVaultContent();
 }
 
 } // End of prevention check
