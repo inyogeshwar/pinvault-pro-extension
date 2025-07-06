@@ -109,7 +109,7 @@
 
 ## 📄 License
 
-MIT License - Feel free to use, modify, and distribute.
+MIT License - Feel free to use, modify.
 
 ## 👨‍💻 Developer
 
