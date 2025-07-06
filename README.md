@@ -102,7 +102,7 @@
 
 ## 🔗 Links
 
-- **🌐 Website:** [https://jayguptaji.github.io/pinvault-pro-extension/](https://jayguptaji.github.io/pinvault-pro-extension/)
+- **🌐 Website:** [https://jayguptaji.github.io/pinvault-pro-extension/](https://inyogeshwar.github.io/pinvault-pro-extension/)
 - **📦 Releases:** [https://github.com/inyogeshwar/pinvault-pro-extension/releases](https://github.com/inyogeshwar/pinvault-pro-extension/releases)
 - **🐛 Issues:** [https://github.com/inyogeshwar/pinvault-pro-extension/issues](https://github.com/inyogeshwar/pinvault-pro-extension/issues)
 - **💬 Support:** [yogeshwar853202@outlook.com](mailto:yogeshwar853202@outlook.com)
