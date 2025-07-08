@@ -1,13 +1,20 @@
-# Contributing to PinVault Pro Extension
+# Contributing to PinVault Pro
 
-Thank you for your interest in contributing! We welcome contributions of all kinds, including bug reports, feature requests, documentation improvements, and code enhancements.
+Thanks for your interest in contributing 🎉
 
-## Getting Started
+## How to Contribute
 
-1. Fork the repository:  
-   https://github.com/inyogeshwar/pinvault-pro-extension/fork
-2. Clone your fork:  
-   git clone https://github.com/your-username/pinvault-pro-extension.git
-3. Install dependencies:  
-   ```bash
-   npm install
+1. Fork the repository
+2. Clone your fork: `git clone https://github.com/inyogeshwar/pinvault-pro-extension.git`
+3. Create your feature branch: `git checkout -b feature-name`
+4. Commit your changes: `git commit -m "Add feature"`
+5. Push to the branch: `git push origin feature-name`
+6. Open a Pull Request
+
+## Guidelines
+
+- Follow code style and existing structure
+- Update README.md if needed
+- Test your changes thoroughly
+
+Looking forward to your awesome contributions ✨
