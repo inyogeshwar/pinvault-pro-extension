@@ -1,12 +1,19 @@
-// Sidebar JavaScript for PinVault Pro
+// Sidebar JavaScript for PinVault Pro - Modern Rewrite
 
 class PinVaultProSidebar {
     constructor() {
+        this.downloadQueue = [];
+        this.isQueuePaused = false;
+        this.selectedImages = new Set();
+        this.previewImages = new Map();
+        this.currentTheme = 'auto';
         this.init();
     }
 
     init() {
+        this.setupTheme();
         this.setupEventListeners();
+        this.setupKeyboardShortcuts();
         this.checkPinterestStatus();
         this.loadSettings();
         
@@ -36,9 +43,14 @@ class PinVaultProSidebar {
             this.startDownload();
         });
 
+        // Theme toggle
+        document.getElementById('themeToggle').addEventListener('click', () => {
+            this.toggleTheme();
+        });
+
         // Settings
-        document.getElementById('highQuality').addEventListener('change', (e) => {
-            this.saveSetting('highQuality', e.target.checked);
+        document.getElementById('formatSelect').addEventListener('change', (e) => {
+            this.saveSetting('formatQuality', e.target.value);
         });
 
         document.getElementById('privacyMode').addEventListener('change', (e) => {
@@ -47,6 +59,20 @@ class PinVaultProSidebar {
 
         document.getElementById('autoScrollToggle').addEventListener('change', (e) => {
             this.toggleAutoScroll(e.target.checked);
+        });
+
+        document.getElementById('showPreview').addEventListener('change', (e) => {
+            this.togglePreviewGrid(e.target.checked);
+            this.saveSetting('showPreview', e.target.checked);
+        });
+
+        // Queue controls
+        document.getElementById('pauseResumeBtn')?.addEventListener('click', () => {
+            this.toggleDownloadQueue();
+        });
+
+        document.getElementById('clearQueueBtn')?.addEventListener('click', () => {
+            this.clearDownloadQueue();
         });
 
         // Cancel download
@@ -69,13 +95,212 @@ class PinVaultProSidebar {
 
         document.getElementById('feedbackLink').addEventListener('click', (e) => {
             e.preventDefault();
-            // Open feedback form or email
             chrome.tabs.create({ url: 'mailto:yogeshwar853202@outlook.com?subject=PinVault%20Pro%20Feedback&body=Hi%20Yogeshwar,%0A%0ARegarding%20PinVault%20Pro%20extension:%0A%0A' });
         });
 
         document.getElementById('githubLink').addEventListener('click', (e) => {
             e.preventDefault();
             chrome.tabs.create({ url: 'https://github.com/inyogeshwar/pinvault-pro-extension' });
+        });
+    }
+
+    setupTheme() {
+        const savedTheme = localStorage.getItem('pinvault-theme') || 'auto';
+        this.setTheme(savedTheme);
+    }
+
+    setTheme(theme) {
+        this.currentTheme = theme;
+        document.body.setAttribute('data-theme', theme);
+        localStorage.setItem('pinvault-theme', theme);
+        
+        const themeIcon = document.querySelector('.theme-icon');
+        if (themeIcon) {
+            switch (theme) {
+                case 'light':
+                    themeIcon.textContent = '☀️';
+                    break;
+                case 'dark':
+                    themeIcon.textContent = '🌙';
+                    break;
+                case 'auto':
+                default:
+                    themeIcon.textContent = '🌓';
+                    break;
+            }
+        }
+    }
+
+    toggleTheme() {
+        const themes = ['auto', 'light', 'dark'];
+        const currentIndex = themes.indexOf(this.currentTheme);
+        const nextIndex = (currentIndex + 1) % themes.length;
+        const nextTheme = themes[nextIndex];
+        
+        this.setTheme(nextTheme);
+        this.showToast(`Theme changed to ${nextTheme}`, 'info');
+    }
+
+    setupKeyboardShortcuts() {
+        document.addEventListener('keydown', (e) => {
+            // Ctrl+Shift+P to toggle sidebar (this will close it since it's already open)
+            if (e.ctrlKey && e.shiftKey && e.key === 'P') {
+                e.preventDefault();
+                this.showToast('Use Ctrl+Shift+P from any Pinterest page to toggle sidebar', 'info');
+            }
+        });
+    }
+
+    showToast(message, type = 'info', duration = 4000) {
+        const toastContainer = document.getElementById('toastContainer');
+        const toast = document.createElement('div');
+        toast.className = `toast ${type}`;
+        
+        toast.innerHTML = `
+            <span>${message}</span>
+            <button class="toast-close" aria-label="Close notification">&times;</button>
+        `;
+        
+        toastContainer.appendChild(toast);
+        
+        // Close button functionality
+        const closeBtn = toast.querySelector('.toast-close');
+        closeBtn.addEventListener('click', () => {
+            this.removeToast(toast);
+        });
+        
+        // Auto remove after duration
+        setTimeout(() => {
+            this.removeToast(toast);
+        }, duration);
+    }
+
+    removeToast(toast) {
+        if (toast && toast.parentNode) {
+            toast.classList.add('hiding');
+            setTimeout(() => {
+                if (toast.parentNode) {
+                    toast.parentNode.removeChild(toast);
+                }
+            }, 300);
+        }
+    }
+
+    togglePreviewGrid(show) {
+        const previewSection = document.getElementById('previewSection');
+        if (previewSection) {
+            previewSection.style.display = show ? 'block' : 'none';
+        }
+        
+        if (show) {
+            this.updatePreviewGrid();
+        }
+    }
+
+    updatePreviewGrid() {
+        const previewGrid = document.getElementById('previewGrid');
+        if (!previewGrid) return;
+        
+        if (this.selectedImages.size === 0) {
+            previewGrid.innerHTML = `
+                <div class="preview-placeholder">
+                    <div class="preview-icon" aria-hidden="true">🖼️</div>
+                    <p>Select images to see preview</p>
+                </div>
+            `;
+            previewGrid.setAttribute('aria-label', 'No images selected for preview');
+            return;
+        }
+        
+        previewGrid.innerHTML = '';
+        previewGrid.setAttribute('aria-label', `Preview grid showing ${this.selectedImages.size} selected images`);
+        
+        let itemIndex = 0;
+        this.previewImages.forEach((imageData, imageId) => {
+            if (this.selectedImages.has(imageId)) {
+                const previewItem = document.createElement('div');
+                previewItem.className = 'preview-item';
+                previewItem.setAttribute('role', 'gridcell');
+                previewItem.setAttribute('tabindex', '0');
+                previewItem.setAttribute('aria-label', `Selected image: ${imageData.title || 'Untitled'}`);
+                previewItem.innerHTML = `<img src="${imageData.thumbnail}" alt="${imageData.title || 'Preview'}" loading="lazy">`;
+                
+                // Keyboard navigation
+                previewItem.addEventListener('keydown', (e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        this.showImageDetails(imageData);
+                    }
+                });
+                
+                previewItem.addEventListener('click', () => {
+                    this.showImageDetails(imageData);
+                });
+                
+                previewGrid.appendChild(previewItem);
+                itemIndex++;
+            }
+        });
+    }
+
+    showImageDetails(imageData) {
+        this.showToast(`Image: ${imageData.title || 'Untitled'}`, 'info');
+    }
+
+    toggleDownloadQueue() {
+        this.isQueuePaused = !this.isQueuePaused;
+        const btn = document.getElementById('pauseResumeBtn');
+        if (btn) {
+            const icon = btn.querySelector('.icon');
+            if (this.isQueuePaused) {
+                icon.textContent = '▶️';
+                btn.innerHTML = btn.innerHTML.replace('Pause Queue', 'Resume Queue');
+                this.showToast('Download queue paused', 'warning');
+            } else {
+                icon.textContent = '⏸️';
+                btn.innerHTML = btn.innerHTML.replace('Resume Queue', 'Pause Queue');
+                this.showToast('Download queue resumed', 'success');
+            }
+        }
+    }
+
+    clearDownloadQueue() {
+        this.downloadQueue = [];
+        this.updateQueueDisplay();
+        this.showToast('Download queue cleared', 'info');
+        
+        // Hide queue section if empty
+        const queueSection = document.getElementById('queueSection');
+        if (queueSection) {
+            queueSection.style.display = 'none';
+        }
+    }
+
+    updateQueueDisplay() {
+        const queueList = document.getElementById('queueList');
+        const queueSection = document.getElementById('queueSection');
+        
+        if (!queueList || !queueSection) return;
+        
+        if (this.downloadQueue.length === 0) {
+            queueSection.style.display = 'none';
+            return;
+        }
+        
+        queueSection.style.display = 'block';
+        queueList.innerHTML = '';
+        queueList.setAttribute('aria-label', `Download queue with ${this.downloadQueue.length} items`);
+        
+        this.downloadQueue.forEach((item, index) => {
+            const queueItem = document.createElement('div');
+            queueItem.className = 'queue-item';
+            queueItem.setAttribute('role', 'listitem');
+            queueItem.setAttribute('aria-label', `Queue item ${index + 1}: ${item.title || `Image ${index + 1}`}, status: ${item.status}`);
+            queueItem.innerHTML = `
+                <div class="queue-item-status ${item.status}" aria-hidden="true"></div>
+                <span>${item.title || `Image ${index + 1}`}</span>
+            `;
+            queueList.appendChild(queueItem);
         });
     }
 
@@ -494,14 +719,18 @@ class PinVaultProSidebar {
 
     showProgress() {
         const progressSection = document.getElementById('progressSection');
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
+        const progressRingFill = document.getElementById('progressRingFill');
+        const progressPercentage = document.getElementById('progressPercentage');
         const progressDetails = document.getElementById('progressDetails');
         
         if (progressSection) progressSection.style.display = 'block';
-        if (progressFill) progressFill.style.width = '0%';
-        if (progressText) progressText.textContent = '0%';
+        if (progressRingFill) {
+            progressRingFill.style.strokeDashoffset = '314'; // Reset to 0%
+        }
+        if (progressPercentage) progressPercentage.textContent = '0%';
         if (progressDetails) progressDetails.textContent = 'Starting download...';
+        
+        this.showToast('Download started', 'info');
     }
 
     hideProgress() {
@@ -510,13 +739,42 @@ class PinVaultProSidebar {
     }
 
     updateProgress(progress, details) {
-        const progressFill = document.getElementById('progressFill');
-        const progressText = document.getElementById('progressText');
+        const progressRingFill = document.getElementById('progressRingFill');
+        const progressPercentage = document.getElementById('progressPercentage');
         const progressDetails = document.getElementById('progressDetails');
+        const progressContainer = document.querySelector('.circular-progress');
         
-        if (progressFill) progressFill.style.width = progress + '%';
-        if (progressText) progressText.textContent = Math.round(progress) + '%';
+        // Calculate stroke-dashoffset for circular progress
+        // Total circumference is approximately 314 (2 * π * r where r = 50)
+        const offset = 314 - (314 * progress / 100);
+        
+        if (progressRingFill) {
+            progressRingFill.style.strokeDashoffset = offset.toString();
+        }
+        if (progressPercentage) progressPercentage.textContent = Math.round(progress) + '%';
         if (progressDetails) progressDetails.textContent = details;
+        
+        // Update accessibility attributes
+        if (progressContainer) {
+            progressContainer.setAttribute('aria-valuenow', Math.round(progress).toString());
+            progressContainer.setAttribute('aria-valuetext', `${Math.round(progress)}% - ${details}`);
+        }
+        
+        // Update queue if downloading
+        if (progress > 0 && progress < 100) {
+            this.updateDownloadQueue(details);
+        }
+    }
+
+    updateDownloadQueue(currentDetails) {
+        // Add current download to queue display
+        if (currentDetails && !this.downloadQueue.find(item => item.title === currentDetails)) {
+            this.downloadQueue.push({
+                title: currentDetails,
+                status: 'downloading'
+            });
+            this.updateQueueDisplay();
+        }
     }
 
     cancelDownload() {
@@ -527,14 +785,27 @@ class PinVaultProSidebar {
     async loadSettings() {
         try {
             const settings = await chrome.storage.sync.get({
-                highQuality: true,
+                formatQuality: 'high',
                 privacyMode: false,
-                autoScroll: false
+                autoScroll: false,
+                showPreview: true
             });
 
-            document.getElementById('highQuality').checked = settings.highQuality !== false;
-            document.getElementById('privacyMode').checked = settings.privacyMode === true;
-            document.getElementById('autoScrollToggle').checked = settings.autoScroll === true;
+            const formatSelect = document.getElementById('formatSelect');
+            if (formatSelect) formatSelect.value = settings.formatQuality || 'high';
+            
+            const privacyMode = document.getElementById('privacyMode');
+            if (privacyMode) privacyMode.checked = settings.privacyMode === true;
+            
+            const autoScrollToggle = document.getElementById('autoScrollToggle');
+            if (autoScrollToggle) autoScrollToggle.checked = settings.autoScroll === true;
+            
+            const showPreview = document.getElementById('showPreview');
+            if (showPreview) {
+                showPreview.checked = settings.showPreview !== false;
+                this.togglePreviewGrid(settings.showPreview !== false);
+            }
+            
         } catch (error) {
             console.error('Error loading settings:', error);
         }
@@ -551,8 +822,9 @@ class PinVaultProSidebar {
     async getSettings() {
         try {
             return await chrome.storage.sync.get({
-                highQuality: true,
+                formatQuality: 'high',
                 privacyMode: false,
+                showPreview: true,
                 filenameFormat: 'title_date',
                 folderOrganization: 'date',
                 customFolder: ''
@@ -560,8 +832,9 @@ class PinVaultProSidebar {
         } catch (error) {
             console.error('Error getting settings:', error);
             return {
-                highQuality: true,
+                formatQuality: 'high',
                 privacyMode: false,
+                showPreview: true,
                 filenameFormat: 'title_date',
                 folderOrganization: 'date',
                 customFolder: ''
@@ -577,9 +850,10 @@ chrome.runtime.onMessage.addListener((message, sender, sendResponse) => {
     } else if (message.action === 'downloadComplete') {
         sidebar.hideProgress();
         sidebar.updateStats(); // Refresh stats
+        sidebar.showToast('Download completed successfully!', 'success');
     } else if (message.action === 'downloadError') {
         sidebar.hideProgress();
-        alert('Download error: ' + message.error);
+        sidebar.showToast('Download error: ' + message.error, 'error');
     }
 });
 

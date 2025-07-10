@@ -243,6 +243,33 @@
     }
 }
 
+/* Notification animations */
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideOut {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+.pinvault-notification {
+    animation: slideIn 0.3s ease-out;
+}
+
 /* Dark theme support */
 @media (prefers-color-scheme: dark) {
     .pinvault-bulk-selector {

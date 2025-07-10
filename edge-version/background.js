@@ -156,6 +156,20 @@ class PinVaultProBackground {
                     sendResponse({ success: true });
                     break;
 
+                case 'toggleSidebar':
+                    try {
+                        const [currentTab] = await chrome.tabs.query({ active: true, currentWindow: true });
+                        if (currentTab) {
+                            const currentWindow = await chrome.windows.get(currentTab.windowId);
+                            await chrome.sidePanel.open({ windowId: currentWindow.id });
+                        }
+                        sendResponse({ success: true });
+                    } catch (error) {
+                        console.error('Error toggling sidebar:', error);
+                        sendResponse({ error: error.message });
+                    }
+                    break;
+
                 default:
                     console.warn('Background: Unknown action:', request.action);
                     sendResponse({ error: 'Unknown action' });
